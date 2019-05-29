@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.assignment" extends="ccm">
+		
+		<action name="searchAssignment111" class="com.saninco.ccm.action.assignment.AssignmentAction" method="searchAssignment"/>
+		
+		<action name="searchAssignmentTotalNo111" class="com.saninco.ccm.action.assignment.AssignmentAction" method="searchAssignmentTotalNo"/>
+		
+		<action name="deleteAssignment" class="com.saninco.ccm.action.assignment.AssignmentAction" method="getDeleteAssignment"/>
+		
+		<action name="addAssignment" class="com.saninco.ccm.action.assignment.AssignmentAction" method="getAddAssignment"/>
+		
+		<action name="editAssignment" class="com.saninco.ccm.action.assignment.AssignmentAction" method="getEnditAssignment"/>
+		
+		<action name="editList" class="com.saninco.ccm.action.assignment.AssignmentAction" method="getEnditList"/>
+		
+		<action name="getNumberOfAssignmentByVendorIdAndBanId" class="com.saninco.ccm.action.assignment.AssignmentAction" method="getNumberOfAssignmentByVendorIdAndBanId"/>
+		
+    </package>
+</struts>

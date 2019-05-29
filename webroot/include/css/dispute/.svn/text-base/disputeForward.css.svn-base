@@ -1,0 +1,32 @@
+#pageContainer {
+    padding: 8px;
+	border: 1px solid #adc3da;
+}
+
+.tabForm {
+	margin-bottom: 10px;
+}
+
+.disputeTab td {
+	height: 35px;
+}
+
+.disputeTab2 .message-label {
+	vertical-align: top;
+}
+
+.disputeTab3 .sender td {
+	height: 35px;
+}
+
+.disputeTab3 .receiver td {
+	height: 35px;
+}
+
+.disputeCheckbox .attachments-container {
+	margin-bottom: 10px;
+}
+
+.disputeCheckbox .attachments-label {
+	vertical-align: top;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.validation" extends="ccm">
+    
+        <action name="countMRCVarianceNo" class="com.saninco.ccm.action.validation.MRCVarianceAction" method="countMRCVarianceNo" />
+        <action name="listMRCVarianceListings" class="com.saninco.ccm.action.validation.MRCVarianceAction" method="listMRCVarianceListings" />
+        
+        <action name="countVarianceItemsNo" class="com.saninco.ccm.action.validation.MRCVarianceAction" method="countVarianceItemsNo" />
+        <action name="listVarianceItemsListings" class="com.saninco.ccm.action.validation.MRCVarianceAction" method="listVarianceItemsListings" />
+        
+        <action name="countTwoMonthsVarianceProposalItemsNo" class="com.saninco.ccm.action.validation.MRCVarianceAction" method="countTwoMonthsVarianceProposalItemsNo" />
+        <action name="listTwoMonthsVarianceProposalItemsListings" class="com.saninco.ccm.action.validation.MRCVarianceAction" method="listTwoMonthsVarianceProposalItemsListings" />
+        
+        <action name="getVarianceReasons" class="com.saninco.ccm.action.validation.MRCVarianceAction" method="getVarianceReasons" />
+        
+        <action name="getMasterInventoryDetails" class="com.saninco.ccm.action.validation.MRCVarianceAction" method="getMasterInventoryDetails" />
+
+    </package>
+</struts>

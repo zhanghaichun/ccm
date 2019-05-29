@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.common.CommonLookupAction" extends="ccm">
+
+    	<action name="download" class="com.saninco.ccm.action.common.CommonLookupAction" method="download">
+    		<result name="input" type="tiles">downloadErrorView</result>
+    	</action>
+    	
+    	<action name="preview" class="com.saninco.ccm.action.common.CommonLookupAction" method="preview">
+    		<result name="input" type="tiles">downloadErrorView</result>
+    	</action>
+    	
+    	<action name="changeUserTheme" class="com.saninco.ccm.action.common.CommonLookupAction" method="changeUserTheme"/>
+    	
+    	<action name="getMyWorkspace" class="com.saninco.ccm.action.common.CommonLookupAction" method="getMyWorkspace"/>
+    	
+    	<action name="getDisputesBucketCount" class="com.saninco.ccm.action.common.CommonLookupAction" method="getDisputesBucketCount"/>
+		
+    	<action name="getBackupAction" class="com.saninco.ccm.action.common.CommonLookupAction" method="getBackupAction"/>
+		
+    	<action name="getDelegation" class="com.saninco.ccm.action.common.CommonLookupAction" method="getDelegation"/>
+		
+    	<action name="getMyTeam" class="com.saninco.ccm.action.common.CommonLookupAction" method="getMyTeam"/>
+    	
+    	<action name="getMyTeamUser" class="com.saninco.ccm.action.common.CommonLookupAction" method="getMyTeamUser"/>
+    	
+    	<action name="doGetPastDuePageNo" class="com.saninco.ccm.action.common.CommonLookupAction" method="getInvoiceTotalPageNoInPastDue"/>
+		
+    	
+    	
+    	<action name="doGetInvoiceTotalPageNoInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="getInvoiceTotalPageNoInCommonLookup"/>
+    	
+    	<!-- Get External Approve Invoice Page Number-->
+        <action name="countExternalApproveInvoicePageNo" class="com.saninco.ccm.action.common.CommonLookupAction" method="countExternalApproveInvoicePageNo"/>
+        
+        <!-- List External Approve Invoice items-->
+        <action name="listExternalApproveInvoiceItems" class="com.saninco.ccm.action.common.CommonLookupAction" method="listExternalApproveInvoiceItems"/>
+        
+        <!-- Download External Approve Invoice items-->
+        <action name="downloadExternalApproveInvoices" class="com.saninco.ccm.action.common.CommonLookupAction" method="downloadExternalApproveInvoices"/>
+    	
+    	<action name="doSearchDisputeCountByDays" class="com.saninco.ccm.action.common.CommonLookupAction" method="searchDisputeCountByDays"/>
+    	
+    	<action name="doSearchDisputeByDays" class="com.saninco.ccm.action.common.CommonLookupAction" method="searchDisputeByDays"/>
+		
+    	<action name="doSearchInvoiceInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="searchInvoiceInCommonLookup"/>
+		
+    	<action name="doGetUnknownInvoicesTotalPageNoInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="doGetUnknownInvoicesTotalPageNoInCommonLookup"/>
+    	
+    	<action name="doGetMissingInvoicesTotalPageNoInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="getMissingInvoicesTotalPageNoInCommonLookup"/>
+    	
+		<action name="doSearchMissingInvoicesInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="searchMissingInvoices"/>
+		
+		<action name="doSearchPreloadInvoiceInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="searchPreloadInvoices"/>
+		
+		<action name="doSearchInvoiceRejectInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="SearchInvoiceReject"/>
+		
+        <action name="doSearchPastDue" class="com.saninco.ccm.action.common.CommonLookupAction" method="SearchPastDue"/>
+
+		<action name="getPreloadInvoicesTotalPageNoInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="getPreloadInvoicesTotalPageNoInCommonLookup"/>
+		
+		<action name="getInvoiceRejectTotalPageNoInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="getInvoiceRejectTotalPageNoInCommonLookup"/>
+		
+		<action name="doSaveMissingInvoicesExcel" class="com.saninco.ccm.action.common.CommonLookupAction" method="saveMissingInvoicesExcel"/>
+		
+		<action name="doSavePreloadInvoicesExcel" class="com.saninco.ccm.action.common.CommonLookupAction" method="savePreloadInvoicesExcel"/>
+		
+		<action name="doSaveDueDaysInvoicesExcel" class="com.saninco.ccm.action.common.CommonLookupAction" method="saveDueDaysInvoicesExcel"/>
+		
+		<action name="doSearchUnknownInvoicesInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="searchUnknownInvoices"/>
+		
+    	<action name="doGetInvoiceInProcessTotalPageNoInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="getInvoiceInProcessTotalPageNoInCommonLookup"/>
+    	
+		<action name="doSearchInvoiceInProcessInCommonLookup" class="com.saninco.ccm.action.common.CommonLookupAction" method="searchInvoiceInProcess"/>
+    	
+    	<action name="doAttachmentPointIdCountService" class="com.saninco.ccm.action.common.CommonLookupAction" method="getAttachmentPointIdCountService"/>
+    	
+		<action name="doSearchAttachmentPointIdService" class="com.saninco.ccm.action.common.CommonLookupAction" method="getSearchAttachmentPointIdService"/>
+
+    	<action name="disputeIdAttachmentPointIdCountService" class="com.saninco.ccm.action.common.CommonLookupAction" method="getDisputeAttachmentPointIdCountService"/>
+    	
+		<action name="disputeSearchAttachmentPointIdService" class="com.saninco.ccm.action.common.CommonLookupAction" method="getDisputeSearchAttachmentPointIdService"/>
+		
+		<action name="doRemoveMissingInvoice" class="com.saninco.ccm.action.common.CommonLookupAction" method="removeMissingInvoice"/>
+	
+		<action name="doRemoveUnknownInvoice" class="com.saninco.ccm.action.common.CommonLookupAction" method="removeUnknownInvoice"/>
+    	
+		<action name="doDownloadReport" class="com.saninco.ccm.action.common.CommonLookupAction" method="downloadReport"/>
+		
+		<action name="doSaveUnknownInvoicesExcel" class="com.saninco.ccm.action.common.CommonLookupAction" method="saveUnknownInvoicesExcel"/>
+		
+		<action name="doSaveDisputeExcel" class="com.saninco.ccm.action.common.CommonLookupAction" method="saveDisputeExcel"/>
+		
+		<action name="doSearchBanApproveTotalPageNo" class="com.saninco.ccm.action.common.CommonLookupAction" method="doSearchBanApproveTotalPageNo"/>
+		
+		<action name="doSearchBanRejectTotalPageNo" class="com.saninco.ccm.action.common.CommonLookupAction" method="doSearchBanRejectTotalPageNo"/>
+  
+  		<action name="searchBanApproveList" class="com.saninco.ccm.action.common.CommonLookupAction" method="searchBanApproveList"/>
+  		
+  		<action name="searchBanRejectList" class="com.saninco.ccm.action.common.CommonLookupAction" method="searchBanRejectList"/>
+    </package>
+</struts>

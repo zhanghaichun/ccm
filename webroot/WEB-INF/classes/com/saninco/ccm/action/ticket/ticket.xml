@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.ticket" extends="ccm">
+    	<action name="searchTicket" class="com.saninco.ccm.action.ticket.TicketAction" method="exec">
+		  	<result name="success" type="tiles">searchTicketView</result>
+		</action>
+		
+			<action name="doSearchTicket" class="com.saninco.ccm.action.ticket.TicketAction" method="searchTicket"></action>
+			
+			<action name="doSaveTicketSearch" class="com.saninco.ccm.action.ticket.TicketAction" method="saveTicketSearch"></action>
+			
+			<action name="doGetTicketSearchTotalPageNo" class="com.saninco.ccm.action.ticket.TicketAction" method="getTicketSearchTotalPageNo"></action>
+			
+			<action name="saveExcelBySearchTicket" class="com.saninco.ccm.action.ticket.TicketAction" method="saveExcelBySearchTicket"></action>
+		
+		
+		<action name="viewTicketDetail" class="com.saninco.ccm.action.ticket.TicketDetailAction" method="exec">
+		  	<result name="success" type="tiles">ticketDetailView</result>
+		</action>
+		
+			<action name="doAddTicketHistory" class="com.saninco.ccm.action.ticket.TicketDetailAction" method="doAddTicketHistory">
+				<result name="success">/WEB-INF/pages/ticket/res/ticketHistorySuccess.jsp</result>
+				<result name="input">/WEB-INF/pages/ticket/res/ticketHistoryInput.jsp</result>
+			</action>
+		
+			<action name="doSaveTicket" class="com.saninco.ccm.action.ticket.TicketDetailAction" method="saveTicket"></action>
+			
+			<action name="doUpdateTicket" class="com.saninco.ccm.action.ticket.TicketDetailAction" method="updateTicket"></action>
+			
+			<action name="doGetTicketDetailSearchTotalPageNo" class="com.saninco.ccm.action.ticket.TicketDetailAction" method="getTicketDetailSearchTotalPageNo"></action>
+			
+			<action name="doSearchTicketDetail" class="com.saninco.ccm.action.ticket.TicketDetailAction" method="searchTicketDetail"></action>
+			
+			<action name="doGetTicket" class="com.saninco.ccm.action.ticket.TicketDetailAction" method="getTicket"></action>
+		
+    </package>
+</struts>

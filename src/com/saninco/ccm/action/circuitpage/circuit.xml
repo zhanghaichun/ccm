@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.circuitpage" extends="ccm">
+	    <!-- <action name="searchCircuitPageView" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="exec">
+			  	<result name="success" type="tiles">searchCircuitPageView</result>
+		</action>
+		
+		  <action name="searchInventoryDashboard" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="inventoryDashboard">
+			  	<result name="success">/WEB-INF/pages/circuitpage/inventoryDashboard.jsp</result>
+		</action> -->
+		
+		<action name="searchInventoryDashboard" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="inventoryDashboard">
+<!--			  	<result name="success" type="tiles">searchInventoryDashboard</result>-->
+			<result name="success">/WEB-INF/pages/circuitpage/inventoryDashboard.jsp</result>
+		</action>
+		
+		<action name="saveExcelBySearchMasterInventory" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="saveExcelBySearchMasterInventory"></action>
+		<action name="searchMasterInventoryList" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="searchMasterInventoryList"></action>
+		<action name="getMasterInventoryListPageNo" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="getMasterInventoryListPageNo"></action>
+    	<action name="saveMasterInventorySearch" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="saveMasterInventorySearch"></action>
+    	<action name="searchMasterInvenrotyCompleteByFilter" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="searchMasterInvenrotyCompleteByFilter">
+    		<result name="none"/>
+    	</action>
+    	
+		<!--  获取 master inventory 表中，某条数据的 修改历史记录的总数  	-->
+    	<action name="getInventoryChangeHistoryListPageNo" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="getInventoryChangeHistoryListPageNo"></action>
+    	<!--  获取 master inventory 表中，某条数据的 修改历史记录 列表 	-->
+    	<action name="getInventoryChangeHistoryList" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="getInventoryChangeHistoryList"></action>
+    	<!--  导出 master inventory 表中，某条数据的 修改历史记录 列表 到excel 	-->
+    	<action name="saveExcelBySearchInventoryChangeHistory" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="saveExcelBySearchInventoryChangeHistory"></action>
+    	<action name="getMIDetail" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="getMIDetail"></action>
+    	<action name="updateMIDetail" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="updateMIDetail"></action>
+    	
+    	<action name="searchInventoryRateDashboard" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="inventoryDashboard">
+<!--			  	<result name="success" type="tiles">searchInventoryRateDashboard</result>-->
+			<result name="success">/WEB-INF/pages/masterInventory/inventoryRateDashboard.jsp</result>
+		</action>
+    	<action name="searchMasterInventoryRateList" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="searchMasterInventoryRateList"></action>
+		<action name="getMasterInventoryRateListPageNo" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="getMasterInventoryRateListPageNo"></action>
+    	<action name="searchMasterInvenrotyRateCompleteByFilter" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="searchMasterInvenrotyRateCompleteByFilter">
+    		<result name="none"/>
+    	</action>
+    	<action name="saveExcelBySearchMasterInventoryRate" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="saveExcelBySearchMasterInventoryRate"></action>
+		<action name="getInventoryRateChangeHistoryListPageNo" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="getInventoryRateChangeHistoryListPageNo"></action>
+    	<action name="getInventoryRateChangeHistoryList" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="getInventoryRateChangeHistoryList"></action>
+    	<action name="saveExcelBySearchInventoryRateChangeHistory" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="saveExcelBySearchInventoryRateChangeHistory"></action>
+    	
+    	<action name="showInventoryAndRate" class="com.saninco.ccm.action.circuitpage.CircuitPageAction" method="exec">
+            <result name="success" type="tiles">showInventoryAndRate</result>
+        </action>
+    </package>
+</struts>

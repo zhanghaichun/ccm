@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.operations" extends="ccm">
+
+    	<action name="doOperationsPage" class="com.saninco.ccm.action.operations.OperationsAction" method="exec">
+    		<result name="success" type="tiles">operationsPageView</result>
+    	</action>
+    	<action name="saveOperations" class="com.saninco.ccm.action.operations.OperationsAction" method="saveOperations"></action>
+    	<action name="findInvoiceSt" class="com.saninco.ccm.action.operations.OperationsAction" method="findInvoiceSt"></action>
+    	<action name="addInvoiceStV" class="com.saninco.ccm.action.operations.OperationsAction" method="addInvoiceStV"></action>
+    	<action name="deleteInvoiceStV" class="com.saninco.ccm.action.operations.OperationsAction" method="deleteInvoiceStV"></action>
+    	<action name="findBarCode" class="com.saninco.ccm.action.operations.OperationsAction" method="findBarCode"></action>
+    	<action name="CreateEmialsAddEmailTable" class="com.saninco.ccm.action.operations.OperationsAction" method="CreateEmialsAddEmailTable"></action>
+    	<action name="getPreEmailsTotalPageNoLC" class="com.saninco.ccm.action.operations.OperationsAction" method="getPreEmailsTotalPageNo"></action>
+    	<action name="searchPreEmailsOfDispute" class="com.saninco.ccm.action.operations.OperationsAction" method="searchPreEmailsOfDispute"></action>
+    	<action name="getEmailByEmailId" class="com.saninco.ccm.action.operations.OperationsAction" method="getEmailByEmailId"></action>
+   		<action name="updateEmailByEmail" class="com.saninco.ccm.action.operations.OperationsAction" method="updateEmailByEmail"> </action>
+    	<action name="sendCheckedEmailsAndChangeEmailStatus" class="com.saninco.ccm.action.operations.OperationsAction" method="sendCheckedEmailsAndChangeEmailStatus"></action>
+    	<action name="getAnnexsTotalPageNo" class="com.saninco.ccm.action.operations.OperationsAction" method="getAnnexsTotalPageNo"></action>
+    	<action name="searchAnnexsOfDispute" class="com.saninco.ccm.action.operations.OperationsAction" method="searchAnnexsOfDispute"></action>
+        <action name="sendAPSendingRequest" class="com.saninco.ccm.action.operations.ApFeedOutboundAction" method="sendOutboundFeedToAP"></action> 
+        <action name="sendAPLoadingRequest" class="com.saninco.ccm.action.operations.ApFeedInboundAction" method="loadAPRemittance"></action> 
+    </package>
+</struts>

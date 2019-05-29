@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.rateSearch" extends="ccm">
+        <!-- 返回Contract & Tariff Rules Tab 标签页，其中包含两个子标签
+        Contract Rules, Tariff Rules -->
+        <action name="displayRateViewSearch" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="exec">
+            <result name="success" type="tiles">showRateSearch</result>
+        </action>
+
+
+        <action name="countRateSearchPageNo" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="countRateSearchPageNo" />
+
+        <action name="listRateSearch" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="listRateSearch" />
+
+        <action name="downloadRateSearch" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="downloadRateSearch" />
+
+        <action name="countContractSummaryPageNo" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="countContractSummaryPageNo" />
+
+        <action name="listContractSummary" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="listContractSummary" />
+
+        <action name="downloadContractSummary" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="downloadContractSummary" />
+        <action name="filterRulesReference" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="filterRulesReference"/>
+        <action name="uploadRate" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="uploadRate">
+        	<result name="success">/WEB-INF/pages/rateSearch/uploadRateSuccess.jsp</result>
+        </action>
+        <action name="downLoadRateErrorFile" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="downLoadRateErrorFile"></action>
+        <action name="downloadRateTemplate" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="downloadRateTemplate" />
+        <action name="downloadRateBlankTemplate" class="com.saninco.ccm.action.rateSearch.RateSearchAction" method="downloadRateBlankTemplate" />
+    </package>
+</struts>

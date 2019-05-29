@@ -1,0 +1,5 @@
+#VL_vendorList_1 .content .row,
+#VL_banList_Invoice .content .row,
+#VL_productList .content .row {
+	line-height: normal;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.circuitold.action" extends="ccm">
+    <action name="searchCircuitOld" class="com.saninco.ccm.circuitold.action.CircuitAction" method="exec">
+<!--		  	<result name="success">/WEB-INF/pages/circuitold/searchCircuitOldChargesAndSCOAsMainPanel.jsp</result>-->
+			<result name="success" type="tiles">searchCircuitOldView</result> 
+
+	</action>
+	<action name="doSaveCircuitSearchOld" class="com.saninco.ccm.circuitold.action.CircuitAction" method="saveCircuitSearch"></action>
+	<action name="doGetCircuitSearchTotalPageNoOld" class="com.saninco.ccm.circuitold.action.CircuitAction" method="getCircuitSearchTotalPageNo"></action>
+    <action name="doSearchCircuitOld" class="com.saninco.ccm.circuitold.action.CircuitAction" method="searchCircuit"></action>
+    <action name="doSaveExcelOld" class="com.saninco.ccm.circuitold.action.CircuitAction" method="saveExcel"></action>
+    <action name="doSaveAllToExcelOld" class="com.saninco.ccm.circuitold.action.CircuitAction" method="saveAllToExcel"></action>
+    <action name="dogetTabViewOld" class="com.saninco.ccm.circuitold.action.CircuitAction" method="getTabView"></action>
+    <action name="dogetCircuitDateHyperlinkOld" class="com.saninco.ccm.circuitold.action.CircuitAction" method="getCircuitDateHyperlink"></action>
+    <action name="dosaveHistoricalDataToExcelOld" class="com.saninco.ccm.circuitold.action.CircuitAction" method="saveHistoricalDataToExcel">
+    </action>
+    </package>
+</struts>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.ban" extends="ccm">
+    
+    	<action name="banAction" class="com.saninco.ccm.action.ban.BanAction" method="exec">
+		  	<result name="success" type="tiles">banActionView</result>
+		</action>
+		
+		<action name="doGetBanTotalNO" class="com.saninco.ccm.action.ban.BanAction" method="getBanTotalNO"/>
+		
+		<action name="doSearchBanList" class="com.saninco.ccm.action.ban.BanAction" method="searchBanList"/>
+		
+		<action name="getInvoiceChannelAndFormatAndScoaJsonByLineOsBussiness" class="com.saninco.ccm.action.ban.BanAction" method="getInvoiceChannelAndFormatAndScoaJsonByLineOsBussiness"/>
+		
+		<action name="getInvoiceFormatsByLineOsBussinessAndChannel" class="com.saninco.ccm.action.ban.BanAction" method="getInvoiceFormatsByLineOsBussinessAndChannel"/>
+		
+		<action name="saveDownloadBanToExcel" class="com.saninco.ccm.action.ban.BanAction" method="saveDownloadBanToExcel"/>
+		
+		<action name="deleteBanById" class="com.saninco.ccm.action.ban.BanAction" method="deleteBanById"/>
+
+		<action name="banDetailAction" class="com.saninco.ccm.action.ban.BanDetailAction" method="exec">
+		  	<result name="success" type="tiles">banDetailActionView</result>
+		</action>
+
+		<action name="banViewDetailAction" class="com.saninco.ccm.action.ban.BanDetailAction" method="banViewDetail">
+		  	<result name="success" type="tiles">banViewDetailActionView</result>
+		</action>
+		
+		<action name="doUploadAttachFileByBan" class="com.saninco.ccm.action.ban.BanDetailAction" method="doUploadAttachFileByBan">
+		  	<result name="success">/WEB-INF/pages/ban/res/banDetailUploadFilePageSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/ban/res/banDetailPageInput.jsp</result>
+		</action>
+		
+		<action name="getContactByVendorId" class="com.saninco.ccm.action.ban.BanDetailAction" method="getContactByVendorId"/>
+		
+		<action name="serachAccountNumber" class="com.saninco.ccm.action.ban.BanDetailAction" method="serachAccountNumber"/>
+		
+		<action name="doValidationAccountExis" class="com.saninco.ccm.action.ban.BanDetailAction" method="doValidationAccountExis"/>
+		
+		<action name="saveBanToBanDetailPage" class="com.saninco.ccm.action.ban.BanDetailAction" method="saveBanToBanDetailPage">
+			<result name="success">/WEB-INF/pages/ban/res/banDetailPageSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/ban/res/banDetailPageInput.jsp</result>
+		</action>
+		<action name="updateBanStatusId" class="com.saninco.ccm.action.ban.BanDetailAction" method="updateBanStatusId"/>
+		
+    </package>
+</struts>

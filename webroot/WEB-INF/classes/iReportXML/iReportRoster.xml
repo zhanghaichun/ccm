@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ireports>
+	<ireport>
+		<has>3</has>
+		<reportId>1</reportId>
+		<reportName>BAN Metrics</reportName>
+		<ireportPath>BAN Metrics\ban_metrics.jasper,BAN Metrics\BanAnalystList.jasper,BAN Metrics\BTPDetails.jasper
+		</ireportPath>
+		<able>Yes</able>
+	</ireport>
+	<ireport>
+		<has>0</has>
+		<reportId>2</reportId>
+		<reportName>Unbundled Loop Circuits Report</reportName>
+		<ireportPath></ireportPath>
+		<able>No</able>
+	</ireport>
+	<ireport>
+		<has>2</has>
+		<reportId>3</reportId>
+		<reportName>Dispute Transactions</reportName>
+		<ireportPath>BAN Metrics\Disputes Detail Report.jasper,BAN Metrics\Summary by claim.jasper
+		</ireportPath>
+		<able>Yes</able>
+	</ireport>
+	<ireport>
+		<has>1</has>
+		<reportId>4</reportId>
+		<reportName>Summary SCOA Lookup - RWI Accrual Summary</reportName>
+		<ireportPath>RWIAccrualSummary.jasper</ireportPath>
+		<able>Yes</able>
+	</ireport>
+	<ireport>
+		<has>1</has>
+		<reportId>5</reportId>
+		<reportName>Summary SCOA Lookup - RWI Closed Summary</reportName>
+		<ireportPath>RWIClosedSummary.jasper</ireportPath>
+		<able>Yes</able>
+	</ireport>
+	<ireport>
+		<has>1</has>
+		<reportId>6</reportId>
+		<reportName>Summary YTD Lookup - RWI Closed</reportName>
+		<ireportPath>RWIClosed.jasper</ireportPath>
+		<able>Yes</able>
+	</ireport>
+	<ireport>
+		<has>1</has>
+		<reportId>7</reportId>
+		<reportName>Top 10 Open Disputes</reportName>
+		<ireportPath>Top_10_Open_Disputes.jasper</ireportPath>
+		<able>Yes</able>
+	</ireport>
+	<ireport>
+		<has>1</has>
+		<reportId>8</reportId>
+		<reportName>Vendor Spend</reportName>
+		<ireportPath>VendorSpend.jasper</ireportPath>
+		<able>Yes</able>
+	</ireport>
+	<ireport>
+		<has>1</has>
+		<reportId>9</reportId>
+		<reportName>LPCs Report</reportName>
+		<ireportPath>LPCsReport.jasper</ireportPath>
+		<able>Yes</able>
+	</ireport>
+	<ireport>
+		<has>1</has>
+		<reportId>10</reportId>
+		<reportName>Dispute Win Loss Report YTD</reportName>
+		<ireportPath>Dispute Win Loss Report YTD.jasper</ireportPath>
+		<able>Yes</able>
+	</ireport>
+	<ireport>
+		<has>1</has>
+		<reportId>11</reportId>
+		<reportName>Dispute Continuity Report</reportName>
+		<ireportPath>Dispute Continuity Report.jasper</ireportPath>
+		<able>Yes</able>
+	</ireport>
+	<ireport>
+		<has>0</has>
+		<reportId>12</reportId>
+		<reportName>Circuits Change Report</reportName>
+		<ireportPath></ireportPath>
+		<able>No</able>
+	</ireport>
+	<ireport>
+		<has>0</has>
+		<reportId>13</reportId>
+		<reportName>Not Paid Invoice Report</reportName>
+		<ireportPath></ireportPath>
+		<able>No</able>
+	</ireport>
+	<ireport>
+		<has>0</has>
+		<reportId>14</reportId>
+		<reportName>Dispute Adjustment Report</reportName>
+		<ireportPath></ireportPath>
+		<able>No</able>
+	</ireport>
+</ireports>

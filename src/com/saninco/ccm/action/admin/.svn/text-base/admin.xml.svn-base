@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.admin" extends="ccm">
+    	<action name="searchAdminAction" class="com.saninco.ccm.action.admin.AdminAction" method="exec">
+		  	<result name="success" type="tiles">searchAdminActionView</result>
+		</action>
+		
+		<action name="doSearchVendorMain" class="com.saninco.ccm.action.admin.AdminAction" method="getSearchVendorMain"/>	
+		
+		<action name="doSearchTarrf" class="com.saninco.ccm.action.admin.AdminAction" method="getTariffs"/>	
+		
+		<action name="doTariffsTotalPageNo" class="com.saninco.ccm.action.admin.AdminAction" method="getTariffsTotalPageNo"/>
+		
+		<action name="doVendorMainTotalPageNo" class="com.saninco.ccm.action.admin.AdminAction" method="getVendorMainTotalPageNo"/>
+		
+		<action name="doSearchBanExemptionCertificate" class="com.saninco.ccm.action.admin.AdminAction" method="getSearchBanExemptionCertificate"/>
+		
+		<action name="doBanExemptionCertificateTotalPageNo" class="com.saninco.ccm.action.admin.AdminAction" method="getBanExemptionCertificateTotalPageNo"/>
+		
+		<action name="deleteBanExemptionCertificate" class="com.saninco.ccm.action.admin.AdminAction" method="deleteBanExemptionCertificate"/>
+		
+		<action name="doUploadAttachFileByBanExemption" class="com.saninco.ccm.action.admin.AdminAction" method="doUploadAttachFileByBanExemption">
+			<result name="success">/WEB-INF/pages/admin/res/banExemptionUploadFilePageSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/admin/res/banDetailPageInput.jsp</result>
+		</action>
+		
+		<action name="doUploadExemption" class="com.saninco.ccm.action.admin.AdminAction" method="doUploadExemption"/>
+		
+		<action name="doUploadAttachFileByVendor" class="com.saninco.ccm.action.admin.AdminAction" method="doUploadAttachFileByVendor">
+			<result name="success">/WEB-INF/pages/admin/res/vendorSuccess.jsp</result>
+		</action>
+		
+		<action name="doVendorSearchList" class="com.saninco.ccm.action.admin.AdminAction" method="getVendorSearchList"/>
+		
+		<action name="doUpdateVendor" class="com.saninco.ccm.action.admin.AdminAction" method="getUpdateVendor"/>
+		
+		<action name="doDeleteContact" class="com.saninco.ccm.action.admin.AdminAction" method="getDeleteContact"/>
+		
+		<action name="doDeleteVendor" class="com.saninco.ccm.action.admin.AdminAction" method="getDeleteVendor"/>
+		
+		<action name="doVerifyContact" class="com.saninco.ccm.action.admin.AdminAction" method="getVerifyContact"/>
+		
+		<action name="doSaveVendor" class="com.saninco.ccm.action.admin.AdminAction" method="getSaveVendor"/>
+		
+		<action name="doSearchContactVendorMain" class="com.saninco.ccm.action.admin.AdminAction" method="getSearchContactVendorMain"/>
+			
+		<action name="doContactVendorMainTotalPageNo" class="com.saninco.ccm.action.admin.AdminAction" method="getContactVendorMainTotalPageNo"/>
+		
+		<action name="doExcelByContact" class="com.saninco.ccm.action.admin.AdminAction" method="getExcelByContact"/>
+		
+		<action name="doExcelByNewContact" class="com.saninco.ccm.action.admin.AdminAction" method="getExcelByNewContact"/>
+		
+		<action name="doAddContact" class="com.saninco.ccm.action.admin.AdminAction" method="getAddContact">
+			<result name="success">/WEB-INF/pages/admin/res/vendorSuccess.jsp</result>
+		</action>
+		
+		<action name="doEditContact" class="com.saninco.ccm.action.admin.AdminAction" method="getEditContact">
+			<result name="success">/WEB-INF/pages/admin/res/vendorSuccess.jsp</result>
+		</action>
+		
+		<action name="doAddVendorContact" class="com.saninco.ccm.action.admin.AdminAction" method="getAddVendorContact">
+			<result name="success">/WEB-INF/pages/admin/res/vendorSuccess.jsp</result>
+		</action>
+		
+    </package>
+</struts>

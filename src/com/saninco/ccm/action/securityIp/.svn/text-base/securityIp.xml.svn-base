@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>  
+    <package name="com.saninco.ccm.action.securityIp" extends="ccm">
+    	<action name="getSeacurityTotalPageNo" class="com.saninco.ccm.action.securityIp.SecurityIPAction" method="getSeacurityTotalPageNo"/>
+    	
+    	<action name="searchSecurityIp" class="com.saninco.ccm.action.securityIp.SecurityIPAction" method="searchSecurityIp"/>
+    	
+    	<action name="updateSecurity" class="com.saninco.ccm.action.securityIp.SecurityIPAction" method="updateSecurity"/>
+
+    	<action name="reactiveSecurity" class="com.saninco.ccm.action.securityIp.SecurityIPAction" method="reactiveSecurity"/>
+    	
+    	<action name="delSecurityIp" class="com.saninco.ccm.action.securityIp.SecurityIPAction" method="delSecurityIp"/>
+    	
+    	<action name="addSecurityIp" class="com.saninco.ccm.action.securityIp.SecurityIPAction" method="addSecurityIp"/>
+    	
+    	<action name="addSecurityIpTrueOrFalse" class="com.saninco.ccm.action.securityIp.SecurityIPAction" method="addSecurityIpTrueOrFalse"/>
+
+    </package>
+</struts>

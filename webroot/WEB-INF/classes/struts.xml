@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml" />
+    
+    <constant name="struts.i18n.reload" value="true" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages,pageableMessages" />
+    <constant name="struts.locale" value="en_US" />
+    <constant name="struts.objectFactory" value="spring" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.serve.static.browserCache" value="false" />
+    <constant name="struts.url.includeParams" value="none" />
+    <constant name="struts.action.extension" value="action" />
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.devMode" value="false" />
+	<constant name="struts.enable.SlashesInActionNames" value="true"/>
+    <!-- max is 4G -->
+    <constant name="struts.multipart.maxSize" value="4294000000" />
+    <!-- 
+    <constant name="struts.multipart.saveDir" value="e:/upload" />
+     -->
+    <package name="ccm" extends="struts-default">
+    	<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+		</result-types>
+				  
+		<interceptors>
+
+			<interceptor name="authorizeInterceptor" class="com.saninco.ccm.filter.AuthorizeInterceptor"></interceptor>
+			<interceptor name="logger" class="com.saninco.framework.interceptor.LoggingInterceptor"/>
+			<interceptor-stack name="CCMStack">
+				<interceptor-ref name="logger"/>
+				<interceptor-ref name="authorizeInterceptor"/>
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="exception">
+					<param name="logEnabled">true</param>
+					<param name="logLevel">error</param>
+				</interceptor-ref>
+				<!-- interceptor-ref name="userValidate"/ -->
+			</interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="CCMStack"/> 
+		
+		<global-results>
+			<result name="input" type="tiles">viewBPLErrorPage</result>
+		</global-results>
+    	<!-- global-results -->
+		    <!-- result name="error" type="tiles">/WEB-INF/pages/ccmError.jsp</result -->
+		    <!-- result name="exception" type="tiles">/WEB-INF/pages/ccmException.jsp</result -->
+		    <!-- result name="login" type="redirectAction">Login!input</result -->
+			<!-- result name="userValidateError">/WEB-INF/pages/userValidateError.jsp</result --> 
+		<!-- /global-results -->
+		
+		<global-exception-mappings>
+			<exception-mapping result="input"  exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="exception" exception="java.lang.Exception"/>
+		</global-exception-mappings>
+		
+		<action name="*" >
+		  	<result>/{1}.jsp</result>
+		  	<result name="input" type="tiles">{1}</result>
+		</action>     
+    </package>   
+
+	<include file="com/saninco/ccm/action/profile/profile.xml" />
+    <include file="com/saninco/ccm/action/reconcile/reconcile.xml" />
+    <include file="com/saninco/ccm/action/credit/credit.xml" />
+    <include file="com/saninco/ccm/action/ticket/ticket.xml"/>
+    <include file="com/saninco/ccm/action/dispute/dispute.xml" />
+    <include file="com/saninco/ccm/action/quote/quote.xml" />
+    <include file="com/saninco/ccm/action/quoteRequest/quoteRequest.xml" />
+    <include file="com/saninco/ccm/action/masterInventory/masterInventory.xml" />
+    <include file="com/saninco/ccm/action/invoice/invoice.xml" />
+    <include file="com/saninco/ccm/action/quicklink/quicklink.xml" />
+    <include file="com/saninco/ccm/action/system/system.xml" />
+    <include file="com/saninco/ccm/action/common/commonLookup.xml" />
+    <include file="com/saninco/ccm/action/common/errorPage.xml" />
+    <include file="com/saninco/ccm/action/payment/payment.xml" />
+    <include file="com/saninco/ccm/action/report/report.xml" />
+    <include file="com/saninco/ccm/action/security/userSecurity.xml" />
+    <include file="com/saninco/ccm/action/role/role.xml" />
+    <include file="com/saninco/ccm/action/assignment/assignment.xml" />
+    <include file="com/saninco/ccm/action/dashboard/dashboard.xml" />
+    <include file="com/saninco/ccm/action/admin/admin.xml" />
+    <include file="com/saninco/ccm/action/operations/operations.xml" />
+    <include file="com/saninco/ccm/action/invoice/invoice4bb.xml" />
+    <include file="com/saninco/ccm/action/ban/ban.xml" />
+    <include file="com/saninco/ccm/action/scoa/accountCode.xml" />
+    <include file="com/saninco/ccm/action/circuit/circuit.xml"/>
+    <include file="com/saninco/ccm/action/circuitpage/circuit.xml"/>
+    <include file="com/saninco/ccm/action/vendor/vendor.xml"/>
+    <include file="com/saninco/ccm/circuitold/action/circuit.xml"/>
+    <include file="com/saninco/ccm/circuitpage/action/circuitPage.xml"/>
+    <include file="com/saninco/ccm/target/action/target.xml"/>
+    <include file="com/saninco/ccm/action/securityIp/securityIp.xml" />
+    <include file="com/saninco/ccm/action/wiki/wiki.xml" />
+    <include file="com/saninco/ccm/action/message/message.xml" />
+    <!-- Quote Inventory -->
+    <include file="com/saninco/ccm/action/quoteInventory/quoteInventory.xml" />
+    <!-- Contract/Tariff/Price List -->
+    <include file="com/saninco/ccm/action/contractTariffPriceList/contractTariffPriceList.xml" />
+    <include file="com/saninco/ccm/action/openInterface/openInterface.xml" />
+    <!-- Contract Tab-->
+    <include file="com/saninco/ccm/action/contractTab/contractTab.xml" />
+    <include file="com/saninco/ccm/action/contract/contract.xml" /><!-- contract -->
+    <include file="com/saninco/ccm/action/pricelist/pricelist.xml" /><!-- pricelist -->
+    
+    <!-- Contract & Tariff rules -->
+    <include file="com/saninco/ccm/action/contractAndTariffRules/contractAndTariffRules.xml" />
+    <include file="com/saninco/ccm/action/contractRules/contractRules.xml" />
+    <include file="com/saninco/ccm/action/tariffRules/tariffRules.xml" />
+    <include file="com/saninco/ccm/action/mtmRules/mtmRules.xml" />
+    
+    <include file="com/saninco/ccm/action/rateSearch/rateSearch.xml" />
+    
+    <include file="com/saninco/ccm/action/validation/mrcVariance.xml" />
+</struts>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.payment" extends="ccm">
+    
+        <action name="doSearchPaymentAssignment" class="com.saninco.ccm.action.payment.PaymentAction" method="searchPaymentAssignment"/>
+        
+        <action name="doSearchPayment" class="com.saninco.ccm.action.payment.PaymentAction" method="searchPayment"/>
+		
+        <action name="doSavePaymentSearch" class="com.saninco.ccm.action.payment.PaymentAction" method="savePaymentSearch"/>
+	
+        <action name="doGetPaymentAssignmentSearchTotalPageNo" class="com.saninco.ccm.action.payment.PaymentAction" method="getPaymentAssignmentSearchTotalPageNo"/>
+        
+        <action name="doGetPaymentSearchTotalPageNo" class="com.saninco.ccm.action.payment.PaymentAction" method="getPaymentSearchTotalPageNo"/>
+		
+		<action name="getUserPreviledgedVendorList" class="com.saninco.ccm.action.payment.PaymentAction" method="getUserPreviledgedVendorList"/>
+		
+		<action name="doGetPaymentFileTotalNO" class="com.saninco.ccm.action.payment.PaymentAction" method="getPaymentFileTotalNO"/>
+		
+		<action name="doSearchPaymentFileList" class="com.saninco.ccm.action.payment.PaymentAction" method="searchPaymentFileList"/>
+		
+		<action name="doDeletePaymentFileByFId" class="com.saninco.ccm.action.payment.PaymentAction" method="deletePaymentFileByFId"/>
+		
+		<action name="doPaymentPTConfirm" class="com.saninco.ccm.action.payment.PaymentAction" method="paymentPTConfirm">
+			<result name="success">/WEB-INF/pages/admin/res/ptSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/admin/res/ptInput.jsp</result>
+		</action>
+
+ 		<action name="viewPaymentDetails" class="com.saninco.ccm.action.payment.PaymentDetailAction" method="exec">
+		  	<result name="success" type="tiles">viewPaymentDetailsView</result>
+		</action>
+	
+		<action name="doGetPaymentDetailsTotalPageNo" class="com.saninco.ccm.action.payment.PaymentDetailAction" method="getPaymentDetailsTotalPageNo"/>
+		
+		<action name="doGetPaymentDetails" class="com.saninco.ccm.action.payment.PaymentDetailAction" method="getPaymentDetails"/>
+		
+		<action name="doGetPaymentHistoryTotalPageNo" class="com.saninco.ccm.action.payment.PaymentDetailAction" method="getPaymentHistoryTotalPageNo"/>
+		
+		<action name="doGetPaymentHistory" class="com.saninco.ccm.action.payment.PaymentDetailAction" method="getPaymentHistory"/>
+		
+		<action name="savePaymentHistory" class="com.saninco.ccm.action.payment.PaymentDetailAction" method="savePaymentHistory"/>
+	
+		<action name="doSearchPaymentByPName" class="com.saninco.ccm.action.payment.PaymentAction" method="searchPaymentByPName"/>
+		
+    </package>
+</struts>

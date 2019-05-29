@@ -1,0 +1,246 @@
+/* 针对小屏幕的移动设备的样式的调试。
+  @media screen and (max-width: 487px) {
+
+  }
+*/
+
+@media screen and (max-width: 487px) {
+  
+
+  body {
+    padding-bottom: 55px;
+  }
+
+}
+
+.dashboard-list-main-container input[type="button"] {
+  font-size: 12px;
+  background: white;
+  cursor: pointer;
+  border-width: 1px;
+}
+
+/* 这句代码是因为全局样式的影响而做的调整。 */
+.dashboard-list-main-container a:link, 
+.dashboard-list-main-container a:visited {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+
+/* 在页面右上方的 Add New Dashboard 按钮。 */
+.page-title .add-new-link {
+  display: inline-block;
+  margin-top: 16px;
+}
+
+@media screen and (max-width: 487px) {
+  .page-title-col-wrapper {
+    padding-right: 0;
+  }
+
+  .add-new-col-wrapper {
+    padding-left: 0;
+  }
+}
+
+.page-title .add-new-button {
+  display: inline-block;
+  padding: 6px 14px;
+}
+
+.page-title .title-content {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.list-title-wrapper {
+  height: 40px;
+  line-height: 40px;
+}
+
+/* 页面中section 标签。 */
+.dashboard-list-section {
+  margin: 15px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 487px) {
+  
+
+  .dashboard-list-section {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+/* List header */
+.list-title-wrapper .list-header {
+  color: #000;
+  user-select: none;
+}
+
+.header-name {
+  font-size: 11px;
+}
+
+.operation-header-name {
+  display: inline-block;
+  margin-right: 1px;
+}
+
+/* dashobard list 排序图标 */
+.list-title-wrapper .sort-icon {
+  display: inline-block;
+  width: 8px;
+  height: 12px;
+  margin-left: 5px;
+  transform: translateY(2px);
+  background-image: url("../img/dashboard-list/no-sort.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer; 
+}
+
+/* 升序排列 */ 
+.list-title-wrapper .sort-icon.asc {
+  background-image: url("../img/dashboard-list/sort-asc.png");
+}
+
+/* 降序排列 */
+.list-title-wrapper .sort-icon.desc {
+  background-image: url("../img/dashboard-list/sort-desc.png");
+}
+
+/* 列表中每一行元素样式的设置。 */
+.dashboard-list .dashboard-list-item {
+  height: 40px;
+  padding-top: 8px;
+  font-family: ArialMT;
+}
+
+
+.dashboard-list .dashboard-name {
+  display: flex;
+}
+
+
+.dashboard-list .dashboard-name .name-content {
+  flex: 1;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11px;
+}
+
+.dashboard-list .creation-date {
+    font-size: 11px;
+}
+
+.dashboard-list .time-small {
+  display: none;
+  color: #A5BED6;
+  font-size: 11px;
+}
+
+@media screen and (max-width: 487px) {
+  
+  .dashboard-list .time-small {
+    display: inline-block;
+  }
+
+}
+
+.empty-list {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+}
+
+.dashboard-list-section a.empty-add-new {
+    margin-left: 5px;
+    text-decoration: underline;
+    color: #78ace8;
+}
+
+@media screen and (max-width: 487px) {
+  .list-title-wrapper .sort-list-header-wrapper {
+    padding-right: 0;
+  }
+}
+
+.dashboard-list .operation {
+  transform: translateY(2px);
+}
+
+.dashboard-list .operation .wide-button {
+  margin-bottom: 5px;
+}
+
+.dashboard-list .operation .delete-button {
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.dashboard-list .operation .enter-button {
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  
+  .dashboard-list .operation .delete-button {
+    margin-right: 0;
+  }
+
+  .dashboard-list .operation .enter-button {
+    margin-right: 2px;
+  }
+}
+
+/* 分页控件 */
+.pagination-control {
+  margin-top: 10px;
+  font-size: 11px;
+}
+
+@media screen and (max-width: 487px) {
+  
+
+  .pagination-control {
+    margin-left: 10px;
+  }
+
+}
+
+.pagination-control img {
+    vertical-align: bottom;
+}
+
+.pagination-control > * {
+  display: inline-block;
+}
+
+.pagination-control #recordsCount {
+  cursor: pointer;
+  height: 18px;
+}
+
+.current-page {
+  width: 30px;
+  text-align: center;
+  height: 16px;
+}
+
+
+
+
+
+

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.1.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">	<bean id="propertyConfigurer"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <!-- this is for the web configuration -->
+            <list>
+	            <value>classpath:jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="operationService" class="com.saninco.ccm.service.operations.OperationServiceImpl">
+    	<property name="invoiceStDao" ref="invoiceStDao"></property>
+    	<property name="banDao" ref="banDao"></property>
+    	<property name="barCodeDao" ref="barCodeDao"></property>
+    	<property name="vendorDao" ref="vendorDao"></property>
+    	<property name="invoiceStVDao" ref="invoiceStVDao"></property>
+    </bean>
+    
+    <bean id="dashboardService" class="com.saninco.ccm.service.dashboard.DashboardServiceImpl">
+    	<property name="invoiceDao" ref="invoiceDao"></property>
+    	<property name="dashboardDao" ref="dashboardDao"></property>
+    </bean>
+    
+    <bean id="reportAdminService" class="com.saninco.ccm.service.report.ReportAdminServiceImpl">
+    	<property name="reportDAO" ref="reportDAO"/>
+    </bean>
+    
+    <bean id="importFromXMLImplService" class="com.saninco.ccm.service.imports.ImportFromXMLImplService">
+    	<property name="invoiceDao" ref="invoiceDao"/>
+    </bean>
+    
+    <bean id="invoiceDetailService" class="com.saninco.ccm.service.invoice.InvoiceDetailServiceImpl">
+		<property name="invoiceDetailDao" ref="invoiceDetailDao"/>
+		<property name="userDao" ref="userDao"/>
+		<property name="proposalDao" ref="proposalDao"/>
+		<property name="disputeDao" ref="disputeDao"/>
+		<property name="invoiceStatusDao" ref="invoiceStatusDao"/>
+		<property name="reconcileStatusDao" ref="reconcileStatusDao"/>
+		<property name="reconcileDao" ref="reconcileDao"/>
+		<property name="invoiceDao" ref="invoiceDao"/>
+		<property name="banDao" ref="banDao"/>
+		<property name="workflowActionDao" ref="workflowActionDao"/>
+	</bean>
+	
+    <bean id="securityManagementService" class="com.saninco.ccm.service.security.SecurityManagementServiceImpl">
+		<property name="securityManagementDao" ref="securityManagementDao"/>
+	</bean>
+    
+    <bean id="paymentDetailService" class="com.saninco.ccm.service.payment.PaymentDetailServiceImpl">
+		<property name="paymentDao" ref="paymentDao"/>
+	</bean>
+    
+	<bean id="ticketService" class="com.saninco.ccm.service.ticket.TicketServiceImpl">
+		<property name="ticketDao" ref="ticketDao"></property>
+	</bean>
+    
+	<bean id="ticketDetailService" class="com.saninco.ccm.service.ticket.TicketDetailServiceImpl">
+		<property name="ticketDao" ref="ticketDao"/>
+		<property name="ticketHistoryDao" ref="ticketHistoryDao"/>
+		<property name="sysConfigDAO" ref="sysConfigDAO"/>
+	</bean>
+
+	<bean id="quicklinkService" class="com.saninco.ccm.service.quicklink.QuicklinkServiceImpl">
+		<property name="banDao" ref="banDao"/>
+		<property name="userDao" ref="userDao"/>
+		<property name="vendorDao" ref="vendorDao"/>
+		<property name="userQuicklinkDao" ref="userQuicklinkDao"/>
+	</bean>
+	
+	<bean id="quoteService" class="com.saninco.ccm.service.quote.QuoteServiceImpl">
+		<property name="quoteDao" ref="quoteDao"/>
+	</bean>
+	<bean id="masterInventoryService" class="com.saninco.ccm.service.masterInventory.MasterInventoryServiceImpl">
+		<property name="masterInventoryDao" ref="masterInventoryDao"/>
+	</bean>
+	
+    <bean id="postAuthChecks" class="com.saninco.ccm.service.system.PostAuthenticationChecksImpl">
+    </bean>
+    
+	<bean id="logonService" class="com.saninco.ccm.service.system.LogonServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+		<property name="passwordHistoryDao"><ref bean="passwordHistoryDao" /></property>
+		<property name="sysConfigDAO" ref="sysConfigDAO"></property>
+		<property name="postAuthenticationChecks"><ref bean="postAuthChecks"/></property>
+		<security:custom-authentication-provider/>
+	</bean>
+	
+	<bean id="userService" class="com.saninco.ccm.service.system.UserServiceImpl">
+		<property name="userLoginPictureDao"><ref bean="userLoginPictureDao" /></property>
+		<property name="userDao"><ref bean="userDao" /></property>
+		<property name="userDelegationDao"><ref bean="userDelegationDao"/></property>
+	</bean>
+	    
+	<bean id="commonLookupService" class="com.saninco.ccm.service.CommonLookupServiceImpl">
+		<property name="securityManagementDao" ref="securityManagementDao"/>
+		<property name="eventJournalDao" ref="eventJournalDao"/>
+		<property name="sysConfigDAO" ref="sysConfigDAO"/>
+		<property name="banDao" ref="banDao"/>
+		<property name="currencyDao" ref="currencyDao"/>
+		<property name="vendorDao" ref="vendorDao"/>
+		
+		<property name="invoiceStatusDao" ref="invoiceStatusDao"/>
+		<property name="paymentStatusDao" ref="paymentStatusDao"/>
+		<property name="disputeReasonDao" ref="disputeReasonDao"/>
+		<property name="disputeStatusDao" ref="disputeStatusDao"/>
+		<property name="creditStatusDao" ref="creditStatusDao"/>
+		
+		<property name="createdByDao" ref="createdByDao"/>		
+		<property name="userDelegationDao" ref="userDelegationDao"/>
+		<property name="invoiceDao" ref="invoiceDao"/>
+		<property name="disputeDao" ref="disputeDao"/>
+		<property name="paymentDao" ref="paymentDao"/>
+		<property name="creditDao" ref="creditDao"/>
+
+		<property name="priorityDao" ref="priorityDao"/>
+		<property name="severityDao" ref="severityDao"/>
+		<property name="ticketStatusDao" ref="ticketStatusDao"/>
+		<property name="userDao" ref="userDao"/>
+		<property name="contactDao" ref="contactDao"/>
+		
+		<property name="roleDao" ref="roleDao"/>
+		<property name="labelDao" ref="labelDao"/>
+		<property name="functionDao" ref="functionDao"/>
+		
+		<property name="accountCodelDao" ref="accountCodelDao"/>
+		
+		<property name="rtagDao" ref="rtagDao"></property>
+		
+		<property name="attachmentFileDao" ref="attachmentFileDao"></property>
+		
+		<property name="originatorDao" ref="originatorDao"></property>
+		<property name="invoiceStDao" ref="invoiceStDao"/>
+	</bean>
+	
+	<bean id="invoiceService" class="com.saninco.ccm.service.invoice.InvoiceServiceImpl">
+		<property name="invoiceDao" ref="invoiceDao"/>
+		<property name="attachmentFileDao" ref="attachmentFileDao"/>
+	</bean>
+	<bean id="circuitService" class="com.saninco.ccm.service.circuit.CircuitServiceImpl">
+		<property name="circuitDao" ref="circuitDao"/>
+	</bean>
+	<bean id="paymentService" class="com.saninco.ccm.service.payment.PaymentServiceImpl">
+		<property name="paymentDao" ref="paymentDao"/>
+	</bean>
+	
+	<bean id="banService" class="com.saninco.ccm.service.ban.BanServiceImpl">
+		<property name="banDao" ref="banDao"/>
+	</bean>
+		
+	<bean id="disputeService" class="com.saninco.ccm.service.dispute.DisputeServiceImpl">
+		<property name="reconcileDao" ref="reconcileDao"/>
+		<property name="invoiceDao" ref="invoiceDao"/>
+		<property name="disputeDao" ref="disputeDao"/>
+		<property name="creditDao" ref="creditDao"/>
+		<property name="reconcileStatusDao" ref="reconcileStatusDao"/>
+		<property name="userDao" ref="userDao"/>
+		<property name="contactDao" ref="contactDao"/>
+		<property name="attachmentFileDao" ref="attachmentFileDao"/>
+		<property name="sysConfigDAO" ref="sysConfigDAO"/>
+		<property name="proposalDao" ref="proposalDao"/>
+		<property name="emailDao" ref="emailDao"/>
+	</bean>
+	
+	<bean id="creditService" class="com.saninco.ccm.service.credit.CreditServiceImpl">
+		<property name="creditDao" ref="creditDao"/>
+	</bean>
+	 
+	<bean id="reconcileService" class="com.saninco.ccm.service.reconcile.ReconcileServiceImpl">
+		<property name="reconcileDao" ref="reconcileDao"/>
+		<property name="disputeDao" ref="disputeDao"/>
+		<property name="creditDao" ref="creditDao"/>
+	</bean>
+	
+	<bean id="creditDetailService" class="com.saninco.ccm.service.credit.CreditDetailServiceImpl">
+	 	<property name="creditDetailDao" ref="creditDetailDao"></property>
+	</bean>
+
+	<bean id="userListService" class="com.saninco.ccm.service.security.UserListServiceImpl">
+		<property name="userDao" ref="userDao"/>	
+	</bean>
+	
+	<bean id="apService" class="com.saninco.ccm.service.ap.ApServiceImpl">
+		<property name="apDao" ref="apDao"/>
+		<property name="paymentBatchDao" ref="paymentBatchDao"/>
+		<property name="paymentDetailDao" ref="paymentDetailDao"/>
+		<property name="paymentDao" ref="paymentDao"/>
+		<property name="remittanceDao" ref="remittanceDao"/>
+		<property name="workflowActionDao" ref="workflowActionDao"/>
+	</bean>
+	
+	<bean id="roleService" class="com.saninco.ccm.service.role.RoleServiceImpl">
+		<property name="roleDao" ref="roleDao"/>
+	</bean>
+
+	<bean id="assignmentService" class="com.saninco.ccm.service.assignment.AssignmentServiceImpl">
+		<property name="assignmentDao" ref="assignmentDao"/>
+		<property name="vendorDao" ref="vendorDao"/>
+		<property name="banDao" ref="banDao"/>
+	</bean>
+	
+	<bean id="rtagService" class="com.saninco.ccm.service.rtag.RtagServiceImpl">
+		<property name="rtagDao" ref="rtagDao"/>
+	</bean>
+ 
+	<bean id="reportUserService" class="com.saninco.ccm.service.report.ReportUserServiceImpl">
+		<property name="reportDAO" ref="reportDAO"/>
+		<property name="banDao" ref="banDao"/>
+		<property name="sysConfigDAO" ref="sysConfigDAO"/>
+	</bean>
+	
+	<bean id="disputeTabService" class="com.saninco.ccm.service.invoice.DisputeTabServiceImpl">
+		<property name="proposalDao" ref="proposalDao"/>
+		<property name="disputeDao" ref="disputeDao"></property>
+		<property name="banDao" ref="banDao"/>
+		<property name="currencyDao" ref="currencyDao"></property>
+		<property name="originatorDao" ref="originatorDao"/>
+		<property name="invoiceDao" ref="invoiceDao"></property>
+		<property name="disputeReasonDao" ref="disputeReasonDao"/>
+		<property name="accountCodelDao" ref="accountCodelDao"></property>
+		<property name="disputeStatusDao" ref="disputeStatusDao"></property>
+		<property name="attachmentFileDao" ref="attachmentFileDao"></property>
+	</bean>
+	
+	<bean id="eventJournalService" class="com.saninco.ccm.service.EventJournalServiceImpl">
+		<property name="eventJournalDao" ref="eventJournalDao"/>
+	</bean>
+	
+	<bean id="accountCodeService" class="com.saninco.ccm.service.scoa.AccountCodeServiceImpl">
+		<property name="accountCodelDao" ref="accountCodelDao"/>
+	</bean>
+	
+	<bean id="invoiceService4BB" class="com.saninco.ccm.service.invoice.InvoiceService4BBImpl">
+		<property name="invoiceDao4BB" ref="invoiceDao4BB"/>
+		<property name="userDelegationDao"><ref bean="userDelegationDao"/></property>
+	</bean>	
+	
+	<bean id="vendorMainsService" class="com.saninco.ccm.service.vendor.VendorMainServiceImpl">
+		<property name="vendorDao" ref="vendorDao"></property>
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	
+	<bean id="apMain" class="com.saninco.ccm.job.ApMain">
+		<property name="apService" ref="apService"></property>
+	</bean>
+	
+	<!-- aop:config>
+		<aop:aspect ref="eventJournalService">
+    		<aop:pointcut id="eventJournalPointCut" expression="execution(public * com.saninco.ccm.service.*.*.*(..))" />
+    		<aop:around pointcut-ref="eventJournalPointCut" method="saveEventJournal"/>
+    	</aop:aspect>
+  	</aop:config -->
+	
+</beans>

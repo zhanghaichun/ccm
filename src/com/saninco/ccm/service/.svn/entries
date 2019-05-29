@@ -1,0 +1,343 @@
+10
+
+dir
+10640
+svn://192.168.0.71/svntest/ccm-production-mrc-variance/src/com/saninco/ccm/service
+svn://192.168.0.71/svntest
+
+
+
+2019-04-26T04:40:12.157960Z
+10577
+yong.zhang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2f4b01f1-ed84-4fc5-8e0d-a9e6e3299111
+
+operations
+dir
+
+ticket
+dir
+
+system
+dir
+
+message
+dir
+
+tariffRules
+dir
+
+email
+dir
+
+contractTariffPriceList
+dir
+
+quicklink
+dir
+
+ICommonLookupService.java
+file
+
+
+
+
+2019-05-16T02:53:53.167804Z
+fec2398557607bdbf3ddeca28ed26529
+2019-03-29T20:28:16.981448Z
+10501
+limingyang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9423
+
+quote
+dir
+
+inventory
+dir
+
+imports
+dir
+
+rtag
+dir
+
+pricelist
+dir
+
+EventJournalServiceImpl.java
+file
+
+
+
+
+2019-05-16T02:53:53.163804Z
+de621b81282898aaf08eaa887e1f4617
+2012-05-03T02:13:54.372785Z
+13
+limingyang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1638
+
+ban
+dir
+
+securityIp
+dir
+
+circuit
+dir
+
+reconcile
+dir
+
+quoteRequest
+dir
+
+mtmRules
+dir
+
+masterInventory
+dir
+
+credit
+dir
+
+report
+dir
+
+contract
+dir
+
+dispute
+dir
+
+rateSearch
+dir
+
+SendUserCreationEmailAdvice.java
+file
+
+
+
+
+2019-05-16T02:53:53.165804Z
+bdd3e730066bb11347680ba5d1bc87b1
+2012-05-03T02:13:54.372785Z
+13
+limingyang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2761
+
+SendPasswordResetEmailAdvice.java
+file
+
+
+
+
+2019-05-16T02:53:53.173805Z
+4f5ebd1a9b2e7fa4c844f9fb316e3ad7
+2012-05-03T02:13:54.372785Z
+13
+limingyang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2953
+
+scoa
+dir
+
+IEventJournalService.java
+file
+
+
+
+
+2019-05-16T02:53:53.160804Z
+1e34d7b5c15731a2ed623966e13e255d
+2012-05-03T02:13:54.372785Z
+13
+limingyang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+254
+
+dashboard
+dir
+
+contractRules
+dir
+
+invoice
+dir
+
+vendor
+dir
+
+ap
+dir
+
+role
+dir
+
+wiki
+dir
+
+CommonLookupServiceImpl.java
+file
+
+
+
+
+2019-05-16T02:53:53.170805Z
+76214e04d97d4bda4ece7eadc13af889
+2019-03-29T20:28:16.981448Z
+10501
+limingyang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+133396
+
+security
+dir
+
+assignment
+dir
+
+quoteInventory
+dir
+
+payment
+dir
+

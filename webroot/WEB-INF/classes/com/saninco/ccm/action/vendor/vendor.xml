@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>  
+    <package name="com.saninco.ccm.action.vendor" extends="ccm">
+    
+			<action name="viewVendorDetails" class="com.saninco.ccm.action.vendor.VendorAction" method="exec">
+				<result name="success" type="tiles">VendorDetailView</result> 
+			</action>
+			<action name="doAllCharges" class="com.saninco.ccm.action.vendor.VendorAction" method="getAllCharges"/>
+			<action name="doAllChargeTotalPageNo" class="com.saninco.ccm.action.vendor.VendorAction" method="getAllChargeTotalPageNo"/>
+			<action name="doRecurringCharges" class="com.saninco.ccm.action.vendor.VendorAction" method="getRecurringCharges"/>
+			<action name="doRecurringChargeTotalPageNo" class="com.saninco.ccm.action.vendor.VendorAction" method="getRecurringChargeTotalPageNo"/>
+			<action name="doSearchSortProposalTable" class="com.saninco.ccm.action.vendor.VendorAction" method="getSearchSortProposalTable"/>
+			<action name="doSearchSortProposalTotalPageNo" class="com.saninco.ccm.action.vendor.VendorAction" method="getSearchSortProposalTotalPageNo"/>
+			<action name="doSearchPaymentTable" class="com.saninco.ccm.action.vendor.VendorAction" method="getSearchPaymentTable"/>
+			<action name="doSearchPaymentTotalPageNo" class="com.saninco.ccm.action.vendor.VendorAction" method="getSearchPaymentTotalPageNo"/>
+			<action name="saveExcelByAllCharges" class="com.saninco.ccm.action.vendor.VendorAction" method="saveExcelByAllCharges"/>
+			<action name="saveExcelByRecurringCharge" class="com.saninco.ccm.action.vendor.VendorAction" method="saveExcelByRecurringCharge"/>
+			<action name="saveExcelBySortProposal" class="com.saninco.ccm.action.vendor.VendorAction" method="saveExcelBySortProposal"/>
+			<action name="saveExcelByPayment" class="com.saninco.ccm.action.vendor.VendorAction" method="saveExcelByPayment"/>
+			<action name="getListByProvinceId" class="com.saninco.ccm.action.vendor.VendorInventoryAction" method="getListByProvinceId"/>
+			<action name="getListByCityId" class="com.saninco.ccm.action.vendor.VendorInventoryAction" method="getListByCityId"/>
+			
+			<action name="viewVendorInventory" class="com.saninco.ccm.action.vendor.VendorInventoryAction" method="exec">
+<!--				<result name="success">/WEB-INF/pages/vendor/vendorInventoryMainPanel.jsp</result>-->
+				<result name="success" type="tiles">VendorInventoryView</result> 
+				 
+			</action>
+			<action name="doSearchVendorInventory" class="com.saninco.ccm.action.vendor.VendorInventoryAction" method="searchVendorInventory"></action>
+			<action name="doGetVendorInventorySearchTotalPageNo" class="com.saninco.ccm.action.vendor.VendorInventoryAction" method="getVendorInventorySearchTotalPageNo"></action>
+			<action name="doDownloadVendorInventoryCsv" class="com.saninco.ccm.action.vendor.VendorInventoryAction" method="doDownloadVendorInventoryCsv"></action>
+			<action name="doSaveVendorInventorySearch" class="com.saninco.ccm.action.vendor.VendorInventoryAction" method="saveVendorInventorySearch"></action>
+    		<action name="doDownloadVendorInventoryPDF" class="com.saninco.ccm.action.vendor.VendorInventoryAction" method="doDownloadVendorInventoryPDF"></action>
+    </package>
+</struts>

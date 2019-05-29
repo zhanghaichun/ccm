@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+
+<!-- =================================================================== -->
+<!-- CCM build.xml,v1.0 2010/09/23 Joe Yang                       -->
+<!-- =================================================================== -->
+
+<project name="ccm" default="deploy" basedir=".">
+	<property file="./build.properties"/>
+	<!--   Setup of SVN-ANT classpath  -->
+	<path id="svnant.classpath">
+ 		<fileset dir="${ant.home}/lib/svnant">     
+  			<include name="**/*.jar" />
+ 		</fileset>
+	</path>
+	<!--   Setup of Mysql classpath  -->
+	<path id="mysql.classpath">
+		<fileset dir="${build.lib}/mysql">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<!--   Setup of CCM classpath  -->
+	<path id="ccm.classpath">
+		<fileset dir="${build.lib}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<target name="showCmd" depends="init">
+			<echo message="${build.mode} -- ${app.build.dev}" />
+	</target>
+	<!--   Loading of SVN task  -->
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="svnant.classpath" />
+	<target name="svncheckout" description="checkouts individual project using svnant task">    
+  		<property name="svn.tag.message" value="Checking out project ${project.name} "/>
+		<echo message="${svn.tag.message}"/>
+  		<svn username="${svn.username}" password="${svn.password}">
+ 			<checkout url="${svn.repository.url}" destPath="${svn.local.work.dir}" revision="${svn.revision.no}"/>  
+  		</svn>
+ 	</target>
+	<target name="init">		
+		<echo message="***Build running in ${build.mode}***"></echo>
+		<condition property="app.build.dev">
+			<equals arg1="${build.mode}" arg2="DEV"/>
+		</condition>
+		<condition property="app.build.qa">
+			<equals arg1="${build.mode}" arg2="QA"/>
+		</condition>
+		<condition property="app.build.prod">
+			<equals arg1="${build.mode}" arg2="PROD"/>
+		</condition>
+		<echo message="Mode = ${build.mode}"/>
+	</target>
+	<target name="copy.properties.dev" if="app.build.dev">
+		<copy todir="${build.dir.config}" overwrite="true">
+			<fileset dir="${app.config.dir}/dev">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+				<exclude name="log4j.properties" />
+			</fileset>
+		</copy>
+		<copy file="${app.config.dir}/dev/log4j.properties" tofile="${build.dir.classes}/log4j.properties" 
+			overwrite="true" />
+		<echo message="DEV properties files copied successfully."/>
+	</target>
+	<target name="copy.properties.qa" if="app.build.qa">
+		<copy todir="${build.dir.config}"  overwrite="true">
+			<fileset dir="${app.config.dir}/qa">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+				<exclude name="log4j.properties" />
+			</fileset>
+		</copy>
+		<copy file="${app.config.dir}/qa/log4j.properties" tofile="${build.dir.classes}/log4j.properties" 
+			overwrite="true" />
+		<echo message="QA properties files copied successfully."/>
+	</target>
+	<target name="copy.properties.prod" if="app.build.prod">
+		<copy todir="${build.dir.config}" overwrite="true">
+			<fileset dir="${app.config.dir}/prod">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+				<exclude name="log4j.properties" />
+			</fileset>
+		</copy>
+		<copy file="${app.config.dir}/prod/log4j.properties" tofile="${build.dir.classes}/log4j.properties" 
+			overwrite="true" />
+		<echo message="PROD properties files copied successfully."/>
+	</target>
+	<target name="compile" depends="init">
+        <tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+        <echo message="${NOW} -- Started COMPILE  ${project.name}..." />
+		<copy todir="${build.dir.classes}" overwrite="true">
+			<fileset dir="${app.src}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+
+		<javac debug="on" srcdir="${app.src}" destdir="${build.dir.classes}" classpathref="ccm.classpath" includes="**/*.java" />
+		
+		<antcall target="copy.properties.dev" />
+		<antcall target="copy.properties.qa" />
+		<antcall target="copy.properties.prod" />
+		
+		<copy todir="${build.dir.lib}"  flatten="true" overwrite="true">
+			<fileset dir="${build.lib}">
+				<include name="**/*.jar"/>  
+				<exclude name="**/j2ee/*"/>  
+				<exclude name="**/weblogic/*"/>  
+				<exclude name="**/servlet.jar" />
+				<exclude name="**/servlet-api.jar" />
+			</fileset>
+		</copy>
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+        <echo message="${NOW} -- Finished COMPILE ${project.name}..." />
+	</target>
+
+	<target name="banner">
+		<echo>+---------------------------------------+</echo>
+		<echo>   Building ${project.name} </echo>
+		<echo>+---------------------------------------+</echo>
+	</target>
+
+	<target name="clean" depends="init">
+		<delete dir="${build.dir.dist}" />
+		<mkdir dir="${build.dir.dist}"/>
+		<mkdir dir="${build.dir.dist}/war"/>
+		<mkdir dir="${build.dir.dist}/jar"/>
+		<delete dir="${build.dir.tmp}"/>
+		<mkdir dir="${build.dir.tmp}"/>
+		<delete dir="${build.dir.classes}"/>
+		<mkdir dir="${build.dir.classes}"/>
+		<delete dir="${build.dir.lib}"/>
+		<mkdir dir="${build.dir.lib}"/>
+	</target>
+	
+	<target name="main" depends="banner,clean,compile" />
+	<target name="apJobApp" depends="svncheckout,main">
+		<copy todir="${build.dir.classes}" overwrite="true">
+			<fileset dir="${app.config.dir}">
+				<include name="**/*.properties" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dir.classes}" overwrite="true"> 
+			<fileset dir="${app.webapp}/WEB-INF/spring-files">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dir.classes}" overwrite="true"> 
+			<fileset dir="${app.webapp}/WEB-INF/spring-files/ap">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+		<jar destfile="${build.dir.dist}/jar/ccm.jar" 
+		     basedir="${build.dir.classes}">
+            <manifest>
+                <attribute name="Main-Class" value="com.saninco.ccm.job.ApMain"/>
+            </manifest>
+		</jar>
+		<copy todir="${build.dir.lib}"  flatten="true" overwrite="true">
+			<fileset dir="${build.lib}">
+				<include name="**/*.jar"/>  
+				<exclude name="**/j2ee/*"/>  
+				<exclude name="**/weblogic/*"/>  
+				<exclude name="**/servlet.jar" />
+				<exclude name="**/servlet-api.jar" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="packageWar" depends="svncheckout,main">
+        <tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+        <echo message="${NOW} -- Started Packaging WAR for ${project.name}..." />
+
+	    <war destfile="${build.dir.dist}/war/${app.war.name}" webxml="${app.webapp}/WEB-INF/web.xml">
+	      <classes dir="${app.webapp}/WEB-INF/classes">
+	        <include name="**/*" />
+	        <exclude name="**/META-INF/**" />
+	      </classes>
+	      <fileset dir="${app.webapp}">
+	        <include name="**/*" />
+	        <exclude name="WEB-INF/web.xml" />
+			<exclude name="**/classes/**" />
+	      </fileset>
+	    </war>
+	    <delete dir="${build.dir.tmp}"/>
+		<echo message="${NOW} -- Finished Packaging WAR for ${project.name}..." />
+	</target>
+	<target name="deploy.tomcat.dev" if="app.build.dev">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to deploy to ${project.name} development Tomcat server ... " />
+		<copy file="${build.dir.dist}/war/${app.war.name}" tofile="${build.dir.dist}/war/${app.ui.war}" 
+			overwrite="true" />
+		<scp file="${build.dir.dist}/war/${app.ui.war}"  todir="${tomcat.dev.user}:${tomcat.dev.passwd}@${tomcat.dev.host}:${tomcat.dev.deploy.dir}"  trust="yes" />
+		<delete file="${build.dir.dist}/war/${app.ui.war}" />
+		<echo message="${NOW} -- Successfully deployed to ${project.name} development Tomcat server!" />
+	</target>
+	<target name="deploy.tomcat.qa" if="app.build.qa">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to deploy to ${project.name} QA Tomcat server ... " />
+		<copy file="${build.dir.dist}/war/${app.war.name}" tofile="${build.dir.dist}/war/${app.ui.war}" 
+			overwrite="true" />
+		<scp file="${build.dir.dist}/war/${app.ui.war}"  todir="${tomcat.qa.user}:${tomcat.qa.passwd}@${tomcat.qa.host}:${tomcat.qa.deploy.dir}" trust="yes" />
+		<delete file="${build.dir.dist}/war/${app.ui.war}" />
+		<echo message="${NOW} -- Successfully deployed to ${project.name} QA Tomcat server!" />
+	</target>
+	<target name="deploy.tomcat.prod" if="app.build.prod">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to deploy to ${project.name} production Tomcat server ... " />
+		<copy file="${build.dir.dist}/war/${app.war.name}" tofile="${build.dir.dist}/war/${app.ui.war}" 
+			overwrite="true" />
+		<scp file="${build.dir.dist}/war/${app.ui.war}"  todir="${tomcat.prod.user}:${tomcat.prod.passwd}@${tomcat.prod.host}:${tomcat.prod.deploy.dir1}"  trust="yes" />
+		<sshexec host="${tomcat.prod.host}"  username="${tomcat.prod.user}" password="${tomcat.prod.passwd}" trust="yes" command="cp ${tomcat.prod.deploy.dir1}/${app.ui.war} ${tomcat.prod.deploy.dir2}"/>
+		<delete file="${build.dir.dist}/war/${app.ui.war}" />
+		<echo message="${NOW} -- Successfully deployed to ${project.name} production Tomcat server!" />
+	</target>
+	<!-- deploy database -->
+	<target name="deploy.database.dev" if="app.build.dev">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to deploy to ${project.name} development database server ... " />
+		<sql
+		    driver="${jdbc.driver}"
+		    url="${jdbc.dev.url}"
+		    userid="${jdbc.dev.username}" src="${sql.src.file}"  delimiter="$$" 
+		    password="${jdbc.dev.password}" classpathref="mysql.classpath" />
+		<echo message="${NOW} -- Successfully deployed to ${project.name} development database server!" />
+	</target>
+	<target name="deploy.database.qa" if="app.build.qa">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to deploy to ${project.name} QA database server ... " />
+		<sql
+		    driver="${jdbc.driver}"
+		    url="${jdbc.qa.url}"
+		    userid="${jdbc.qa.username}" src="${sql.src.file}" delimiter="$$" 
+		    password="${jdbc.qa.password}" classpathref="mysql.classpath" />
+		<echo message="${NOW} -- Successfully deployed to ${project.name} QA database server!" />
+	</target>
+	<target name="deploy.database.prod" if="app.build.prod">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to deploy to ${project.name} production database server ... " />
+		<sql
+		    driver="${jdbc.driver}"
+		    url="${jdbc.prod.url}"
+		    userid="${jdbc.prod.username}" src="${sql.src.file}"  delimiter="$$" 
+		    password="${jdbc.prod.password}" classpathref="mysql.classpath" />
+		<echo message="${NOW} -- Successfully deployed to ${project.name} production database server!" />
+	</target>
+	<target name="deployDatabase" depends="init">
+		<antcall target="deploy.database.dev" />
+		<antcall target="deploy.database.qa" />
+		<antcall target="deploy.database.prod" />
+	</target>
+	<!-- Shutdown Tomcat server -->
+	<target name="shutdown.tomcat.dev" if="app.build.dev">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to shutdown development Tomcat server ... " />
+		  <sshexec host="${tomcat.dev.host}"  username="${tomcat.dev.user}" password="${tomcat.dev.passwd}" trust="true" command="${tomcat.dev.app.stop}"/>
+		<echo message="${NOW} -- Successfully shutdown development Tomcat server!" />
+	</target>
+	<target name="shutdown.tomcat.qa" if="app.build.qa">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to shutdown QA Tomcat server ... " />
+		  <sshexec host="${tomcat.qa.host}"  username="${tomcat.qa.user}" password="${tomcat.qa.passwd}" trust="true" command="${tomcat.qa.app.stop}"/>
+		<echo message="${NOW} -- Successfully shutdown QA Tomcat server!" />
+	</target>
+	<target name="shutdown.tomcat.prod" if="app.build.prod">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to shutdown production Tomcat server ... " />
+		  <sshexec host="${tomcat.prod.host}"  username="${tomcat.prod.user}" password="${tomcat.prod.passwd}" trust="true" command="${tomcat.prod.app.stop}"/>
+		<echo message="${NOW} -- Successfully shutdown production Tomcat server!" />
+	</target>
+	<target name="shutdownTomcat">
+		<antcall target="shutdown.tomcat.dev" />
+		<antcall target="shutdown.tomcat.qa" />
+		<antcall target="shutdown.tomcat.prod" />
+	</target>
+	<!-- Start Tomcat server -->
+	<target name="start.tomcat.dev" if="app.build.dev">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to start development Tomcat server ... " />
+		  <sshexec host="${tomcat.dev.host}"  username="${tomcat.dev.user}" password="${tomcat.dev.passwd}" trust="true" command="${tomcat.dev.app.start}"/>
+		<echo message="${NOW} -- Successfully start development Tomcat server!" />
+	</target>
+	<target name="start.tomcat.qa" if="app.build.qa">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to start QA Tomcat server ... " />
+		  <sshexec host="${tomcat.qa.host}"  username="${tomcat.qa.user}" password="${tomcat.qa.passwd}" trust="true" command="${tomcat.qa.app.start}"/>
+		<echo message="${NOW} -- Successfully start QA Tomcat server!" />
+	</target>
+	<target name="start.tomcat.prod" if="app.build.prod">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to start production Tomcat server ... " />
+		  <sshexec host="${tomcat.prod.host}"  username="${tomcat.prod.user}" password="${tomcat.prod.passwd}" trust="true" command="${tomcat.prod.app.start}"/>
+		<echo message="${NOW} -- Successfully start production Tomcat server!" />
+	</target>
+	<target name="startTomcat">
+		<antcall target="start.tomcat.dev" />
+		<antcall target="start.tomcat.qa" />
+		<antcall target="start.tomcat.prod" />
+	</target>
+	<!-- Undeploy Tomcat server -->
+	<target name="undeploy.tomcat.dev" if="app.build.dev">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to undeploy development Tomcat server ... " />
+		  <sshexec host="${tomcat.dev.host}"  username="${tomcat.dev.user}" password="${tomcat.dev.passwd}" trust="true" command="${tomcat.dev.app.undeploy}"/>
+		<echo message="${NOW} -- Successfully undeploy development Tomcat server!" />
+	</target>
+	<target name="undeploy.tomcat.qa" if="app.build.qa">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to undeploy QA Tomcat server ... " />
+		  <sshexec host="${tomcat.qa.host}"  username="${tomcat.qa.user}" password="${tomcat.qa.passwd}" trust="true" command="${tomcat.qa.app.undeploy}"/>
+		<echo message="${NOW} -- Successfully undeploy QA Tomcat server!" />
+	</target>
+	<target name="undeploy.tomcat.prod" if="app.build.prod">
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+		<echo message="${NOW} -- Begin to undeploy production Tomcat server ... " />
+		<sshexec host="${tomcat.prod.host}"  username="${tomcat.prod.user}" password="${tomcat.prod.passwd}" trust="true" command="${tomcat.prod.app.undeploy}"/>
+		<echo message="${NOW} -- Successfully undeploy production Tomcat server!" />
+	</target>
+	<target name="undeploy">
+		<antcall target="undeploy.tomcat.dev" />
+		<antcall target="undeploy.tomcat.qa" />
+		<antcall target="undeploy.tomcat.prod" />
+	</target>	
+	<!-- Stop server, undeploy, deploy War, and start server -->
+	<target name="deployWar" depends="packageWar">
+		<antcall target="shutdownTomcat" />
+		<antcall target="undeploy" />
+		<antcall target="deploy.tomcat.dev" />
+		<antcall target="deploy.tomcat.qa" />
+		<antcall target="deploy.tomcat.prod" />
+		<antcall target="startTomcat" />
+	</target>
+	<target name="deploy">
+		<antcall target="deployWar" />
+		<antcall target="deployDatabase" />
+	</target>
+	<target name="packageEAR" depends="main">
+        <tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+        <echo message="${NOW} -- Started Packaging WAR for ${project.name}..." />
+		
+		<mkdir dir="${build.dir.tmp}" />
+	    <war destfile="${build.dir.tmp}/${app.ui.war}" webxml="${app.webapp}/WEB-INF/web.xml">
+	      <classes dir="${app.webapp}/WEB-INF/classes">
+	        <include name="**/*" />
+	        <exclude name="**/META-INF/**" />
+	      </classes>
+	      <fileset dir="${app.webapp}">
+	        <include name="**/*" />
+	        <exclude name="WEB-INF/web.xml" />
+			<exclude name="**/classes/**" />
+	      </fileset>
+	    </war>
+		<echo message="${NOW} -- Finished Packaging WAR for ${project.name}..." />
+		<delete dir="${build.dir.lib}"/>
+		
+		<mkdir dir="${build.dir.tmp}/META-INF"/>
+		<copy todir="${build.dir.tmp}/META-INF" overwrite="true">
+			<fileset dir="${app.descriptor}">
+				<include name="application.xml"/>
+				<include name="weblogic-application.xml"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.dir.tmp}/META-INF" overwrite="true" flatten="true">
+			<fileset dir="${app.src}">
+				<include name="**/*.hbm.xml" />
+			</fileset>
+		</copy>
+		
+		<echo message="Creating ${project.name}.ear"/>
+		<ear earfile="${build.dir.dist}/${app.ear.name}" appxml="${app.descriptor}/application.xml">
+			<fileset dir="${build.dir.tmp}" includes="**/*.jar, *.war, **/*.xml, **/*.jasper, **/*.jpg" />
+			<manifest>
+				<attribute name="Class-Path" value=""/>
+				<attribute name="Created-By" value="${app.vendor}"/>
+				<attribute name="Weblogic-Application-Version" value="${app.version}"/>
+			</manifest>
+		</ear>
+		
+		<delete dir="${build.dir.tmp}"/>
+		<tstamp><format property="NOW" pattern="MM/dd/yyyy hh:mm:ss" /></tstamp>
+        <echo message="${NOW} -- Finished Packaging EAR for ${project.name}..." />
+	</target>
+	<target name="createTest" depends="clean,compile">
+		<copy todir="${build.dir.classes}">
+			<fileset dir="${app.config.dir}">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dir.classes}">
+			<fileset dir="${app.webapp}/WEB-INF/config">
+				<include name="**/*.properties" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dir.classes}">
+			<fileset dir="${app.webapp}/WEB-INF/spring-files">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dir.classes}" overwrite="true"> 
+			<fileset dir="${app.webapp}/WEB-INF/spring-files-test">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="test" depends="createTest">
+		<junit showoutput="yes" filtertrace="off" printsummary="yes" haltonfailure="yes">
+		 <classpath>
+			<path refid="ccm.classpath"/>
+		   	<pathelement location="${build.dir.classes}"/>
+		 </classpath>
+		  <batchtest fork="yes" filtertrace="false">
+		    <fileset dir="${src.tests}">
+		      <include name="**/*Test*.java"/>
+		      <exclude name="**/AllTests.java"/>
+		    </fileset>
+		  </batchtest>
+		</junit>
+	</target>
+</project>
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.dashboard" extends="ccm">
+
+    	<action name="searchDashboard" class="com.saninco.ccm.action.dashboard.DashboardAction" method="exec">
+    		<result name="success" type="tiles">searchDashboardView</result>
+		</action>
+    	
+    	<!-- 这是修改之后的dashboard 首页。 -->
+    	<action name="showDashboardList" class="com.saninco.ccm.action.dashboard.DashboardAction" method="searchDashboardListInfo">
+    		<result name="success" type="tiles">showDashboardList</result>
+    		<result name="mobile">/WEB-INF/pages/dashboard/dashboard_list.jsp</result>
+		</action>
+		
+		<!-- dashboard list中的分页和排序的查询条件。 -->
+		<action name="searchDashboardListByConditions" class="com.saninco.ccm.action.dashboard.DashboardAction" method="searchDashboardListByConditions"/>
+		
+		<!-- 展示一个dashboard list 表中的 dashboard 的详细信息。 -->
+		<action name="showDashboardDetail" class="com.saninco.ccm.action.dashboard.DashboardAction" method="showDashboardDetail">
+			<result name="success" type="tiles">userDashboardModuleView</result>
+			<result name="mobile">/WEB-INF/pages/dashboard/dashboard.jsp</result>
+		</action>
+
+		<!-- 删除dashboard列表中的项。 -->
+		<action name="deleteDashboardListItem" class="com.saninco.ccm.action.dashboard.DashboardAction" method="deleteDashboardListItem"/>
+		
+		<!-- 搜索数据库中相关 dashboard list item 的总条数 -->
+		<action name="getTotalRecordsNo" class="com.saninco.ccm.action.dashboard.DashboardAction" method="getTotalRecordsNo"/>
+		
+		<action name="dashboard" class="com.saninco.ccm.action.dashboard.DashboardAction" method="dashboard">
+			<!-- <result name="success" type="tiles">userDashboardModuleView</result> -->
+			<result name="success">/WEB-INF/pages/dashboard/dashboard.jsp</result>
+		</action>
+		
+		<action name="addNewDashboard" class="com.saninco.ccm.action.dashboard.DashboardAction" method="addNewDashboard">
+			<result name="success" type="redirect">showDashboardDetail.action?userDashboardId=${userDashboardId}&amp;isMobile=${isMobile}</result>
+		</action>
+
+		<action name="getChartDataByUserModuleId" class="com.saninco.ccm.action.dashboard.DashboardAction" method="getChartDataByUserModuleId" />
+		
+		<action name="saveControlData" class="com.saninco.ccm.action.dashboard.DashboardAction" method="saveControlData" />
+		
+		<action name="addNewDashboarModule" class="com.saninco.ccm.action.dashboard.DashboardAction" method="addNewDashboarModule" />
+		
+		<action name="updateUserDashboardName" class="com.saninco.ccm.action.dashboard.DashboardAction" method="updateUserDashboardName" />
+		
+		<action name="updateUserDashboardModuleName" class="com.saninco.ccm.action.dashboard.DashboardAction" method="updateUserDashboardModuleName" />
+		
+		<action name="updateUserDashboardModuleShowPercent" class="com.saninco.ccm.action.dashboard.DashboardAction" method="updateUserDashboardModuleShowPercent" />
+		
+		<action name="changeUserDashboardListby" class="com.saninco.ccm.action.dashboard.DashboardAction" method="changeUserDashboardListby"/>
+		
+		<action name="updateUserDashboardModuleMoveNewSort" class="com.saninco.ccm.action.dashboard.DashboardAction" method="updateUserDashboardModuleMoveNewSort"/>
+		
+		<action name="removeUserDashboardViewMode" class="com.saninco.ccm.action.dashboard.DashboardAction" method="removeUserDashboardViewMode"/>
+		
+		<action name="changeUserDashboardViewMode" class="com.saninco.ccm.action.dashboard.DashboardAction" method="changeUserDashboardViewMode" />
+		
+		<action name="saveDashboardPosition" class="com.saninco.ccm.action.dashboard.DashboardAction" method="saveDashboardPosition"/>
+		
+		<action name="invoiceAtTransactionDayChart" class="com.saninco.ccm.action.dashboard.DashboardAction" method="invoiceAtTransactionDayChart"/>
+		
+		<action name="userInvoiceAtTransactionDayChart" class="com.saninco.ccm.action.dashboard.DashboardAction" method="userInvoiceAtTransactionDayChart"/>
+		
+		<action name="invoiceAtDashletDayChart" class="com.saninco.ccm.action.dashboard.DashboardAction" method="invoiceAtDashletDayChart"/>
+		
+		<action name="userInvoiceAtDashletDayChart" class="com.saninco.ccm.action.dashboard.DashboardAction" method="userInvoiceAtDashletDayChart"/>
+		
+    </package>
+</struts>

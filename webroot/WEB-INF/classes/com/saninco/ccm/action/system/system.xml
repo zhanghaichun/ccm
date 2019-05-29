@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.system" extends="ccm">
+    
+    	<action name="login" class="com.saninco.ccm.action.system.Logon" method="exec">
+		  	<result name="input">/WEB-INF/pages/system/login.jsp</result>
+		</action>
+		
+    	<action name="securityLogout" class="com.saninco.ccm.action.system.Logout" method="securityLogout">
+		  	<result name="input">/WEB-INF/pages/system/securityLogout.jsp</result>
+		</action>
+		
+    	<action name="bb/login" class="com.saninco.ccm.action.system.Logon" method="bbLogin">
+		  	<result name="input">/WEB-INF/bb/system/login.jsp</result>
+		</action>
+			
+    	<action name="bb/securityLogout" class="com.saninco.ccm.action.system.Logout" method="securityLogout">
+		  	<result name="input">/WEB-INF/pages/system/securityLogout.jsp</result>
+		</action>
+        <!-- 		
+    	<action name="Logout" class="com.saninco.ccm.action.system.Logout">
+		  	<result>/index.jsp</result>
+		</action>
+		 -->
+
+        <action name="changepwd" class="com.saninco.ccm.action.system.ChangePassword" method="exec">
+            <result name="input">/WEB-INF/pages/system/changepwd.jsp</result>
+		</action>
+
+        <action name="doPwdChange" method="doPwdChange" 
+                class="com.saninco.ccm.action.system.ChangePassword">
+            <result name="input">/WEB-INF/pages/system/changepwd.jsp</result>
+            <result name="success">/WEB-INF/pages/system/changepwdconfirm.jsp</result>
+		</action>
+		
+		<action name="home" class="com.saninco.ccm.action.system.Home" method="exec">
+            <result name="input">/WEB-INF/pages/system/home.jsp</result>
+		</action>
+		
+	    <action name="pwdReset" class="com.saninco.ccm.action.system.PwdReset" method="exec">
+            <result name="input">/WEB-INF/pages/system/pwdreset.jsp</result>
+		</action>
+		
+		<action name="doPwdReset" method="doPwdReset" 
+		        class="com.saninco.ccm.action.system.PwdReset">
+            <result name="input">/WEB-INF/pages/system/pwdreset.jsp</result>
+            <result name="success">/WEB-INF/pages/system/pwdresetconfirm.jsp</result>
+		</action>
+		
+    </package>
+</struts>

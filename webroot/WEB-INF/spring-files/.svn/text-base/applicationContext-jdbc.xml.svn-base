@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+        
+    <!-- JNDI DataSource  -->
+	<!--
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/myDataSource</value>
+		</property>
+	</bean> 
+	-->
+	
+	<!-- C3P0 Connection Pool DataSource -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close" dependency-check="none">
+        <property name="driverClass" value="${driverClass}" />
+        <property name="jdbcUrl" value="${jdbcUrl}" />
+        <property name="user" value="${user}" />
+        <property name="password" value="${password}" />
+        <property name="autoCommitOnClose" value="${autoCommitOnClose}"/>
+		<property name="checkoutTimeout" value="${checkoutTimeout}"/>
+        <property name="initialPoolSize" value="${initialPoolSize}"/>
+        <property name="minPoolSize" value="${minPoolSize}"/>
+        <property name="maxPoolSize" value="${maxPoolSize}"/>
+        <property name="maxIdleTime" value="${maxIdleTime}"/>
+        <property name="acquireIncrement" value="${acquireIncrement}"/>
+        <property name="maxIdleTimeExcessConnections" value="${maxIdleTimeExcessConnections}"/>
+        
+        <property name="idleConnectionTestPeriod" value="${idleConnectionTestPeriod}"/>
+        <property name="preferredTestQuery" value="${preferredTestQuery}"/>
+        <property name="testConnectionOnCheckin" value="${testConnectionOnCheckin}"/>
+        <property name="testConnectionOnCheckout" value="${testConnectionOnCheckout}"/>
+    </bean>   
+    
+    <bean id="jtDaoParent" abstract="true" class="org.springframework.jdbc.core.support.JdbcDaoSupport">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>	
+</beans>

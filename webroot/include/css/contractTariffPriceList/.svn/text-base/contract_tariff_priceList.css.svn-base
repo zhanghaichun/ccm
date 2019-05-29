@@ -1,0 +1,138 @@
+
+
+#pageContainer {
+	padding-bottom: 25px;
+}
+
+.page-title {
+	padding-top: 0;
+	padding-bottom: 4px;
+}
+
+/* 重置相关样式。 */
+.tabDetailView {
+	width: 100%;
+	margin-bottom: 10px;
+    border-width: 1px;
+    border-collapse: collapse;
+}
+
+.tabDetailViewDL.left-part {
+    border-right: none;
+}
+
+
+.searchItemPanel table {
+	width: 100%;
+}
+
+.searchItemPanel table td {
+	height: 25px;
+	line-height: 25px;
+}
+
+/* 下拉列表中的间距不统一的问题 */
+#vendor-filter-list .content .row,
+#ban-filter-list .content .row,
+#product-filter-list .content .row,
+#product-component-filter-list .content .row {
+	line-height: normal;
+}
+
+.searchItemPanel table td input[type="text"] {
+	height: 20px;
+	width: 230px;
+	padding: 3px;
+}
+
+.buttons-container .button-item {
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+/* 过期的合同的小控件的显示样式 */
+.form-prompt-message {
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	font-weight: 600;
+	border: 1px solid #f6b345;
+	background: #fff3e5;
+	color: #f6b345;
+}
+
+.expiry-contract-icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url("../../images/contractTariffPriceList/excalmation_point.png");
+	background-repeat: no-repeat;
+	background-size: cover; 
+	transform: translateY(3px);
+}
+
+.form-prompt-message .see-contracts-detail {
+	margin-left: 5px;
+	color: #f6b345;
+	cursor: pointer;
+	border: none;
+	text-decoration: underline;
+	font-weight: bold;
+	outline: none;
+	background: transparent;
+}
+
+.form-prompt-message .expiry-contract-count {
+	margin-left: 5px;
+}
+
+/* 每一个下载列表的正确样式。 */
+.download-button {
+	float: left;
+	margin-left: 10px;
+	margin-top: 6px;
+}
+
+.download-button input {
+	cursor: pointer;
+}
+
+/* Rate Discrepancy List 相关样式 */
+
+.rate-discrepancy-bg-div {
+	display:none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	border: 0px;
+	background: rgba(0,0,0,.3);
+}
+
+.rate-discrepancy-div {
+	box-shadow: 0 0 6px 4px rgba(192,192,192,1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    position: absolute;
+    padding: 10;
+}
+
+.rate-discrepancy-div-title {
+	width: 100%; 
+	height: 60px; 
+	top: 0px; 
+	left: 0px;
+}
+
+.rate-discrepancy-div-h {
+	padding-top:20px; 
+	float: left
+}
+
+
+
+
+

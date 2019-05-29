@@ -1,0 +1,65 @@
+#validationResult {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+    display: none;
+	background: transparent;
+	z-index: 3;
+}
+
+/* set validation result panel.*/
+#validationResultPanel {
+	position: absolute;
+	width: 800px;
+	min-height: 100px;
+    max-height: 500px;
+    border: 1px solid #888;
+    visibility: visible;
+    background: white;
+}
+
+#validationResultPanel .modal-header {
+    height: 23px;
+    background: url("../images/validation_status/sprite.png") repeat-x 0px -200px;
+    border-bottom: 1px solid #999;
+    cursor: move;
+}
+
+#validationResultPanel .validation-result-modal-close {
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    right: 3px;
+    top: 5px;
+    background: url("../images/validation_status/sprite.png") no-repeat 0px -300px;
+    cursor: pointer;
+}
+
+#validation-result-panel-content {
+	max-height: 476px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+#validation-result-panel-content::-webkit-scrollbar  {  
+    width: 8px;  
+    height: 8px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+#validation-result-panel-content::-webkit-scrollbar-track {  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);  
+    border-radius: 10px;  
+    background-color: #F5F5F5;  
+}
+
+/*定义滑块 内阴影+圆角*/ 
+#validation-result-panel-content::-webkit-scrollbar-thumb {  
+    border-radius: 10px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);  
+    background-color: #c1c1c1;  
+}

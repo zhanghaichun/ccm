@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>
+		CCM
+	</display-name>
+    <!-- Tiles configuration files -->
+    <context-param>
+		<param-name>
+			org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG
+		</param-name>
+		<param-value>
+			/WEB-INF/tiles/tiles.xml,
+			/WEB-INF/tiles/tiles-admin.xml,
+			/WEB-INF/tiles/tiles-dashboard.xml,
+			/WEB-INF/tiles/tiles-dispute.xml,
+			/WEB-INF/tiles/tiles-invoice.xml,
+			/WEB-INF/tiles/tiles-payment.xml,
+			/WEB-INF/tiles/tiles-profile.xml,
+			/WEB-INF/tiles/tiles-report.xml,
+			/WEB-INF/tiles/tiles-role.xml,
+			/WEB-INF/tiles/tiles-security.xml,
+			/WEB-INF/tiles/tiles-error.xml,
+			/WEB-INF/tiles/tiles-ticket.xml,
+			/WEB-INF/tiles/tiles-ban.xml,
+			/WEB-INF/tiles/tiles-operations.xml,
+			/WEB-INF/tiles/tiles-circuit.xml,
+			/WEB-INF/tiles/tiles-circuit-page.xml,
+			/WEB-INF/tiles/tiles-vendor.xml,
+			/WEB-INF/tiles/tiles-target.xml,
+			/WEB-INF/tiles/tiles-wiki.xml,
+			/WEB-INF/tiles/tiles-message.xml,
+            /WEB-INF/tiles/tiles-quoteInventory.xml,
+            /WEB-INF/tiles/tiles-contractTariffPriceList.xml,
+            /WEB-INF/tiles/tiles-contractTab.xml,
+            /WEB-INF/tiles/tiles-masterInventoryRate-page.xml,
+            /WEB-INF/tiles/tiles-contractAndTariffRules.xml,
+            /WEB-INF/tiles/tiles-rateSearch.xml
+		</param-value>
+	</context-param>    
+    <!-- spring configuration -->
+    <context-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/spring-files/applicationContext-*.xml</param-value>
+ 	</context-param>
+	
+	 <servlet>
+		<servlet-name>loadImage</servlet-name>
+		<servlet-class>com.saninco.ccm.common.image.LoadImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loadImage</servlet-name>
+		<url-pattern>/wikifilepath/*</url-pattern>
+	</servlet-mapping>
+    
+    <servlet>  
+	 <servlet-name>ImageServlet</servlet-name>  
+	 <servlet-class>net.sf.jasperreports.j2ee.servlets.ImageServlet</servlet-class>  
+	</servlet>  
+	  
+	<servlet-mapping>  
+	    <servlet-name>ImageServlet</servlet-name>  
+	 <url-pattern>/servlets/image</url-pattern>  
+	</servlet-mapping>  
+	
+    <filter>
+        <filter-name>urlSecurityCheckFilter</filter-name>
+        <filter-class>com.saninco.ccm.filter.UrlSecurityCheckFilter</filter-class>
+    </filter>
+    <filter-mapping>
+      <filter-name>urlSecurityCheckFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+ 
+    <filter-mapping>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    
+    <!-- filter>
+        <filter-name>forceChangePasswordFilter</filter-name>
+        <filter-class>com.rogers.tfportal.filter.ForceChangePasswordFilter</filter-class>
+    </filter>
+ 
+    <filter-mapping>
+      <filter-name>forceChangePasswordFilter</filter-name>
+      <url-pattern>*.action</url-pattern>
+    </filter-mapping -->
+	
+	<!-- load spring -->
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+     
+    <!-- load Tiles -->
+     <listener>
+        <listener-class>
+            org.apache.struts2.tiles.StrutsTilesListener
+        </listener-class>
+    </listener>
+    
+    <!-- Hibernate open session in view filter -->
+    <filter>   
+        <filter-name>hibernateFilter</filter-name>   
+        <filter-class>com.saninco.ccm.filter.CcmOpenSessionInViewFilter</filter-class>
+        <init-param>
+            <param-name>singleSession</param-name>
+            <param-value>true</param-value>
+        </init-param>         
+    </filter> 
+    <filter-mapping>   
+        <filter-name>hibernateFilter</filter-name>   
+        <url-pattern>*.action</url-pattern>   
+    </filter-mapping> 
+    
+    <!-- Struts 2.0 filter -->
+	<filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>
+            org.apache.struts2.dispatcher.FilterDispatcher
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>*.action</url-pattern>
+    </filter-mapping>  
+    
+    <!-- The following filter has been commented out by Joe.Yang to solve SSL issue -->    
+	<!-- filter>
+        <filter-name>ThreadObjectFilter</filter-name>
+        <filter-class>
+            com.saninco.ccm.filter.ThreadObjectFilter
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ThreadObjectFilter</filter-name>
+        <url-pattern>*.action</url-pattern>
+    </filter-mapping -->
+    
+    <!-- Response page cache clean filter -->
+	<filter>
+        <filter-name>ResponseFilter</filter-name>
+        <filter-class>
+            com.saninco.ccm.filter.ResponseFilter
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ResponseFilter</filter-name>
+        <url-pattern>*.action</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>ResponseFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+	
+	<listener>
+		<listener-class>com.saninco.ccm.listener.CcmInitListener</listener-class>
+	</listener>
+ 	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+ 	</listener>
+ 	<distributable/>
+<!-- 	<session-config>-->
+<!--		<session-timeout>1</session-timeout>-->
+<!--	</session-config>-->
+	<welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
+

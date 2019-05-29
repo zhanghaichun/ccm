@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.contract" extends="ccm">
+        <!-- contract 页面返回。 -->
+        <action name="showContractContent" class="com.saninco.ccm.action.contract.ContractAction" method="exec">
+            <result name="success">/WEB-INF/pages/contract/contract.jsp</result>
+        </action>
+
+        <!-- contract 列表分页请求。 -->
+        <action name="getContractViewListPageNo" class="com.saninco.ccm.action.contract.ContractAction" method="getContractViewListPageNo" />
+
+        <!-- contract 列表数据请求。 -->
+        <action name="searchContractList" class="com.saninco.ccm.action.contract.ContractAction" method="searchContractList" />
+        
+        <!-- contract TerminationPenalty 列表分页请求。 -->
+        <action name="getTerminationPenaltyListNo" class="com.saninco.ccm.action.contract.ContractAction" method="getTerminationPenaltyListNo" />
+
+        <!-- contract TerminationPenalty 列表数据请求。 -->
+        <action name="searchTerminationPenaltyList" class="com.saninco.ccm.action.contract.ContractAction" method="searchTerminationPenaltyList" />
+
+        <!-- contract 列表下载。 -->
+        <action name="downloadContractToExcel" class="com.saninco.ccm.action.contract.ContractAction" method="downloadContractToExcel" />
+        
+    </package>
+</struts>

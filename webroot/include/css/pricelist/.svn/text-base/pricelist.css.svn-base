@@ -1,0 +1,84 @@
+#pricelistPageContainer {}
+
+#pricelistPageContainer .tabDetailView {
+	width: 100%;
+	margin-bottom: 10px;
+	border-width: 1px;
+	border-collapse: collapse;
+}
+
+#pricelistPageContainer .searchItemPanel table {
+	width: 100%;
+}
+
+#pricelistPageContainer .searchItemPanel table td {
+	height: 25px;
+	line-height: 25px;
+}
+
+#pricelistPageContainer .searchItemPanel table td input[type="text"] {
+	height: 20px;
+	width: 230px;
+	padding: 3px;
+}
+
+#pricelistPageContainer .searchItemPanel a:link,
+#pricelistPageContainer .searchItemPanel a:hover {
+	text-decoration: none;
+}
+
+#pricelistPageContainer .searchItemPanel .Date {
+	height: 20px;
+    padding: 3px;
+    width: 140px;
+}
+
+#pricelistPageContainer .searchItemPanel .calendar-image-link {
+	display: inline-block;
+	transform: translateY(4px);
+}
+
+#pricelistPageContainer #band-filter-list .content .row,
+#pricelistPageContainer #service-type-filter-list .content .row {
+    line-height: normal;
+}
+
+#pricelistPageContainer .buttons-container input {
+	cursor: pointer;
+}
+
+#pricelistPageContainer .buttons-container .clear-pricelist--button {
+	margin-left: 5px;
+}
+
+#pricelistPageContainer #pricelist-wrapper {
+	width: 100%;
+}
+
+#pricelistPageContainer #pricelist-wrapper .wrapper-inner-table {
+	table-layout: fixed; 
+	width: 100%;
+}
+
+#pricelistPageContainer #pricelist-wrapper .data-table-wrapper {
+	width:100%; 
+	overflow-x: auto; 
+	padding-bottom: 20px;
+}
+
+#pricelistPageContainer .pricelist-pagination-TD {
+	padding-top: 15px;
+}
+
+#pricelistPageContainer #pricelist-dataTable-page {
+	float: left;
+}
+
+#pricelistPageContainer .oper-buttons {
+	float: left;
+	margin-left: 15px;
+}
+
+#pricelistPageContainer .oper-buttons input[type="button"] {
+	cursor: pointer;
+}

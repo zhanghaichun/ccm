@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- tiles-credit.xml By xinyu.Liu -->
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>  
+
+    <definition name="securityManagementView" extends="ccmMainTemplate">
+        <put-attribute name="mainPanel" value="/WEB-INF/pages/security/securityManagementMainPanel.jsp"/>
+    </definition>
+    <definition name="searchuserListView" extends="ccmMainTemplate">
+        <put-attribute name="mainPanel" value="/WEB-INF/pages/security/searchUserListMainPanel.jsp"/>
+    </definition>
+</tiles-definitions>

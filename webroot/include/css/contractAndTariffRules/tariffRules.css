@@ -1,0 +1,116 @@
+#tariffRulesPageContainer {}
+
+#tariffRulesPageContainer .clearfix:before,
+#tariffRulesPageContainer .clearfix:after {
+    display: table;
+    content: '';
+}
+
+#tariffRulesPageContainer .clearfix:after {
+    clear: both;
+}
+
+#tariffRulesPageContainer .pull-left {
+    float: left;
+}
+
+#tariffRulesPageContainer .pull-right {
+    float: right;
+}
+
+#tariffRulesPageContainer .tabDetailView {
+    width: 100%;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-collapse: collapse;
+}
+
+#tariffRulesPageContainer .searchItemPanel table {
+    width: 100%;
+}
+
+#tariffRulesPageContainer .searchItemPanel table td {
+    height: 25px;
+    line-height: 25px;
+}
+
+#tariffRulesPageContainer .searchItemPanel table td input[type="text"] {
+    height: 20px;
+    width: 230px;
+    padding: 3px;
+}
+
+#tariffRulesPageContainer .searchItemPanel a:link,
+#tariffRulesPageContainer .searchItemPanel a:hover {
+    text-decoration: none;
+}
+
+#tariffRulesPageContainer .searchItemPanel .Date {
+    height: 20px;
+    padding: 3px;
+    width: 140px;
+}
+
+#tariffRulesPageContainer .searchItemPanel .calendar-image-link {
+    display: inline-block;
+    transform: translateY(4px);
+}
+
+#effectiveDateImg {
+    vertical-align: middle;
+}
+
+
+/* 取消搜索条件中下拉列表的行高度样式。 */
+#tariffRulesPageContainer #charge-type-filter-list .content .row,
+#tariffRulesPageContainer #key-field-filter-list .content .row,
+#tariffRulesPageContainer #sub-product-filter-list .content .row,
+#tariffRulesPageContainer #summaryVendorNameFilterList .content .row,
+#tariffRulesPageContainer #vendorNameFilterList .content .row,
+#tariffRulesPageContainer #tariffNameFilterList .content .row {
+    line-height: normal;
+}
+
+#tariffRulesPageContainer .buttons-container input {
+    cursor: pointer;
+}
+
+#tariffRulesPageContainer .buttons-container .clear-tariffRules--button {
+    margin-left: 5px;
+}
+
+#tariffRulesPageContainer #tariffRulesSearchResultTableWrapper {
+    width: 100%;
+}
+
+#tariffRulesPageContainer #tariffRulesSearchResultTableWrapper .wrapper-inner-table {
+    table-layout: fixed; 
+    width: 100%;
+}
+
+#tariffRulesPageContainer #tariffRulesSearchResultTableWrapper .data-table-wrapper {
+    width:100%; 
+    overflow-x: auto; 
+    padding-bottom: 20px;
+}
+
+#tariffRulesPageContainer .tariffRules-pagination-TD {
+    padding-top: 15px;
+}
+
+#tariffRulesPageContainer #tariffRules-dataTable-page {
+    float: left;
+}
+
+#tariffRulesPageContainer .oper-buttons {
+    float: left;
+    margin-left: 15px;
+}
+
+#tariffRulesPageContainer .oper-buttons input[type="button"] {
+    cursor: pointer;
+}
+
+#tariff-rules-data-table .align-right {
+    text-align: right;
+}

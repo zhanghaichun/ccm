@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.contractTab" extends="ccm">
+        <!-- 返回Contract Tab 标签页，其中包含两个子标签
+        Contract, Price List -->
+        <action name="searchContract" class="com.saninco.ccm.action.contractTab.ContractTabAction" method="exec">
+            <result name="success" type="tiles">showContractTab</result>
+        </action>
+    </package>
+</struts>

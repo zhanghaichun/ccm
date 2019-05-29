@@ -1,0 +1,244 @@
+/* 设置按钮当鼠标悬浮时为 手指的样式 */
+.button-finger {
+	cursor: pointer;
+}
+
+/* 在 Action列中， 点击reply 按钮弹出框中容器的样式。 */
+.reply-container {
+	position: absolute;
+	/*display: none;*/
+	width: 375px;
+	padding: 10px;
+	border: 1px solid #9dc5ea;
+	border-radius: 3px;
+	background: #f2f2f2;
+	box-sizing: border-box;
+}
+
+.reply-container:after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: -16px;
+	right: 10px;
+	border: 8px solid transparent;
+	border-top-color: #9dc5ea;
+
+}
+
+.reply-container #__addReply_notes {
+	width: 355px;
+	height: 70px;
+	border-color: #9dc5ea;
+	resize: none;
+	padding: 0 5px;
+	padding-top: 3px;
+	overflow: auto;
+	margin-bottom: 6px;
+	box-sizing: border-box;
+}
+
+/* Action 列中 button 按钮的样式 */
+#_table_DisputeActionRequestListPage .action-button {
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+/* 在reply列中， 点击reply list icon, 弹出的reply 列表
+的信息容器的样式。 */
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: "";
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+
+.reply-list-container {
+	position: absolute;
+	width: 400px;
+	padding: 10px;
+	padding-top: 18px;
+	border: 1px solid #9dc5ea;
+	border-radius: 1px;
+	background: white;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+
+.reply-list-container .delete-list-container {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	right: 0;
+	top: -2px;
+	background: url("../../images/disputeDetails/delete.png") no-repeat;
+	background-size: cover;
+}
+
+.reply-list-container:after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: -16px;
+	right: 200px;
+	border: 8px solid transparent;
+	border-top-color: #9dc5ea;
+
+}
+
+.reply-list-container .reply-list-item {
+	position: relative;
+	margin-bottom: 10px;
+	padding: 0 10px;
+	padding-bottom: 10px;
+	background: #f2f2f2;
+	border: 1px solid #9dc5ea;
+	border-radius: 1px;
+}
+
+.reply-list-container .reply-list-item .reply-user {
+	float: left;
+	padding-left: 0;
+	margin: 10px 0;
+}
+
+.reply-list-container .reply-list-item .reply-date {
+	float: right;
+	margin: 10px 7px;
+}
+
+.reply-list-container .reply-list-item .reply-content {
+	margin: 0;
+	padding-left: 2px;
+}
+
+.reply-list-container .reply-list-item .delete-item {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	right: 0;
+	top: -2px;
+	background: url("../../images/disputeDetails/delete.png") no-repeat;
+	background-size: cover;
+}
+
+/* 当没有 reply list 的时候显示的容器。 */
+.reply-list-container .no-records {
+	height: 60px;
+	line-height: 60px;
+	margin-bottom: 10px;
+	border: 1px solid #9dc5ea;
+	border-radius: 1px;
+	text-align: center;
+}
+
+/* Add Action Request 按钮和操作的样式。 */
+
+#__dispute_action_request_page_list {
+	float: left;
+}
+
+.add-action-request-button {
+	margin-top: 1px;
+	float: left;
+	margin-left: 10px;
+}
+
+.add-action-request-button input {
+	display: inline-block;
+	padding: 2px 10px;
+	cursor: pointer;
+}
+
+#dispute-action-request {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+    display: none;
+	background: rgba(0,0,0,.2);
+	z-index: 3;
+}
+
+/* Set dispute action request modal.*/
+#dispute-action-request-modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 450px;
+	min-height: 100px;
+    border: 1px solid #888;
+    visibility: visible;
+    background: white;
+    transform: translate(-50%, -50%);
+}
+
+#dispute-action-request-modal #dispute-action-request-modal-content {
+	padding: 15px;
+}
+
+#dispute-action-request-modal-content .notes-label {
+	vertical-align: top;
+}
+
+#dispute-action-request-modal-content .word-required {
+	vertical-align: top;
+	margin-left: 5px;
+	color: red;
+	font-size: 16px;
+}
+
+#dispute-action-request-modal-content .action-request-notes-textarea {
+	width: 75%;
+	height: 100px;
+	margin-left: 30px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	resize: none;
+	border-radius: 3px;
+}
+
+#dispute-action-request-modal-content .word-limit {
+	float: right;
+	margin-right: 35px;
+	margin-bottom: 10px;
+}
+
+#dispute-action-request-modal-content .button-container {
+	float: right;
+	margin-top: 24px;
+	margin-bottom: 10px;
+	margin-right: -110px;
+}
+
+#dispute-action-request-modal-content .button-container input[type="button"] {
+	padding-left: 3px 10px;
+	cursor: pointer;
+}
+
+#dispute-action-request-modal .modal-header {
+    height: 23px;
+    background: url("../../images/validation_status/sprite.png") repeat-x 0px -200px;
+    border-bottom: 1px solid #999;
+    padding-left: 10px;
+    padding-top: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+#dispute-action-request-modal .dispute-action-request-modal-close {
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    right: 3px;
+    top: 4px;
+    background: url("../../images/validation_status/sprite.png") no-repeat 0px -300px;
+    cursor: pointer;
+}

@@ -1,0 +1,250 @@
+#pageContainer {}
+
+#pageContainer .clearfix:before,
+#pageContainer .clearfix:after {
+    display: table;
+    content: '';
+}
+
+#pageContainer .clearfix:after {
+    clear: both;
+}
+
+#pageContainer .pull-left {
+    float: left;
+}
+
+#pageContainer .pull-right {
+    float: right;
+}
+
+#pageContainer .tabDetailView {
+    width: 100%;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-collapse: collapse;
+}
+
+#pageContainer .searchItemPanel table {
+    width: 100%;
+}
+
+#pageContainer .searchItemPanel table td {
+    height: 25px;
+    line-height: 25px;
+}
+
+.searchItemPanel table td input[type="text"] {
+    height: 20px;
+    width: 230px;
+    padding: 3px;
+}
+
+#pageContainer .searchItemPanel a:link,
+#pageContainer .searchItemPanel a:hover {
+    text-decoration: none;
+}
+
+#pageContainer .searchItemPanel .Date {
+    height: 20px;
+    padding: 3px;
+    width: 140px;
+}
+
+#pageContainer .searchItemPanel .calendar-image-link {
+    display: inline-block;
+    transform: translateY(4px);
+}
+
+#effectiveDateImg {
+    vertical-align: middle;
+}
+
+
+/* 取消搜索条件中下拉列表的行高度样式。 */
+#pageContainer #subProductFilterList .content .row,
+#pageContainer #summaryVendorNameFilterList .content .row,
+#pageContainer #vendorNameFilterList .content .row,
+#pageContainer #contractOrTariffNameList .content .row,
+#pageContainer #keyFieldFilterList .content .row {
+    line-height: normal;
+}
+
+#pageContainer .buttons-container input {
+    cursor: pointer;
+}
+
+#pageContainer .buttons-container .clear--button {
+    margin-left: 5px;
+}
+
+#pageContainer .list-wrapper {
+    width: 100%;
+}
+
+#pageContainer .list-wrapper .wrapper-inner-table {
+    table-layout: fixed; 
+    width: 100%;
+}
+
+#pageContainer .list-wrapper .data-table-wrapper {
+    width:100%; 
+    overflow-x: auto; 
+    padding-bottom: 20px;
+}
+
+#pageContainer .list-pagination-TD {
+    padding-top: 5px;
+}
+
+#pageContainer .pagination-table {
+    float: left;
+}
+
+#pageContainer .oper-buttons {
+    float: left;
+    margin-left: 15px;
+}
+
+#pageContainer .oper-buttons input[type="button"] {
+    cursor: pointer;
+}
+
+#pageContainer .align-right {
+    text-align: right;
+}
+
+#rateSearchSwitchTabContainer {
+    margin-top: 15px; 
+}
+
+#first-custom-filters input,
+#second-custom-filters input {
+    margin-left: 7px;
+    margin-right: 7px;
+    width: 80px;
+}
+
+#second-custom-filters .item-number,
+#second-custom-filters .tariff-page{
+	margin-left: 16px;
+}
+
+input[disabled] {
+    background-color: #ebebe4;	
+}
+
+.help-trigger {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    vertical-align: middle;
+    background-image: url('../../images/validation_status/help.png');
+    background-size: cover;
+}
+.help-trigger::after {
+    display: inline-block;
+    min-width: 150px;
+    white-space: normal;
+    font-style: normal;
+}
+
+.quote-attachBorder {   
+    border: 1px solid;
+    border-color: #9dc5ea;
+}
+.quote-upload-div {
+    float: right;
+    height: 17px;
+    width: 70px;
+    padding: 2px 6px;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    cursor:pointer;
+    background-color: #fff;
+}
+
+/* Rate Module 上传控件 */
+#attachDiv {
+    position:relative;
+    float:left;
+    width:85px;
+}
+
+#rateUpload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:70px;
+    height: 19px;
+    opacity: 0;
+    font-size: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#rateUpload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:70px;
+    height: 19px;
+    opacity: 0;
+    font-size: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* 上传模板按钮。 */
+.buttons-container .right-buttons #uploadUqoteForm {
+	float: left;
+}
+
+.rateWindow-left {
+	float: left;
+	padding: 30px 0 0 10px;
+}
+
+.rateWindow-left .failed-icon {
+	background: url(../images/failed-icon.png) center no-repeat;    
+	width: 40px;
+    height: 40px;
+}
+
+.rateWindow-right {
+	float: right;
+	height: 100%;
+	width: 85%;
+	font-family: ArialMT;
+	font-size: 14px;
+	line-height: 18px;
+}
+.rateWindow-right .title{
+	font-family: Arial-BoldMT;
+	font-size: 20px;
+	color: #4A4A4A;
+	padding: 10px 0 10px 10px;
+}
+.rateWindow-right .content{
+	color: #4A4A4A;
+	padding: 5px 0 5px 10px;
+}
+.rateWindow-right .link{
+	color: #4A90E2;
+	text-decoration: underline;
+	padding: 2px 0 2px 10px;
+}
+
+.rateWindow-right .link:hover {
+	cursor: pointer;
+}
+
+.masked #rate-view-type-list,
+.masked #reference-type-list,
+.masked #rate-status-filter-list,
+.masked #charge-type-list,
+.masked #expiration-period-list {
+    visibility: visible;
+}

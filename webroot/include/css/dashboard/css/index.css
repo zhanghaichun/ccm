@@ -1,0 +1,1392 @@
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+::-webkit-scrollbar  {  
+    width: 8px;  
+    height: 8px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track {  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);  
+    border-radius: 10px;  
+    background-color: #F5F5F5;  
+}
+
+/*定义滑块 内阴影+圆角*/ 
+::-webkit-scrollbar-thumb {  
+    border-radius: 10px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);  
+    background-color: #c1c1c1;  
+}
+
+i.icon {
+    display: inline-block;
+    background-image: url("../img/dashboard.png");
+    background-repeat: no-repeat;
+    cursor: pointer; 
+}
+
+/* 编辑dashboard name 控件的样式。 */
+.edit-dashboard-name-container {
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+/* 编辑dashboard name 的图标。 */
+.edit-name-icon {
+	width: 24px;
+	height: 24px;
+	background-position:-390px 0;;
+}
+
+.edit-name-icon:hover {
+	background-position:-366px 0;
+}
+
+/* Dashboard 编辑框在编辑之前的样式。 */
+@media screen and (max-width: 360px) {
+    .edit-dashboard-name-column {
+        width: 80%;
+        padding-left: 0;
+    }
+
+    .edit-dashboard-name-oper-buttons-column {
+        width: 50%;
+    }
+}
+.edit-dashboard-name-container input {
+    color: #4a4a4a;
+    background: transparent;
+}
+
+.edit-dashboard-name-container .editing .edit-textbox {
+	width: 100%;
+	height: 31px;
+	padding-left: 5px;
+	line-height: 31px;
+	border-bottom: 1px solid #9B9B9B;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.edit-dashboard-name-container .non-edit {
+    border-bottom: 1px solid #9B9B9B;
+}
+
+.edit-dashboard-name-container .non-edit .show-textbox {
+    margin-top: 5px;
+}
+
+/* 调整编辑 dashboard name 操作按钮的距离。 */
+.edit-dashboard-name-container .edit-oper-buttons {
+	margin-left: -20px;
+	float: left;
+}
+
+
+@media screen and (max-width: 768px) {
+    .edit-dashboard-name-container .edit-oper-buttons {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.edit-dashboard-name-container .row .col-xs-4 {
+    height: 31px;
+}
+
+@media screen and (max-width: 360px) {
+
+    .edit-dashboard-name-container .row .edit-dashboard-name-oper-buttons-column {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 487px) {
+    
+    .edit-dashboard-name-container .row .col-xs-4 {
+        padding-left: 0;
+        padding-right: 0;
+        transform: translateY(-5px);
+    }
+
+}
+
+
+.edit-dashboard-name-container .title-tontant {
+	width: calc(100% - 30px);
+    float: left;
+    padding-left: 5px;
+    line-height: 31px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.edit-dashboard-name-container .edit-oper-buttons a.confirm-button {
+    color: white;
+    text-decoration: none;
+    margin-right: 7px;
+    padding: 5px 8px;
+}
+
+.edit-dashboard-name-container .edit-oper-buttons a.cancel-button {
+    color: #A5BED6;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 487px) {
+    .edit-dashboard-name-container .edit-oper-buttons a.confirm-button {
+        padding: 5px 3px;
+    }
+
+    .edit-dashboard-name-container .edit-oper-buttons a.cancel-button {
+        padding: 5px;
+    }
+
+}
+
+/* Global Controller dropdown list. */
+.global-controller-dropdown {
+    position: relative;
+}
+
+.global-controller-dropdown-title {
+    background: white;
+}
+
+.global-controller-dropdown-title.border-bottom-none {
+    border-bottom: none !important;
+}
+
+.global-controller-dropdown-title .select-title {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 15px;
+    border: 1px solid #DFE2E5;
+}
+
+.global-controller-dropdown-title .select-title:after {
+    top: 11px;
+    right: 25px;
+}
+
+.global-controller-list-container {
+    position: absolute;
+    width: 100%;
+    border: 1px solid #E2E5E7;
+    background: white;
+    font-size: 12px;
+    z-index: 2;
+}
+
+/* Global controller 的主要列表。 */
+.global-controller-list {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.global-controller-list .filter-name-wrapper {
+    padding-left: 15px;
+}
+
+.global-controller-list .global-controller-list-item {
+    list-style: none;
+    margin: 0;
+}
+
+.global-controller-list-item {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #E2E5E7;
+}
+
+.global-controller-list-item .item-content {
+    position: relative;
+}
+
+.global-controller-list-item .filter-name-content {
+    color: #A5BED6;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.global-controller-list-item .edit-icon-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.global-controller-list-item .edit-icon {
+    width: 16px;
+    height: 16px;
+    background-position:-46px 0;
+}
+
+.global-controller-list-item .edit-icon:hover {
+    background-position:-94px 0;
+}
+
+/* 下面的是整个面板结构的CSS */
+
+.dashboard-default {
+	margin-top: 30px;
+}
+
+.quote-charts-panel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 620px; /* 限制 Dashboard Panel 高度 */
+    border: 1px solid #DFE2E5;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 2px 7px rgba(0,0,0,.3);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.quote-charts-panel-wrapper::-webkit-scrollbar {
+    width: 0;
+}
+
+.quote-charts-panel {
+    padding: 20px 20px; /* Panel 的统一间距。 */
+}
+
+
+/* 删除此面板的图标。 */
+.delete-panel-icon {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    right: 25px;
+    background-position:-344px 0;
+}
+
+.delete-panel-icon:hover {
+    background-position:-300px 0;
+}
+
+.delete-item-icon {
+	float: left;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    margin-top: 1px;
+    background-position:0 0;
+}
+
+.delete-item-icon:hover {
+    background-position:-15px 0;
+}
+
+/* Panel header. */
+.quote-charts-panel-header {
+    padding-right: 30px;
+}
+
+/* 过滤条件子面板，除了面板头部和可视化图形的
+部分。 */
+.filter-subpanel {
+	margin-top: 10px;
+    height: 110px;
+}
+
+.filter-subpanel .dropdowns-container {
+    width: 34%;
+}
+
+.filter-subpanel .panel-filters {
+    width: 66%;
+    padding-right: 15px;
+    font-size: 12px;
+}
+
+.filter-subpanel .panel-filters .filter-content {
+    cursor: pointer;
+}
+
+.filter-subpanel .panel-filter-item {
+    margin-bottom: 5px;
+    line-height: 16px;
+}
+
+.filter-subpanel .panel-filter-item .filter-type {
+    float: left;
+    width: 30%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.filter-subpanel .panel-filter-item .filter-content {
+    float: left;
+    color: #A5BED6;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 70%;
+}
+
+.filter-subpanel .panel-filter-item .filter-content .filter-content-item {
+    background: rgba(165, 190, 214, 0.1);
+    border-radius: 2px;
+}
+
+.filter-subpanel .panel-filter-item .filter-content .filter-content-item-text {
+	float: left;
+	max-width: calc(100% - 20px);
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.list-by-vendor-dropdown-container {
+    position: relative;
+}
+
+
+.list-by-vendor-dropdown-title .select-title {
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 8px;
+    padding-right: 21px;
+    border: 1px solid #DFE2E5;
+    border-radius: 3px;
+    background: #fff;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-by-vendor-dropdown-title .select-title:after {
+    top: 3px;
+    right: 7px;
+}
+
+.list-vendor-container {
+    position: absolute;
+    width: 100%;
+    border-bottom: none;
+    border: 1px solid #E2E5E7;
+    bottom:23px;
+    background: white;
+    font-size: 12px;
+    z-index: 2;
+}
+
+ul.list-by-list {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul.list-by-list .list-by-list-item {
+    list-style: none;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ul.list-by-list .list-by-list-item:hover {
+    background: #E5ECF1;
+    cursor: pointer; 
+}
+
+.quote-charts-panel-wrapper .visual-container {
+	position:relative;
+    height: 400px;
+    margin-top: 50px;
+    /*overflow: auto;
+    overflow-x: hidden;*/
+}
+
+.quote-charts-panel-wrapper .panel-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+.quote-charts-panel-wrapper .visual-container-chart {
+	margin-top: 35px;
+
+}
+
+.quote-charts-panel-wrapper .list-visual-wrapper {
+    max-height: 440px;
+    overflow-y: auto;
+}
+
+.quote-charts-panel-wrapper .visual-container .list-visual-wrapper.result-list-no-data {
+	text-align: center;
+	height: 440px;
+    line-height: 440px;
+    transform: translateX(-1px, 12px);
+	font-size: 12px;
+    font-weight: bold;
+    color: #666666;
+    fill: #666666;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+}
+.quote-charts-panel-wrapper .visual-container .vendor-table {
+    table-layout: fixed;
+    width: 100%;
+    font-size: 12px;
+}
+
+.quote-charts-panel-wrapper .visual-container .vendor-table th {
+    height: 30px;
+    padding-left: 5px;
+    font-weight: normal;
+    color: #9B9B9B;
+    border-bottom: 1px solid #F0F1F2;
+}
+
+.quote-charts-panel-wrapper .visual-container .vendor-table th.list-by {
+    width: 55%;
+}
+
+.quote-charts-panel-wrapper .visual-container .vendor-table th.result {
+    width: 30%;
+}
+
+.quote-charts-panel-wrapper .visual-container .vendor-table th.percentage {
+    width: 15%;
+}
+
+.quote-charts-panel-wrapper .visual-container .vendor-table td {
+    height: 30px;
+    padding-left: 5px;
+	border-bottom: 1px solid #F0F1F2;
+}
+
+.quote-charts-panel-wrapper .visual-container .vendor-table .vendor-name {
+    color: #A5BED6;
+}
+
+.quote-charts-panel-wrapper .visual-container .vendor-table .vendor-name,
+.quote-charts-panel-wrapper .visual-container .vendor-table .result,
+.quote-charts-panel-wrapper .visual-container .vendor-table .percentage {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dashboard-chart {
+	height:500px;
+}
+
+/* 下拉面板。 */
+.select-filter-panel-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    top: 0;
+    left: 0;
+    display: none;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.select-filter-panel {
+    position: relative;
+    font-size: 12px;
+    background: #FFFFFF;
+    border: 1px solid #DFE2E5;
+    box-shadow: 0 3px 2px 0 rgba(0,0,0,0.10);
+
+}
+
+@media screen and (max-width: 487px) {
+    
+    .select-filter-panel-wrapper .panel-content .col-xs-8 {
+        width: 41.66666667%;
+    }
+
+    .select-filter-panel-wrapper .panel-content .col-xs-3 {
+        width: 41.66666667%;
+    }
+}
+
+/* 编辑图标。 */
+.select-filter-panel .edit-icon {
+    position: absolute;
+    top: 8px;
+    right: 25px;
+    width: 16px;
+    height: 16px;
+    background-position:-46px 0;
+}
+
+@media screen and (max-width: 487px) {
+    
+    .select-filter-panel .edit-icon {
+       right: 0;
+    }
+}
+
+.select-filter-panel .edit-icon:hover {
+    background-position:-94px 0;
+}
+
+.select-filter-panel .filter-panel-title {
+    height: 35px;
+    padding-left: 15px;
+    font-weight: 600;
+    line-height: 35px;
+}
+
+#dashboard-content input.filter-checkbox.pull-right {
+    margin-right: 27px;
+    margin-top: 9px;
+	margin-left: 5px;
+    display: block;
+    transform: translateY(3px);
+}
+
+.per-text {
+	color: #b6b6b6;
+	font-weight: normal;
+}
+
+.select-filter-panel .panel-content-item {
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #F0F1F2;
+}
+
+.select-filter-panel .filter-item-content {
+    color: #A5BED6;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+    text-overflow: ellipsis;
+}
+
+/* 添加新的 dashboard 的控件。 */
+.add-new-wrapper {
+    width: 100%;
+    background: #f6f6f6;
+}
+
+.add-new-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 620px;
+    border: 1px dashed #A5BED6;
+}
+
+.add-new-container .add-new {
+    text-align: center;
+}
+
+.add-new-container .add-new .add-new-content {
+    margin-top: 10px;
+    color: #A5BED6;
+}
+
+.add-new-container .add-new .add-new-icon {
+    width: 50px;
+    height: 50px;
+    background-position:-510px 0;
+}
+
+.add-new-container .add-new .add-new-icon:hover {
+    background-position:-560px 0;
+}
+
+
+/* Radio button的样式. */
+
+.radio-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    padding: 15px;
+    padding-bottom: 0;
+    border: 1px solid #9dc5ea;
+    border-radius: 1px;
+    background: white;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.radio-container:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: -5px;
+    right: 22px;
+    background-color: white;
+    border: inherit;
+    border-right: none;
+    border-bottom: none;
+    transform: rotate(45deg); 
+    -ms-transform: rotate(45deg); 
+}
+
+.radio-container .radio-item {
+    margin-bottom: 10px;
+}
+
+.radio-container label {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.radio-container i,
+.radio-container label {
+    cursor: pointer;
+}
+
+
+/* 有复选框的可以进行多选的 filter item 的 弹出modal， 类似于vendor */
+.vendor-list {
+    position: absolute;
+    bottom: 20px;
+    right: 300px;
+    width: 400px;
+    padding: 15px;
+    padding-bottom: 0;
+    border: 1px solid #9dc5ea;
+    background: white;
+    z-index: 2;
+}
+
+.vendor-list:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: -5px;
+    right: 22px;
+    background-color: white;
+    border: inherit;
+    border-right: none;
+    border-bottom: none;
+    transform: rotate(45deg); 
+    -ms-transform: rotate(45deg); 
+}
+
+.delete-icon {
+    width: 15px;
+    height: 15px;
+    background-position:0 0;
+    transform: translate(3px, 4px);
+}
+
+.delete-icon:hover {
+    background-position:-15px 0;
+}
+
+/* Vendor搜索控件。 */
+
+.search-vendor-result {
+    margin: 20px 0;
+}
+
+.search-vendor-result .search-vendor-input {
+    width: 100%;
+    height: 31px;
+    padding-left: 8px;
+    padding-right: 30px;
+    line-height: 31px;
+    outline: none;
+    border: 1px solid #9dc5ea;
+}
+
+.search-vendor-result .search-buttons button {
+    font-size: 12px; 
+}
+
+.search-vendor-result .search-input-wrapper { 
+    position: relative;
+    width: 60%;
+    margin-right: 10px;
+}
+
+.search-vendor-result .search-input-wrapper:after {
+    position: absolute;
+    content: "";
+    top: 6px;
+    right: 14px;
+    width: 16px;
+    height: 16px;
+    background: url("../img/search.png") no-repeat;
+    background-size: cover;
+    transform: translate(3px, 2px);
+}
+
+.search-vendor-result .search-confirm {
+    margin-right: 5px;
+}
+
+
+/* Checkbox button. */
+#dashboard-content input[type="checkbox"] {
+    display: none;
+}
+
+.dashboard-filter-list input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + i {
+    width: 16px;
+    height: 16px;
+    background-position:-142px 0;
+    transform: translateY(3px);
+    -ms-transform: translateY(3px);
+}
+
+input[type="checkbox"]:checked + i {
+    background-position:-126px 0;
+}
+
+.checkbox-container {
+    max-height: 310px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.dashboard-filter-list .checkbox-container .checkbox-item {
+    display: flex;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.checkbox-container .checkbox-item .checkbox-button {
+    margin-right: 5px;
+}
+
+.dashboard-filter-list .checkbox-container label {
+    flex: 1;
+    transform: translateY(2px);
+    cursor: pointer;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+
+/* 单选按钮和复选框都包含的一个modal. */
+.dashboard-filter-list {
+    position: absolute;
+	max-width: 400px;
+    padding: 15px;
+    padding-bottom: 0;
+    background: white;
+    border: 1px solid #9dc5ea;
+    z-index: 2;
+}
+
+.dashboard-filter-list:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: -5px;
+    right: 38px;
+    background-color: white;
+    border: inherit;
+    border-right: none;
+    border-bottom: none;
+    transform: rotate(45deg); 
+    -ms-transform: rotate(45deg); 
+}
+
+.pointer-left.dashboard-filter-list:after {
+    left: 22px;
+}
+
+/* 查询到的vendor的显示。 */
+.selected-result {
+    font-size: 12px;
+}
+
+.selected-result .selected-result-item {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 3px 10px;
+    background: #f6f6f6;
+    border-radius: 5px;
+}
+
+.dashboard-result-loding {
+    display: flex;
+	width: 100%;
+	height: 500px;
+	justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+.search-dashboard-filter {
+    margin: 20px 0;
+}
+
+.search-dashboard-filter .search-dashboard-filter-input {
+    width: 100%;
+    height: 31px;
+    padding-left: 8px;
+    padding-right: 30px;
+    line-height: 31px;
+    outline: none;
+    border: 1px solid #9dc5ea;
+}
+
+.search-dashboard-filter .search-buttons button {
+    font-size: 12px; 
+}
+
+.search-dashboard-filter .search-input-wrapper { 
+    position: relative;
+    width: calc(100% - 136px);
+    margin-right: 10px;
+}
+
+.search-dashboard-filter .search-input-wrapper:after {
+    position: absolute;
+    content: "";
+    top: 6px;
+    right: 14px;
+    width: 16px;
+    height: 16px;
+    background: url("../img/search.png") no-repeat;
+    background-size: cover;
+    transform: translate(3px, 2px);
+}
+
+.search-dashboard-filter .search-confirm {
+    margin-right: 5px;
+}
+
+/* Product content. */
+/* Product Name. */
+.dashboard-filter-list .dashboard-filter-content-list .dashboard-filter {
+    width: 50%;
+}
+
+.dashboard-filter-list .dashboard-filter-content-list .radio-controls {
+    padding-left: 15px;
+}
+
+.dashboard-filter-list .dashboard-filter-content-list .dashboard-filter-name-title {
+    color: #A5BED6;
+    margin-bottom: 10px;
+}
+
+/* Product Label. */
+.dashboard-filter-list .dashboard-filter-content-list .dashboard-filter-label {
+    width: 50%;
+    padding-left: 15px;
+}
+
+.dashboard-filter-radio-container {
+	position: static;
+	max-height: 310px;
+	overflow: auto;
+	overflow-x: hidden;
+	width: auto;
+	border: none;
+	padding: 0;
+}
+
+.dashboard-filter-radio-container .radio-item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.dashboard-filter-radio-container label {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.dashboard-filter-radio-container i,
+.dashboard-filter-radio-container label {
+    cursor: pointer;
+}
+
+.dashboard-filter-radio-container label {
+    flex: 1;
+    margin-left: 5px;
+    line-height: 1.5;
+}
+
+
+/* 选择dashboard module  */
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + i {
+    width: 16px;
+    height: 16px;
+    background-position:-78px 0;
+    transform: translateY(3px);
+}
+
+input[type="radio"]:checked + i {
+    background-position:-174px 0;
+}
+
+.select-dashboard-module-radio-container {
+    width: 100%;
+    padding: 15px;
+    padding-left: 3px;
+    padding-bottom: 0;
+    border-radius: 1px;
+    box-sizing: border-box;
+}
+
+.select-dashboard-type-panel .panel-content{
+	padding: 10px 20px;
+}
+
+.select-dashboard-module-radio-container .radio-item {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.select-dashboard-module-radio-container label {
+    font-weight: normal;
+    color: #4a4a4a;
+    font-size: 14px;
+    margin-left: 16px;
+}
+
+.select-dashboard-module-radio-container i,
+.select-dashboard-module-radio-container label {
+    cursor: pointer;
+}
+
+/* 限制主容器的大小。 */
+.select-dashboard-type-panel {
+	height: 620px;
+    position: relative;
+    width: 100%;
+    background: #FFFFFF;
+    padding: 15px;
+    border: 1px solid #DFE2E5;
+}
+
+.select-dashboard-type-panel .panel-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #4A4A4A;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button-container button {
+    padding: 6px 23px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.dashboard-type-radio {
+    height: 300px;
+    margin-bottom: 15px;
+    overflow: auto;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+.dashboard-type-radio::-webkit-scrollbar  {  
+    width: 8px;  
+    height: 8px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+.dashboard-type-radio::-webkit-scrollbar-track {  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);  
+    border-radius: 10px;  
+    background-color: #F5F5F5;  
+}
+
+/*定义滑块 内阴影+圆角*/ 
+.dashboard-type-radio::-webkit-scrollbar-thumb {  
+    border-radius: 10px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);  
+    background-color: #c1c1c1;  
+}
+
+/* Select Dashboard Type Panel */ 
+.select-dashboard-type-panel {
+    padding: 20px 30px;
+}
+
+.select-dashboard-type-panel .cancel-button {
+    margin-right: 15px;
+}
+
+/* Clear selected condition */
+.selected-result {
+	font-size: 12px;
+    position: relative;
+    border-radius: 4px;
+    padding: 14px;
+}
+
+.selected-result:hover {
+    background: #ECECEC;
+}
+
+.selected-result .clear-icon {
+    position: absolute;
+    top: -8px;
+    right: -6px;
+    width: 16px;
+    height: 16px;
+    background-position: 0;
+}
+
+.selected-result:hover .clear-icon {
+	background-position:-158px 0;
+}
+
+.move-icon {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.forward-icon {
+    background-image: url("../img/forward.png");
+}
+
+.forward-icon:hover {
+    background-image: url("../img/forward-hover.png");
+}
+
+.backward-icon {
+    background-image: url("../img/backward.png");
+}
+
+.backward-icon:hover {
+    background-image: url("../img/backward-hover.png");
+}
+
+/* 可编辑的dashboard panel name. */
+.quote-charts-panel-header .panel-title {
+    width: 76%;
+    font-size: 14px;
+    font-family: arial;
+}
+
+@media screen and (max-width: 320px) {
+
+    .quote-charts-panel-header .panel-title {
+        width: 90%;
+    }
+}
+
+.quote-charts-panel-header .panel-title .left-part {
+    width: calc(100% - 127px);
+    border-bottom: 1px solid #9B9B9B;
+    height: 24px;
+    overflow: hidden;
+}
+
+.quote-charts-panel-header .panel-title .right-part {
+    margin-left: 5px;
+}
+
+.quote-charts-panel-header .panel-title .edit-box {
+    width: 100%;
+    padding: 4px 2px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.quote-charts-panel-header .panel-title a:link {
+    text-decoration: none;
+    font-size: 12px;
+    padding: 2px 9px;
+}
+
+.quote-charts-panel-header .panel-title a.confirm-button {
+    margin-right: 2px;
+}
+
+.quote-charts-panel-header .title-content {
+	width: calc(100% - 24px);
+	line-height: 24px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/*----------------- filter options panel--------------- */
+.filters-icon, .options-icon {
+    position: absolute;
+    left: 50%;
+    margin-left: -26px;
+    width: 52px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 1; 
+}
+
+/* 向下展出图标。 */
+.slideDown-icon {
+    top: 0;
+    background: url("../img/filters.png") no-repeat;
+}
+
+/* 向上收起图标。 */
+.slideUp-icon {
+    bottom: -18px;
+    background: url("../img/filters.png") no-repeat;
+}
+
+
+.filter-options-panel input[type="checkbox"] {
+    display: none;
+}
+
+.filter-options-panel input[type="checkbox"] + i {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+    background: url("../img/checkbox.png") no-repeat;
+    background-size: cover;
+    transform: translateY(2px);
+    -ms-transform: translateY(2px);
+}
+
+.filter-options-panel input[type="checkbox"]:checked + i {
+    background-image: url("../img/checked-checkbox.png");
+}
+
+.filter-options-panel .left-part {
+	width: calc(100% - 144px);
+}
+
+@media screen and (max-width: 375px) {
+    .filter-options-panel .left-part {
+        width: 100%;
+    }
+}
+
+.options-slideup-icon {
+    bottom: 0;
+    background-image: url("../img/options.png");
+}
+
+.options-slideDown-icon {
+    top: -18px;
+    background-image: url("../img/options.png");
+}
+
+.filter-options-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: white;
+    box-shadow: 0 -3px 2px 0 rgba(0,0,0,.1);
+    box-sizing: border-box;
+    font-family: arial;
+    z-index: 3;
+}
+
+@media screen and (max-width: 375px) {
+    .filter-options-panel {
+        height: 100px;
+    }
+}
+
+.filter-options-panel .filter-options-panel-content {
+   
+}
+
+.filter-options-panel .dropdowns-container {
+    width: 160px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.filter-options-panel .visual-switch-buttons {
+	width: 70px;
+    margin-left: 5px;
+    margin-top: 22px;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 375px) {
+    .filter-options-panel .visual-switch-buttons {
+        width: 160px;
+        margin-left: 12px;
+        margin-top: 15px;
+    }
+}
+
+.filter-options-panel .visual-switch-buttons i {
+    width: 22px;
+    height: 22px;
+}
+
+@media screen and (max-width: 375px) {
+    .filter-options-panel .visual-switch-buttons i {
+        margin-right: 30px;
+    }
+}
+
+/* Pie */
+.filter-options-panel .visual-switch-buttons i.pie-icon {
+    background-position:-234px 0;
+}
+
+.filter-options-panel .visual-switch-buttons i.pie-icon.selected {
+    background-position:-256px 0;
+}
+
+/* Bar */
+.filter-options-panel .visual-switch-buttons i.column-icon {
+    background-position:-278px 0;
+}
+
+.filter-options-panel .visual-switch-buttons i.column-icon.selected {
+    background-position:-322px 0;
+}
+
+/* List */
+.filter-options-panel .visual-switch-buttons i.list-icon {
+    background-position:-212px 0;
+}
+
+.filter-options-panel .visual-switch-buttons i.list-icon.selected {
+    background-position:-190px 0;
+}
+
+
+.filter-options-panel .percentage-checkbox-item {
+	max-width: calc(100% - 180px);
+    margin-left: 10px;
+    margin-top: 20px;
+    padding: 3px 6px 3px 6px;
+    color: #9B9B9B;
+    border: 1px solid #B6CCE1;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 487px) {
+    .filter-options-panel .percentage-checkbox-item {
+        padding-bottom: 6px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    
+    .filter-options-panel .percentage-checkbox-item {
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    
+    .filter-options-panel .percentage-checkbox-item {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.filter-options-panel .percentage-checkbox-item .show-percentage-icon {
+    display: none;
+    width: 11px;
+    height: 10px;
+    background-image: url("../img/show-percentage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (min-width: 376px) and (max-width: 487px) {
+    .filter-options-panel .percentage-checkbox-item .show-percentage-text {
+        display: none;
+    }
+
+    .filter-options-panel .percentage-checkbox-item .show-percentage-icon {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .right-part.pull-right {
+        float: none !important;
+        margin-bottom: 10px;
+    }
+
+    .right-part.pull-right:before,
+    .right-part.pull-right:after {
+        display: table;
+        content: '';
+    }
+
+    .right-part.pull-right:after {
+        clear: both;
+    }
+}
+
+.filter-options-panel .percentage-checkbox-item label {
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+
+.filter-options-panel .move-icons {
+    width: 59px;
+    margin: 22px 0 0 5px;
+}
+
+@media screen and (max-width: 375px) {
+    .filter-options-panel .move-icons {
+       margin-top: 15px;
+       margin-left: 85px;
+    }
+}
+
+
+.filter-options-panel .move-icons > span {
+    display: inline-block;
+    width: 27px;
+}

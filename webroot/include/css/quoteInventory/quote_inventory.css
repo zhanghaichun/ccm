@@ -1,0 +1,303 @@
+/* Quote Inventory */
+.clearfix:after,.clearfix:before {
+	display: table;
+	content: "";
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+#pageContainer {
+	padding-bottom: 25px;
+}
+
+.page-title {
+	padding-top: 0;
+	padding-bottom: 4px;
+}
+
+/* 重置相关样式。 */
+.tabDetailView {
+	width: 100%;
+	margin-bottom: 10px;
+	border-width: 1px;
+	border-collapse: collapse;
+}
+
+.tabDetailViewDL.left-part {
+	border-right: none;
+}
+
+.compare-table-td.invalid {
+	background-color: #ebebeb;
+}
+
+/* 对于日期过滤条件的td 中的样式的设置。 */
+.date-filters-td {
+	padding: 0;
+}
+
+.date-filters-td .searchItemPanel {
+	padding: 0;
+}
+
+.date-filters-td .date-received-table {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.date-filters-td .date-issued-table {
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.table-seperator {
+	border: none;
+	border-bottom: 1px solid #abc1d8;
+}
+
+.date-controller-td {
+	padding-left: 9px;
+}
+
+.provider-list {
+	position: relative;
+	text-align: left;
+}
+
+.product-list {
+	position: relative;
+	text-align: left;
+}
+
+.searchItemPanel table {
+	width: 100%;
+}
+
+.searchItemPanel table td {
+	height: 25px;
+	line-height: 25px;
+}
+
+/* 下拉列表中的间距不统一的问题 */
+#VL_summaryVendorList_1 .content .row,
+#VL_complete_flag .content .row,
+#provider-filter-list .content .row,
+#product-filter-list .content .row {
+    line-height: normal;
+}
+
+
+.searchItemPanel.date-item-panel table td {
+	height: 35px;
+}
+
+.searchItemPanel input[type="checkbox"] {
+	cursor: pointer;
+}
+
+.searchItemPanel .switch-checkbox.default {
+	cursor: default;
+}
+
+.confirm-circuit-filter {
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+.searchItemPanel table td input[type="text"] {
+	height: 20px;
+	width: 230px;
+	padding: 3px;
+}
+
+.searchItemPanel table td input.circuit-number {
+	float: left;
+	width: 169px;
+}
+
+
+.compare-filters-table input.invalid {
+	background-color: #ccc;
+}
+
+/* 日期选择框的禁用与启用的复选框。 */
+.searchItemPanel .checkbox-container {
+	height: 25px;
+}
+
+.searchItemPanel .Date {
+	width: 152px;
+	border: 1px solid #ccc;
+	background: #ccc;
+}
+
+/* 日期文本框可用时候的样式。 */
+.searchItemPanel .Date.enabled {
+	background: white;
+}
+
+/* 当向日趋文本框中输入错误格式的日期的时候，应该显示的样式。 */
+.searchItemPanel .Date.enabled.validation-failed {
+	border: 1px dashed #F33;
+	background-color: #FCC;
+}
+
+.quote-inventory-content .searchItemPanel img {
+	vertical-align: middle !important;
+}
+
+/* 去掉a链接底部的下划线。 */
+.calendar-image-link:link {
+	display: inline-block;
+	transform: translateY(-3px);
+	text-decoration: none;
+}
+
+.calendar-label {
+	display: inline-block;
+	transform: translateY(-3px);
+}
+
+.date-title {
+	display: inline-block;
+	width: 20%;
+}
+
+.buttons-container .button-item {
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+.buttons-container .left-buttons {
+	float: left;
+}
+
+.buttons-container .right-buttons {
+	float: right;
+}
+
+/* Download Template 按钮。 */
+.buttons-container .right-buttons .download-template--button {
+	float: left;
+	height: 23px;
+	line-height: 18px;
+}
+
+/* 上传模板按钮。 */
+.buttons-container .right-buttons #uploadUqoteForm {
+	float: left;
+}
+
+.quoteWindow-left {
+	float: left;
+	padding: 30px 0 0 10px;
+}
+
+.quoteWindow-left .failed-icon {
+	background: url(../images/failed-icon.png) center no-repeat;    
+	width: 40px;
+    height: 40px;
+}
+
+.quoteWindow-right {
+	float: right;
+	height: 100%;
+	width: 85%;
+	font-family: ArialMT;
+	font-size: 14px;
+	line-height: 18px;
+}
+.quoteWindow-right .title{
+	font-family: Arial-BoldMT;
+	font-size: 20px;
+	color: #4A4A4A;
+	padding: 10px 0 10px 10px;
+}
+.quoteWindow-right .content{
+	color: #4A4A4A;
+	padding: 5px 0 5px 10px;
+}
+.quoteWindow-right .link{
+	color: #4A90E2;
+	text-decoration: underline;
+	padding: 2px 0 2px 10px;
+}
+
+.quoteWindow-right .link:hover {
+	cursor: pointer;
+}
+
+/* 表格中的行添加高亮显示的css类 */
+.highlight {
+	background: pink;
+	color: #000;
+	padding: 4px;
+	font-size: 9px;
+	font-weight: bold;
+}
+
+#_paginationTable_QuoteInventoryViewListPage {
+	float: left;
+	width: auto;
+	margin-top: 5px;
+}
+
+.download-button {
+	float: left;
+	margin-left: 10px;
+	margin-top: 6px;
+}
+
+.download-button input {
+	cursor: pointer;
+}
+
+/* quote inventory 页面上传控件 */
+.quote-attachBorder {	
+	border: 1px solid;
+	border-color: #9dc5ea;
+}
+.quote-upload-div {
+	float: right;
+	height: 17px;
+	width: 70px;
+	padding: 2px 6px;
+	font-size: 13px;
+	line-height: 15px;
+	text-align: center;
+	cursor:pointer;
+    background-color: #fff;
+}
+
+#attachDiv {
+	position:relative;
+	float:left;
+	width:85px;
+}
+
+#quoteUpload {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:70px;
+	height: 19px;
+	opacity: 0;
+	font-size: 0;
+	cursor: pointer;
+	z-index: 1;
+}
+
+#masterInventoryUpload {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:70px;
+	height: 19px;
+	opacity: 0;
+	font-size: 0;
+	cursor: pointer;
+	z-index: 1;
+}

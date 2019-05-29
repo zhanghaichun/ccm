@@ -1,0 +1,16 @@
+# AP Out Bound files FTP directory
+# ap.feed.outbound.dir=d:/ftp/ccm/outbound
+
+# AP Out bound files sending job CRON expression
+
+ap.feed.outbound.job.cron.expression=0 00 22 * * ?
+
+# AP In bound files loading job CRON expression
+
+ap.feed.inbound.job.cron.expression=0 00 23 * * ?
+
+auto.receive.email.job.cron.repeatInterval=60000
+# report.job.cron.expression=0/15 * * * * ? 
+# ap.report.run.a.job.cron.expression=0 0/5 * * * ?
+# ap.report.run.d.job.cron.expression=0 0 1 * * ?
+# ap.report.run.m.job.cron.expression=0 0 0 1 * ?

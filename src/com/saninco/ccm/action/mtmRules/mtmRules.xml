@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.mtmRules" extends="ccm">
+        <!-- ContractRules -->
+        <action name="showMtMRulesContent" class="com.saninco.ccm.action.mtmRules.MtMRulesAction" method="exec">
+            <result name="success">/WEB-INF/pages/contractAndTariffRules/mtmRules.jsp</result>
+        </action>
+
+
+        <!-- mtm Rules List Item page count.-->
+        <action name="countMtMRulesViewListPageNo" class="com.saninco.ccm.action.mtmRules.MtMRulesAction" method="countMtMRulesViewListPageNo" />
+
+        <!-- mtm Rules list items.-->
+        <action name="listMtMRules" class="com.saninco.ccm.action.mtmRules.MtMRulesAction" method="listMtMRules" />
+
+        <!-- Download mtm rules list items.-->
+        <action name="downloadMtMRulesToExcel" class="com.saninco.ccm.action.mtmRules.MtMRulesAction" method="downloadMtMRulesToExcel" />
+
+    </package>
+
+
+
+</struts>

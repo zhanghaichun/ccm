@@ -1,0 +1,66 @@
+/* ************************************************************ */
+/* 下面的样式是需要添加到一个通用的文件中的，因为 contract/Tariff/Price List
+页面中的一些样式需要移植到 quote inventory 页面中的， 到时候相关的js 文件也需要
+整理到一个文件中，这样做是为了以后更好的维护。 */
+/* ************************************************************ */
+
+#_paginationTable_ContractViewListPage,
+#_paginationTable_TariffViewListPage, 
+#_paginationTable_PriceListViewListPage {
+	float: left;
+	width: auto;
+	margin-top: 5px;
+}
+
+.list-wrapper {
+	display: none;
+	width: 100%;
+}
+
+.wrapper-inner-table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+.data-table-wrapper {
+	width:100%;
+	padding-bottom: 20px;
+	text-align: left;
+	overflow-x: auto;
+}
+
+.clearfix:after,
+.clearfix:before {
+	display: table;
+	content: "";
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+
+/* Termination Penalty 的样式 */
+#contract-data-table .penalty {
+	position: relative;
+}
+
+#contract-data-table .penalty-notes-icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	float: right;
+	background-image: url("../images/contractTariffPriceList/penalty-notes.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+
+#penalty-notes-wrapper .bd.penalty-notes-content {
+    line-height: 1.3;
+    color: gray;
+}
+
+

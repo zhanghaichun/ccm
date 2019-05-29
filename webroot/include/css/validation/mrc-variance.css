@@ -1,0 +1,109 @@
+
+.mrc-variance-content {
+    width: 100%;
+}
+
+#_table_tbody_varianceListPage .selectStyle {
+    background-color: #fff3dc;
+}
+
+#variance-btns {
+    margin-top: 5px;
+}
+
+input[type="button"] {
+    cursor: pointer;
+}
+
+.variance-action {
+    cursor: pointer;
+    color: #4A90E2;
+}
+
+.variance-action .icon.operate {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    transform: translateY(3px);
+    margin-right: 2px;
+    background: url('../../images/validation_status/set_up2.png') no-repeat;
+    background-size: cover;
+}
+
+.circuit-layer {
+    display: none;
+}
+
+.circuit-layer .split-line.attachBorder {
+    margin-top: 8px;
+    border-bottom: none;
+}
+
+.variance-tab-switch-control {
+    margin-top: 35px;
+}
+
+.validation-info-table,
+.circuit-info-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.validation-info-table tr td:first-child,
+.circuit-info-table tr td:first-child {
+    width: 15%;
+}
+
+.validation-info-table tr td:nth-of-type(2),
+.circuit-info-table tr td:nth-of-type(2) {
+    width: 35%;
+}
+
+.validation-info-table tr td:nth-of-type(3),
+.circuit-info-table tr td:nth-of-type(3) {
+    width: 15%;
+}
+
+.validation-info-table {
+    margin-top: 10px;
+}
+
+.validation-info-table .validation-status {
+    display: inline-block;
+}
+
+.variance-notes-area {
+    overflow: auto;
+    resize: none;
+    transform: translateY(10px);
+}
+
+.circuit-info {
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 16px;
+}
+
+.circuit-info-table tr td {
+    height: 30px;
+}
+
+.circuit-info-btns .edit {
+    width: 50px;
+}
+
+
+.yahoo-widget-container {
+    /*display: none;*/
+    /*visibility: hidden;*/
+    border:1px #666666 solid;
+}
+
+#variance-circuit-details-panel {
+    padding: 10px;
+}
+
+#two-month-items {
+    display: none;
+}

@@ -1,0 +1,124 @@
+#contractRulesPageContainer {}
+
+#contractRulesPageContainer .clearfix:before,
+#contractRulesPageContainer .clearfix:after {
+    display: table;
+    content: '';
+}
+
+#contractRulesPageContainer .clearfix:after {
+    clear: both;
+}
+
+#contractRulesPageContainer .pull-left {
+    float: left;
+}
+
+#contractRulesPageContainer .pull-right {
+    float: right;
+}
+
+#contractRulesPageContainer .tabDetailView {
+    width: 100%;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-collapse: collapse;
+}
+
+#contractRulesPageContainer .searchItemPanel table {
+    width: 100%;
+}
+
+#contractRulesPageContainer .searchItemPanel table td {
+    height: 25px;
+    line-height: 25px;
+}
+
+#contractRulesPageContainer .searchItemPanel table td input[type="text"] {
+    height: 20px;
+    width: 230px;
+    padding: 3px;
+}
+
+#contractRulesPageContainer .searchItemPanel a:link,
+#contractRulesPageContainer .searchItemPanel a:hover {
+    text-decoration: none;
+}
+
+#contractRulesPageContainer .searchItemPanel .Date {
+    height: 20px;
+    padding: 3px;
+    width: 140px;
+}
+
+#contractRulesPageContainer .searchItemPanel .calendar-image-link {
+    display: inline-block;
+    transform: translateY(4px);
+}
+
+#effectiveDateImg {
+    vertical-align: middle;
+}
+
+
+/* 取消搜索条件中下拉列表的行高度样式。 */
+#contractRulesPageContainer #summary-vendor-name-filter-list .content .row,
+#contractRulesPageContainer #key-field-filter-list .content .row,
+#contractRulesPageContainer #sub-product-filter-list .content .row,
+#contractRulesPageContainer #contract-name-filter-list .content .row  {
+    line-height: normal;
+}
+
+#contractRulesPageContainer .buttons-container input {
+    cursor: pointer;
+}
+
+#contractRulesPageContainer .buttons-container .clear-contract-rules--button {
+    margin-left: 5px;
+}
+
+#summary-and-details {
+    margin-top: 15px;
+}
+
+
+/* 表格样式 */
+#contractRulesPageContainer .contract-rules-list {
+    width: 100%;
+}
+
+#contractRulesPageContainer .contract-rules-list .wrapper-inner-table {
+    table-layout: fixed; 
+    overflow-x: auto;
+    width: 100%;
+}
+
+#contractRulesPageContainer .contract-rules-list .data-table-wrapper {
+    width:100%; 
+    overflow-x: auto; 
+    padding-bottom: 20px;
+}
+
+#contractRulesPageContainer .contract-rules-pagination-TD {
+    padding-top: 15px;
+}
+
+#contractRulesPageContainer #contract-rules-dataTable-page {
+    float: left;
+}
+
+#contractRulesPageContainer .oper-buttons {
+    float: left;
+    margin-left: 15px;
+}
+
+#contractRulesPageContainer .oper-buttons input[type="button"] {
+    cursor: pointer;
+}
+
+#contract-rules-data-table .align-right {
+    text-align: right;
+}
+
+
+

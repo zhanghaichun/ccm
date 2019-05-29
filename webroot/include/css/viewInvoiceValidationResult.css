@@ -1,0 +1,448 @@
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: '';
+}
+.clearfix:after {
+	clear: both;
+}
+
+/* validation_result 最外层元素的样式。 */
+#validationResultPanel #pageContainer { 
+    font-size: 13px;
+    border: none;
+    background: white;
+}
+
+
+/* 容纳 validation_result 表格的外层容器的样式。 */
+#validationResultPanel #pageContainer .table-container {
+    padding: 0 15px 15px;
+    background: #f6f6f6;
+    border: 1px solid #B5BBC9;
+    border-radius: 1px;
+    margin-bottom: 20px;
+}
+
+/* 表格和Download Reference File 按钮之间的分割线。 */
+#validationResultPanel #pageContainer .table-container hr {
+    margin: 15px auto;
+}
+
+/* validation_result 中的 Download Reference File 按钮的样式。 */
+#validationResultPanel #pageContainer .table-container .download-file input {
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/* validation_result 标题样式。 */
+#validationResultPanel #pageContainer .header-line {
+	positive:relative;
+}
+
+/* validation_result memory模块样式。 */
+#validationResultPanel #pageContainer .header-line .memory-container {
+	position: absolute;
+    top: 60px;
+    right:18px;
+
+    display:none;
+
+    width: 655px;
+    /*height: 250px;*/
+    padding:15px;
+    border:1px solid transparent;
+    background: white;
+    z-index:2;
+    box-shadow: 0 0 6px 4px rgba(192,192,192,.4);
+}
+
+/* 控制memory 容器显示与隐藏的CheckBox */
+#validationResultPanel #pageContainer .header-line #memory-container-checkbox {
+    display:none;
+}
+
+#validationResultPanel #pageContainer .header-line #memory-container-checkbox:checked + .memory-container{
+    display:block;
+}
+
+/* 三角形箭头指向图标 */
+#validationResultPanel #pageContainer .header-line .memory-container:after {
+	position: absolute;
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    right: 18px;
+    top: -7px;
+    border: inherit;
+    box-shadow: -4px -4px 6px rgba(192,192,192,.4);
+    border-bottom:none;
+    border-right:none;
+    transform: rotate(45deg);
+    background: white;
+}
+
+/* validation_result memory-title字样的样式。 */
+#validationResultPanel #pageContainer .header-line .memory-title {
+    margin-bottom: 20px;
+    color: #4A4A4A;
+    font-size: 15px;
+}
+
+#validationResultPanel #pageContainer .header-line .word-flag {
+    color: #8cbef0;
+}
+
+/* validation_result memory 弹出控件的样式 */
+
+/* validation_result 标题字样的样式。 */
+#validationResultPanel #pageContainer .header-line .modal-title {
+    color: #4A4A4A;
+    margin-bottom: 20px;
+	font-size: 18px;
+	float:left;
+}
+/* validation_result memory 按钮button。 */
+#validationResultPanel #pageContainer .header-line .modal-memory-button {
+}
+
+#validationResultPanel #pageContainer .header-line .memory-button-label {
+	float:right;
+	margin-right: 5px;
+	display:block;
+    cursor: pointer;
+}
+
+.header-line .filters-exhibition .left-filters {
+    float: left;
+    width: 50%;
+    border: 1px solid #d5dae1;
+    background: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.header-line .filters-exhibition .right-filters {
+    float: left;
+    width: 50%;
+    border: 1px solid #d5dae1;
+    border-left: none;
+    background: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.header-line table {
+    width: 100%;
+}
+
+.header-line table td {
+    height: 25px;
+    line-height: 25px;
+    padding: 0 7px;
+}
+
+#product-filter-list .content .row,
+#product-component-filter-list .content .row,
+#province-filter-list .content .row {
+    line-height: normal;
+}
+
+.header-line .filters-exhibition table td:first-child {
+    text-align: left;
+    color: #9B9B9B;
+}
+
+.header-line .filters-exhibition table td:last-child {
+    text-align: right;
+}
+
+.header-line .memory-buttons-container {
+    margin-top: 20px;
+}
+
+.header-line .memory-buttons-container input {
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.header-line .search-filters .rate {
+    height: 19px;
+    width: 184px;
+}
+
+.header-line .filters-search-controller {
+    padding: 10px 0;
+    margin-top: 20px;
+    border: 1px solid #B8BFCD;
+}
+
+.header-line .product-filter-td,
+.header-line .province-filter-td {
+    padding: 0;
+}
+
+
+
+/* validation_result 表格元素中 td 元素的样式。 */
+.validation-result-table td {
+    width: 50%;
+    height: 30px;
+    color: #4A4A4A;
+    position: relative;
+}
+
+
+.validation-result-table tr.highlight-field td:nth-of-type(even) {
+    border-right: none;
+}
+
+/* 每一个 result 中 label 标签元素的样式。 */
+.validation-result-table label {
+    margin-right: 8px;
+}
+
+/* 需要设置文字对齐的两个元素的 label 标签的样式。
+notes, Validation_method 和 component 中如果文字过多，也会在左对齐
+的情况下正常显示。 */
+.validation-result-table .notes-label,
+.validation-result-table .validation-method-label,
+.validation-result-table .component-label {
+    float: left;
+}
+
+/* 只有在 audit_reference_type为 Contract, Price List 和 Tariff的时候
+才会显示的details 链接的样式。  */
+.validation-result-table .reference_type_info a {
+    color: #1364C2;
+}
+
+.desc-popup-container .title-bar {
+    font-size: 14px; 
+    color: #4A4A4A;
+    min-width: 400px; 
+    padding-left:10px;
+    font-weight: 600;
+}
+
+
+/* 金额 */
+.validation-result-table .amount {
+    font-family: Arial-BoldMT;
+    font-weight: bolder;
+    color: black;
+}
+
+/* 将金额中的 amount result 显示我红色，
+注意：只有当 validation result 的结果为 failed 的时候，才会显示红色结果。 */
+.validation-result-table .amount.amount-red {
+    color: #d0021b;
+}
+
+/* 元素中的文字样式以及位置进行微调。 */
+.validation-result-table .audit-result-notes {
+    color: #9B9B9B;
+    letter-spacing: 0.14px;
+    line-height: 1.5;
+    transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
+    margin-left: 46px;
+    max-width: 676px;
+    overflow-x: auto;
+}
+.validation-result-table .validation-method {
+    color: black;
+    font-weight:900;
+    letter-spacing: 0.14px;
+    line-height: 1.5;
+    transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
+    max-width: 676px;
+    overflow-x: auto;
+}
+
+.validation-result-table .component {
+    margin-left: 73px;
+}
+
+.validation-result-table .tax-validation-table caption {
+
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.validation-result-table .tax-validation-table td,
+.validation-result-table .tax-validation-table th {
+    width: 33.333%;
+    text-align: left;
+}
+
+/* 只有在reference type 是 Contract, Tariff, Price List 的 时候使用以下样式 start */
+#validationResultPanel #pageContainer .reference_type_info .ctp_validation_detail {
+	width: 550px;
+    /*height: 270px;*/
+    position: absolute;
+    /*top: -302px;*/
+    left: 22px;
+    border:1px solid transparent;
+    background: white;
+    box-shadow: 0 0 6px 4px rgba(192,192,192,.4);
+    display: none;
+    padding: 15;
+}
+
+/* 三角形箭头指向图标 */
+#validationResultPanel #pageContainer .ctp_validation_detail:after {
+	position: absolute;
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    /* top: 295px;*/
+    border: inherit;
+    box-shadow: 3px 3px 4px rgba(192,192,192,.4);
+    border-bottom:none;
+    border-right:none;
+    transform: rotate(45deg);
+    background: white;
+}
+
+/** contract, tariff, price list 窗口中 头部分table的样式  */
+#validationResultPanel #pageContainer .ctp_validation_detail_table_top{
+	width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* contract 窗口中 table的样式 start */
+.ctp_contract_validation_detail_table {
+	padding-top: 10px; 
+	padding-bottom: 10px;
+    width: 100%
+}
+
+.ctp_contract_validation_detail_table .detail_left_td {
+	height:20px;
+	color: #444444; 
+}
+
+.ctp_contract_validation_detail_table .detail_right_td {
+	height:20px;
+	color: black; 
+	font-weight: 600;
+	text-align: right;
+}
+/* tariff 窗口中 table的样式 start */
+
+.ctp_tariff_validation_detail_table_left {
+	padding-top: 10px; 
+	padding-bottom: 10px; 
+	width: 50%; 
+	float: left;
+	padding-right: 10px
+}
+
+.ctp_tariff_validation_detail_table_right {
+	padding-top: 10px; 
+	padding-bottom: 10px; 
+	padding-left: 10px;
+	width: 50%;
+}
+
+.ctp_tariff_validation_detail_table_left .detail_left_td,
+.ctp_tariff_validation_detail_table_right .detail_left_td {
+	height:20px;
+	color: #444444; 
+}
+
+.ctp_tariff_validation_detail_table_left .detail_right_td,
+.ctp_tariff_validation_detail_table_right .detail_right_td {
+	height:20px;
+	color: black; 
+	font-weight: 600;
+	text-align: right;
+}
+.link-container {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    overflow: auto;
+}
+
+.table-separate-line {
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: #ccc;
+}
+
+.contract-link-left-part {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.contract-link-right-part {
+    width: 50%;
+    padding: 10px;
+}
+/* price list 窗口中 table 的样式  start*/
+.ctp_price_list_validation_detail_table_left {
+	padding-top: 10px; 
+	padding-bottom: 10px; 
+	width: 50%;
+	border-right-color: #cccccc;
+	border-right-style: solid;
+	border-right-width: 1; 
+	float: left;
+	padding-right: 10px
+}
+
+.ctp_price_list_validation_detail_table_right {
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	padding-left: 10px;
+	width: 50%;
+}
+
+.ctp_price_list_validation_detail_table_left .detail_left_td,
+.ctp_price_list_validation_detail_table_right .detail_left_td {
+	height:20px;
+	color: #444444; 
+}
+
+.ctp_price_list_validation_detail_table_left .detail_right_td,
+.ctp_price_list_validation_detail_table_right .detail_right_td {
+	height:20px;
+	color: black; 
+	font-weight: 600;
+	text-align: right;
+}
+
+/* download 连接icon */
+.ctp_a {
+	position: absolute;
+    width: 25px;
+    height: 15px;
+    right: 20px;
+    top: 20px;
+    background: url(../images/validation_status/sprite.png) no-repeat 0px -300px;
+    cursor: pointer
+}
+
+/* 只有在reference type 是 Contract, Tariff, Price List 的 时候使用以下样式 end */
+
+.validation-result-table .rate_text_td {
+    color: black;
+}
+
+.rate_text_td .rate-text-label {
+    font-weight: bold;
+}
+
+.rate-text {
+    margin-top: 5px;
+    line-height: 17px;
+    overflow: auto;
+}

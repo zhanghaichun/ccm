@@ -1,0 +1,89 @@
+
+/* This is a general css rules file for all themes */
+
+/* Left menu: header of context menu */
+#Left_Menu .ML_Head{ 
+	 
+	height:25px; 
+	
+	padding-left: 12px;
+	
+	line-height:25px;
+	 
+	color:#000000;
+	font-weight: bold;
+}
+
+
+/* Invoice section */
+#Left_Menu .sections-menu > li > div {
+	height:25px;
+	cursor: pointer;
+}
+
+#Left_Menu #My_Workspace_Menu > li.past-due  span {
+	color:#f00;
+	font-weight:bold;
+	font-size:12;
+}
+
+#Left_Menu .sections-menu > li  img {
+	width: 12px;
+	height: 12px;
+	vertical-align: text-bottom;
+}
+
+#Left_Menu #My_Workspace_Menu > li.past-due  img {
+	width: 16px;
+	height: 16px;
+}
+
+#Left_Menu .sections-menu > li > div > div:first-child {
+	float:left;
+	padding:6px 0 0 5px;
+	border:none;
+}
+
+#Left_Menu #My_Workspace_Menu > li.past-due > div > div:first-child {
+	padding:4px 0 0 5px;
+}
+
+#Left_Menu .sections-menu > li > div > div:last-child{
+	float:left;
+	height:25px;
+	margin-left: 8px;
+	border:none;
+	line-height:25px;
+}
+
+/* Submenu list items */
+#Left_Menu .submenu-section {
+	display: none;
+}
+
+#Left_Menu .submenu-section li > div {
+	height: 25px;
+}
+
+#Left_Menu .submenu-section li > div > div:first-child {
+	float: left;
+	padding: 6px 0 0 5px;
+	border: none;
+	margin-left: 5px;
+}
+
+#Left_Menu .submenu-section li > div > div:first-child img {
+	width: 12px;
+	height: 12px;
+	vertical-align: text-bottom;
+}
+
+#Left_Menu .submenu-section li > div > div:last-child {
+	float: left;
+	
+	height: 25px;
+	margin-left: 12px;
+	
+	line-height: 25px;
+	border: none;
+}

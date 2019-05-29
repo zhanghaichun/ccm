@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>  
+    <definition name="ccmMainTemplate" template="/WEB-INF/pages/layout.jsp">
+        <put-attribute name="header" value="/WEB-INF/pages/header.jsp"/>
+        <put-attribute name="leftPanel" value="/WEB-INF/pages/common/leftPanel4Workspace.jsp"/>
+        <put-attribute name="mainPanel" value=""/>
+        <put-attribute name="messagePanel" value="/WEB-INF/pages/message.jsp"/>
+        <!-- put-attribute name="footer" value="/WEB-INF/pages/footer.jsp"/ -->
+    </definition>
+    
+    <definition name="downloadErrorView" extends="ccmMainTemplate">
+        <put-attribute name="mainPanel" value="/WEB-INF/pages/common/errorMain.jsp"/>
+    </definition>
+</tiles-definitions>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.report" extends="ccm">
+ 
+    	<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+		</result-types>
+    	
+    		<action name="doValidateUserReportFunction" class="com.saninco.ccm.action.report.ReportAdminAction" method="doValidateUserReportFunction"/>
+    		
+    		<action name="associationDeleteTags" class="com.saninco.ccm.action.report.ReportAdminAction" method="associationDeleteTags"/>
+    	
+    		<action name="validationTags" class="com.saninco.ccm.action.report.ReportAdminAction" method="validationTags"/>
+    	
+    		<action name="reportAdminTagsAndRolesJudgementData" class="com.saninco.ccm.action.report.ReportAdminAction" method="reportAdminTagsAndRolesJudgementData"/>
+		
+			<action name="updateReportAdminTags" class="com.saninco.ccm.action.report.ReportAdminAction" method="upReportTags"/>
+		
+			<action name="addReportAdminTags" class="com.saninco.ccm.action.report.ReportAdminAction" method="addReportAdminTags"/>
+		
+			<action name="delReportTags" class="com.saninco.ccm.action.report.ReportAdminAction" method="delReportTags"/>
+			
+			<action name="doSearchTagsSelect" class="com.saninco.ccm.action.report.ReportAdminAction" method="searchTagsSelect"/>
+			
+			<action name="getReportAdminTagsTotalPageNo" class="com.saninco.ccm.action.report.ReportAdminAction" method="getReportAdminTagsTotalPageNo"/>
+			
+			<action name="searchReportAdminTags" class="com.saninco.ccm.action.report.ReportAdminAction" method="searchReportAdminTags"/>
+			
+			<action name="doSearchReportsSelect" class="com.saninco.ccm.action.report.ReportAdminAction" method="searchReportsSelect"/>
+			
+			<action name="dosaveReports" class="com.saninco.ccm.action.report.ReportAdminAction" method="saveReports"/>
+		
+			<action name="getReportAdminTagsAndRolesTotalPageNo" class="com.saninco.ccm.action.report.ReportAdminAction" method="getReportAdminTagsAndRolesTotalPageNo"/>
+			
+			<action name="searchReportAdminTagsAndRoles" class="com.saninco.ccm.action.report.ReportAdminAction" method="searchReportAdminTagsAndRoles"/>
+			
+			<action name="updateReportAdminTagsAndRoles" class="com.saninco.ccm.action.report.ReportAdminAction" method="upReportTagsAndRoles"/>
+		
+			<action name="addReportAdminTagsAndRoles" class="com.saninco.ccm.action.report.ReportAdminAction" method="addReportAdminTagsAndRoles"/>
+		
+			<action name="delReportTagsAndRoles" class="com.saninco.ccm.action.report.ReportAdminAction" method="delReportTagsAndRoles"/>
+			
+			<action name="delTeam" class="com.saninco.ccm.action.report.ReportAdminAction" method="delTeam"/>
+						
+	    	<action name="reportUser" class="com.saninco.ccm.action.report.ReportUserAction" method="exec">
+			  	<result name="success" type="tiles">reportUserPage</result>
+			</action>
+			
+			<action name="doReportParameterFunction" class="com.saninco.ccm.action.report.ReportUserAction" method="doReportParameterFunction"/>
+			
+			<action name="doSearchChargeTypeList" class="com.saninco.ccm.action.report.ReportUserAction" method="searchChargeTypeList"/>
+
+			<action name="doGetReportTotalNOTags" class="com.saninco.ccm.action.report.ReportUserAction" method="getReportTotalNOTags"/>
+			
+			<action name="doSearchReportTags" class="com.saninco.ccm.action.report.ReportUserAction" method="searchReportTags"/>
+			
+			<action name="saveCreatedReport" class="com.saninco.ccm.action.report.ReportUserAction" method="saveCreatedReport"/>
+			
+			<action name="checkReportNameIsRepeat" class="com.saninco.ccm.action.report.ReportUserAction" method="checkNameIsRepeat"/>
+			
+			<action name="doGetViewReportTotalNOTags" class="com.saninco.ccm.action.report.ReportUserAction" method="getViewReportTotalNOTags"/>
+			
+			<action name="doSearchViewReportTags" class="com.saninco.ccm.action.report.ReportUserAction" method="searchViewReportTags"/>
+			
+			<action name="doViewNameTotalNOTags" class="com.saninco.ccm.action.report.ReportUserAction" method="getViewNameTotalNOTags"/>
+			
+			<action name="doViewSearchName" class="com.saninco.ccm.action.report.ReportUserAction" method="viewSearchName"/>
+			
+			<action name="getVendorNameByBanId" class="com.saninco.ccm.action.report.ReportUserAction" method="getVendorNameByBanId"/>
+			
+			<action name="testActionForReport" class="com.saninco.ccm.action.report.ReportUserAction" method="testActionForReport"/>
+			
+			 <action name="deleteReportById" class="com.saninco.ccm.action.report.ReportUserAction" method="deleteReport"/>
+			 
+			<action name="colorPickerControl" class="com.saninco.ccm.action.report.ColorPickerControlAction" method="exec">
+			  	<result name="success">/WEB-INF/pages/report/colorPickerControl.jsp</result>
+			</action>
+			
+			<action name="getTeamTotalPageNo" class="com.saninco.ccm.action.report.ReportAdminAction" method="getTeamTotalPageNo"/>
+				
+			<action name="searchTeams" class="com.saninco.ccm.action.report.ReportAdminAction" method="searchTeams"/>
+					
+			<action name="updateTeam" class="com.saninco.ccm.action.report.ReportAdminAction" method="updateTeam"/>
+						
+			<action name="addTeam" class="com.saninco.ccm.action.report.ReportAdminAction" method="addTeam"/>
+						
+    </package>
+</struts>

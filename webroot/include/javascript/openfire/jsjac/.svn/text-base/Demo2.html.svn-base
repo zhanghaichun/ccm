@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JSJaC Simple CORS Client</title>
+
+        <script type="text/javascript" src="js/JSJaC.js"></script>
+
+        <script type="text/javascript">
+            var server = "192.168.0.74";
+            var username = 'xin.huang';
+			var resource = 'SPS';
+			var password = '1';
+			var sendTo = 'xin@192.168.0.74';
+            var oDbg, con;
+        
+            // <![CDATA[
+            function handleIQ(oIQ) {
+                // oIQ.xml().htmlEnc()
+                con.send(oIQ.errorReply(ERR_FEATURE_NOT_IMPLEMENTED));
+            }
+
+            function handleMessage(oJSJaCPacket) {
+                //  oJSJaCPacket.getFromJID()
+                // oJSJaCPacket.getBody().htmlEnc()
+                console.debug(oJSJaCPacket.getBody());
+                alert(oJSJaCPacket.getBody().htmlEnc());
+            }
+
+            function handlePresence(oJSJaCPacket) {
+            }
+
+            function handleError(e) {
+                alert("An error occured:<br />" + ("Code: " + e.getAttribute('code') + "\nType: " + e.getAttribute('type') + "\nCondition: " + e.firstChild.nodeName).htmlEnc());
+                if (con.connected())
+                    con.disconnect();
+            }
+
+            function handleStatusChanged(status) {
+                oDbg.log("status changed: " + status);
+            }
+
+            function handleConnected() {
+                con.send(new JSJaCPresence());
+            }
+
+            function handleDisconnected() {
+            }
+
+            function handleIqVersion(iq) {
+                con.send(iq.reply([iq.buildNode('name', 'jsjac simpleclient'), iq.buildNode('version', JSJaC.Version), iq.buildNode('os', navigator.userAgent)]));
+                return true;
+            }
+
+            function handleIqTime(iq) {
+                var now = new Date();
+                con.send(iq.reply([iq.buildNode('display', now.toLocaleString()), iq.buildNode('utc', now.jabberDate()), iq.buildNode('tz', now.toLocaleString().substring(now.toLocaleString().lastIndexOf(' ') + 1))]));
+                return true;
+            }
+
+            function doLogin() {
+                oArgs = new Object();
+                    
+                oDbg = new JSJaCConsoleLogger(3);
+                // reset
+
+                try {
+                    
+                    if (window.location.protocol !== "https:"){
+                        httpbase = 'http://' + server + ':7070/http-bind/';
+                    } else {
+                        httpbase = 'https://' + server + ':7443/http-bind/';
+                    }
+                    
+                    // set up the connection
+                    con = new JSJaCHttpBindingConnection({
+                        oDbg: oDbg,
+                        httpbase: httpbase,
+                        timerval: 500
+                    });
+
+                    setupCon(con);
+
+                    // setup args for connect method
+                    oArgs.domain = server;
+                    oArgs.username = username;
+                    oArgs.resource = resource;
+                    oArgs.pass = password;
+                   // oArgs.register = oForm.register.checked;
+                    con.connect(oArgs);
+                } catch (e) {
+                    alert(e.toString());
+                } finally {
+                    return false;
+                }
+            }
+
+            function setupCon(oCon) {
+                oCon.registerHandler('message', handleMessage);
+                oCon.registerHandler('presence', handlePresence);
+                oCon.registerHandler('iq', handleIQ);
+                oCon.registerHandler('onconnect', handleConnected);
+                oCon.registerHandler('onerror', handleError);
+                oCon.registerHandler('status_changed', handleStatusChanged);
+                oCon.registerHandler('ondisconnect', handleDisconnected);
+
+                oCon.registerIQGet('query', NS_VERSION, handleIqVersion);
+                oCon.registerIQGet('query', NS_TIME, handleIqTime);
+            }
+
+            function sendMsg(message) {
+                try {
+                    var oMsg = new JSJaCMessage();
+                    oMsg.setTo(new JSJaCJID(sendTo));
+                    oMsg.setBody(message);
+                    con.send(oMsg);
+
+                    return false;
+                } catch (e) {
+                    alert(e.message);
+                    return false;
+                }
+            }
+
+            function quit() {
+                var p = new JSJaCPresence();
+                p.setType("unavailable");
+                con.send(p);
+                con.disconnect();
+            }
+
+
+            onunload = function() {
+                if ( typeof con != 'undefined' && con && con.connected()) {
+                    // save backend type
+                    if (con._hold)// must be binding
+                        (new JSJaCCookie('btype', 'binding')).write();
+                    else
+                        (new JSJaCCookie('btype', 'polling')).write();
+                    if (con.suspend) {
+                        con.suspend();
+                    }
+                }
+            };
+
+            // ]]>
+        </script>
+        <style type="text/css">
+            /*<![CDATA[*/
+            body {
+                font-family: "Bitstream Vera Sans", "Verdana", sans;
+                font-size: 0.8em;
+                margin: 12px;
+            }
+            h2 {
+                border-bottom: 1px solid grey;
+            }
+            input {
+                border: 1px solid grey;
+            }
+            #iResp {
+                width: 420px;
+                height: 260px;
+                overflow: auto;
+                border: 2px dashed grey;
+                padding: 4px;
+            }
+            #msgArea {
+                width: 420px;
+                height: 45px;
+                padding: 4px;
+                margin: 0;
+                border: 2px dashed grey;
+            }
+            .spaced {
+                margin-bottom: 4px;
+            }
+            .msg {
+                border-bottom: 1px solid black;
+            }
+            .error {
+                font-weight: bold;
+                color: red;
+            }
+            /*]]>*/
+        </style>
+    </head>
+    <body>
+
+        <div id="login_pane">
+            <h2>Login</h2>
+            <form name="loginForm" onSubmit="return doLogin();" action="#">
+                  <input type="submit" value="Login" tabindex="7"/>
+            </form>
+        </div>
+    </body>
+</html>

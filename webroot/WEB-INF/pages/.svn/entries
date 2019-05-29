@@ -1,0 +1,248 @@
+10
+
+dir
+10640
+svn://192.168.0.71/svntest/ccm-production-mrc-variance/webroot/WEB-INF/pages
+svn://192.168.0.71/svntest
+
+
+
+2019-04-26T04:40:12.157960Z
+10577
+yong.zhang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2f4b01f1-ed84-4fc5-8e0d-a9e6e3299111
+
+ticket
+dir
+
+operations
+dir
+
+header.jsp
+file
+
+
+
+
+2019-05-16T02:54:42.548629Z
+7c121f4a13a21306d7400f84b453ab8f
+2018-12-12T06:52:01.902782Z
+10213
+yong.zhang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8934
+
+system
+dir
+
+message
+dir
+
+contractTariffPriceList
+dir
+
+pricelist
+dir
+
+circuitpage
+dir
+
+ban
+dir
+
+circuit
+dir
+
+contractTab
+dir
+
+masterInventory
+dir
+
+report
+dir
+
+dispute
+dir
+
+contract
+dir
+
+message.jsp
+file
+
+
+
+
+2019-05-16T05:11:20.377518Z
+c76c31bf850b36ed9c1b0ff8afca386e
+2016-08-25T01:06:34.430684Z
+7804
+guanhuibin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+167047
+
+rateSearch
+dir
+
+target
+dir
+
+dashboard
+dir
+
+common
+dir
+
+admin
+dir
+
+footer.jsp
+file
+
+
+
+
+2019-05-16T02:54:42.539628Z
+fd6751019f3f450e71c3badf3c343094
+2012-05-03T02:13:54.372785Z
+13
+limingyang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+673
+
+invoice
+dir
+
+vendor
+dir
+
+profile
+dir
+
+circuitold
+dir
+
+wiki
+dir
+
+security
+dir
+
+contractAndTariffRules
+dir
+
+layout.jsp
+file
+
+
+
+
+2019-05-16T02:54:42.542628Z
+51d874ace2ace60c5c1cecd94e4c3640
+2016-08-09T16:57:10.767285Z
+7736
+guanhuibin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14677
+
+quoteInventory
+dir
+
+payment
+dir
+

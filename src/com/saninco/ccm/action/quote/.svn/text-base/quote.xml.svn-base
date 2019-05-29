@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.quote.QuoteAction" extends="ccm">
+		<action name="uploadQuote" class="com.saninco.ccm.action.quote.QuoteAction" method="uploadQuote">
+			<result name="success">/WEB-INF/pages/quoteInventory/uploadQuoteSuccess.jsp</result>
+		</action>
+		<action name="downLoadQuoteErrorFile" class="com.saninco.ccm.action.quote.QuoteAction" method="downLoadQuoteErrorFile"></action>
+    </package>
+</struts>
+
+

@@ -1,0 +1,31 @@
+BODY, .normalTable {
+	font-family:Arial,Helvetica,Geneva, sans-serif;
+	font-size:70%;
+	background:#FFFFFF; 
+	margin-left:1; 
+	margin-top:1
+}
+.TRHeader{
+	background-color: #7B8FB4; 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 60%;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.TableTR{
+	background-color: #FFFFFF; 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 60%;
+	text-decoration: none;
+	color: 0;
+}
+.approveButton{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 60%;
+	text-decoration: none;
+	margin: 1px;
+	padding: 0px;
+}
+.flen{
+	width:60px;
+}

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                         http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                        http://www.springframework.org/schema/security
+                         http://www.springframework.org/schema/security/spring-security-2.0.1.xsd">
+    <beans:bean id="springSecurityFilterChain" class="org.springframework.security.util.FilterChainProxy">
+        <filter-chain-map path-type="ant">
+            <filter-chain filters="none" pattern="/bb/login.action"/>
+            <filter-chain filters="none" pattern="/login.action"/>
+            <filter-chain filters="none" pattern="/doExternalAproveFromEmail.action"/>
+            <filter-chain filters="none" pattern="/doExternalRejectFromEmail.action"/>
+             <filter-chain filters="none" pattern="/doExternalCommentsFromEmail.action"/> 
+             <filter-chain filters="none" pattern="/doExternalCommentsNote.action"/>                 
+            <filter-chain filters="none" pattern="/doViewOriginalList.action"/>
+            <filter-chain filters="none" pattern="/createUsageInvoiceNote.action"/>
+            <filter-chain filters="none" pattern="/downloadInvoiceOriginalFile.action"/>
+            <filter-chain filters="none" pattern="/pwdReset.action"/>
+            <filter-chain filters="none" pattern="/doPwdReset.action"/>
+            <filter-chain filters="none" pattern="/doGetUserLoginPicByUname.action"/>
+            <filter-chain filters="none" pattern="/showUserPicture.action"/>
+            <filter-chain filters="none" pattern="/favicon.ico"/>
+	        <filter-chain pattern="/include/**" filters="none" />
+	        <filter-chain pattern="/themes/**" filters="none" />
+	        <filter-chain pattern="/wikifilepath/**" filters="none" />
+	        
+	        <filter-chain pattern="/downloadReportFile.action"
+ 				filters="httpSessionContextIntegrationFilter, logoutFilter, 
+                securityContextHolderAwareRequestFilter, 
+                exceptionTranslationFilter"/>
+	        
+            <filter-chain pattern="/bb/**"
+                filters="httpSessionContextIntegrationFilter, bbLogoutFilter,
+                bbAuthenticationProcessingFilter, securityContextHolderAwareRequestFilter,
+                bbExceptionTranslationFilter, 
+                bbFilterSecurityInterceptor" />
+                
+            <filter-chain pattern="/**" 
+            	filters="httpSessionContextIntegrationFilter, logoutFilter, 
+                authenticationProcessingFilter, securityContextHolderAwareRequestFilter, 
+                exceptionTranslationFilter, 
+                filterSecurityInterceptor"/>
+        </filter-chain-map>
+    </beans:bean>
+    
+    <beans:bean id="httpSessionContextIntegrationFilter"
+                class="org.springframework.security.context.HttpSessionContextIntegrationFilter" />
+                
+    <beans:bean id="authenticationManager" class="org.springframework.security.providers.ProviderManager"> 
+        <beans:property name="providers"> 
+            <beans:list> 
+                <beans:ref bean="logonService" /> 
+            </beans:list> 
+        </beans:property> 
+    </beans:bean> 
+    
+    <beans:bean id="bbAuthenticationManager" class="org.springframework.security.providers.ProviderManager"> 
+        <beans:property name="providers"> 
+            <beans:list> 
+                <beans:ref bean="bbLogonService" /> 
+            </beans:list> 
+        </beans:property> 
+    </beans:bean> 
+    
+    <beans:bean id="authenticationProcessingFilter" class="org.springframework.security.ui.webapp.AuthenticationProcessingFilter">
+        <beans:property name="invalidateSessionOnSuccessfulAuthentication" value="true" />
+        <beans:property name="authenticationManager" ref="authenticationManager" />
+        <beans:property name="authenticationFailureUrl" value="/login.action?login_error=1" />
+        <beans:property name="defaultTargetUrl" value="/index.jsp" />
+        <beans:property name="filterProcessesUrl" value="/j_spring_security_check" />
+    </beans:bean>
+    <beans:bean id="bbAuthenticationProcessingFilter" class="org.springframework.security.ui.webapp.AuthenticationProcessingFilter">
+        <beans:property name="invalidateSessionOnSuccessfulAuthentication" value="true" />
+        <beans:property name="authenticationManager" ref="bbAuthenticationManager" />
+        <beans:property name="authenticationFailureUrl" value="/bb/login.action?login_error=1" />
+        <beans:property name="defaultTargetUrl" value="/bb/listUserBackup.action" />
+        <beans:property name="filterProcessesUrl" value="/bb/j_spring_security_check" />
+    </beans:bean>
+
+    <beans:bean id="logoutFilter" class="org.springframework.security.ui.logout.LogoutFilter">
+        <beans:constructor-arg value="/login.action" />
+        <beans:constructor-arg>
+            <beans:list>
+                <beans:bean class="org.springframework.security.ui.logout.SecurityContextLogoutHandler">
+					<beans:property name="invalidateHttpSession" value="true"/>
+		    	</beans:bean>
+            </beans:list>
+        </beans:constructor-arg>
+        <beans:property name="filterProcessesUrl" value="/j_spring_security_logout" />
+    </beans:bean>
+    
+    <beans:bean id="bbLogoutFilter" class="org.springframework.security.ui.logout.LogoutFilter">
+        <beans:constructor-arg value="/bb/login.action" />
+        <beans:constructor-arg>
+            <beans:list>
+                <beans:bean class="org.springframework.security.ui.logout.SecurityContextLogoutHandler">
+				<beans:property name="invalidateHttpSession" value="true"/>
+		    </beans:bean>
+            </beans:list>
+        </beans:constructor-arg>
+        <beans:property name="filterProcessesUrl" value="/bb/j_spring_security_logout" />
+    </beans:bean>
+
+    <beans:bean id="securityContextHolderAwareRequestFilter"
+                class="org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter" />
+
+    <beans:bean id="exceptionTranslationFilter" class="org.springframework.security.ui.ExceptionTranslationFilter">
+        <beans:property name="authenticationEntryPoint">
+            <beans:bean class="com.saninco.ccm.filter.CustomAuthenticationProcessingFilterEntryPoint">
+                <beans:property name="loginFormUrl" value="/login.action" />
+                	<beans:property name="forceHttps" value="false" />
+            	</beans:bean>
+        </beans:property>
+        <!-- property name="accessDeniedHandler" ref="accessDeniedHandler" / -->
+    </beans:bean>
+    
+    <beans:bean id="bbExceptionTranslationFilter" class="org.springframework.security.ui.ExceptionTranslationFilter">
+        <beans:property name="authenticationEntryPoint">
+            <beans:bean class="org.springframework.security.ui.webapp.AuthenticationProcessingFilterEntryPoint">
+                <beans:property name="loginFormUrl" value="/bb/login.action"/>
+                <beans:property name="forceHttps" value="false" />
+            </beans:bean>
+        </beans:property>
+        <!-- property name="accessDeniedHandler" ref="accessDeniedHandler" / -->
+    </beans:bean>
+
+    <beans:bean id="filterSecurityInterceptor" class="org.springframework.security.intercept.web.FilterSecurityInterceptor">
+        <beans:property name="accessDecisionManager" ref="accessDecisionManager" />
+        <beans:property name="authenticationManager" ref="authenticationManager" />
+        <beans:property name="objectDefinitionSource">
+            <filter-invocation-definition-source>
+        		<intercept-url pattern="/**" access="IS_AUTHENTICATED_FULLY" />
+            </filter-invocation-definition-source>
+        </beans:property>
+    </beans:bean>
+    
+    <beans:bean id="bbFilterSecurityInterceptor" class="org.springframework.security.intercept.web.FilterSecurityInterceptor">
+        <beans:property name="accessDecisionManager" ref="accessDecisionManager" />
+        <beans:property name="authenticationManager" ref="bbAuthenticationManager" />
+        <beans:property name="objectDefinitionSource">
+            <filter-invocation-definition-source>
+                <intercept-url pattern="/bb/**" access="IS_AUTHENTICATED_FULLY"/>
+            </filter-invocation-definition-source>
+        </beans:property>
+    </beans:bean>
+    <beans:bean id="accessDecisionManager"
+    	class="org.springframework.security.vote.AffirmativeBased">
+    	<beans:property name="decisionVoters">
+    		<beans:list>
+    			<beans:bean
+    				class="org.springframework.security.vote.AuthenticatedVoter" />
+    			<!-- beans:bean
+    				class="org.springframework.security.web.access.expression.WebExpressionVoter" / -->
+    		</beans:list>
+    	</beans:property>
+    </beans:bean>
+ </beans:beans>

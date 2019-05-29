@@ -1,0 +1,40 @@
+10
+
+dir
+10640
+svn://192.168.0.71/svntest/ccm-production-mrc-variance/src/com/saninco/ccm/target
+svn://192.168.0.71/svntest
+
+
+
+2014-12-12T00:02:38.903413Z
+6253
+wenbo.zhang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2f4b01f1-ed84-4fc5-8e0d-a9e6e3299111
+
+model
+dir
+
+service
+dir
+
+dao
+dir
+
+action
+dir
+

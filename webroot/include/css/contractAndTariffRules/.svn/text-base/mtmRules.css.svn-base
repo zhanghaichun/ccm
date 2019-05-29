@@ -1,0 +1,115 @@
+#mtmRulesPageContainer {}
+
+#mtmRulesPageContainer .clearfix:before,
+#mtmRulesPageContainer .clearfix:after {
+    display: table;
+    content: '';
+}
+
+#mtmRulesPageContainer .clearfix:after {
+    clear: both;
+}
+
+#mtmRulesPageContainer .pull-left {
+    float: left;
+}
+
+#mtmRulesPageContainer .pull-right {
+    float: right;
+}
+
+#mtmRulesPageContainer .tabDetailView {
+    width: 100%;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-collapse: collapse;
+}
+
+#mtmRulesPageContainer .searchItemPanel table {
+    width: 100%;
+}
+
+#mtmRulesPageContainer .searchItemPanel table td {
+    height: 25px;
+    line-height: 25px;
+}
+
+#mtmRulesPageContainer .searchItemPanel table td input[type="text"] {
+    height: 20px;
+    width: 230px;
+    padding: 3px;
+}
+
+#mtmRulesPageContainer .searchItemPanel a:link,
+#mtmRulesPageContainer .searchItemPanel a:hover {
+    text-decoration: none;
+}
+
+#mtmRulesPageContainer .searchItemPanel .Date {
+    height: 20px;
+    padding: 3px;
+    width: 140px;
+}
+
+#mtmRulesPageContainer .searchItemPanel .calendar-image-link {
+    display: inline-block;
+    transform: translateY(4px);
+}
+
+
+/* 取消搜索条件中下拉列表的行高度样式。 */
+#mtmRulesPageContainer #charge-type-filter-list .content .row,
+#mtmRulesPageContainer #key-field-filter-list .content .row,
+#mtmRulesPageContainer #sub-product-filter-list .content .row,
+#mtmRulesPageContainer #summaryVendorNameFilterList .content .row,
+#mtmRulesPageContainer #vendorNameFilterList .content .row,
+#mtmRulesPageContainer #tariffNameFilterList .content .row {
+    line-height: normal;
+}
+
+#mtmRulesPageContainer .buttons-container input {
+    cursor: pointer;
+}
+
+#mtmRulesPageContainer .buttons-container .clear-mtmRules--button {
+    margin-left: 5px;
+}
+
+#mtmRulesPageContainer #mtmRulesSearchResultTableWrapper {
+    width: 100%;
+}
+
+#mtmRulesPageContainer #mtmRulesSearchResultTableWrapper .wrapper-inner-table {
+    table-layout: fixed; 
+    width: 100%;
+}
+
+#mtmRulesPageContainer #mtmRulesSearchResultTableWrapper .data-table-wrapper {
+    width:100%; 
+    overflow-x: auto; 
+    padding-bottom: 20px;
+}
+
+#mtmRulesPageContainer .mtmRules-pagination-TD {
+    padding-top: 15px;
+}
+
+#mtmRulesPageContainer #mtmRules-dataTable-page {
+    float: left;
+}
+
+#mtmRulesPageContainer .oper-buttons {
+    float: left;
+    margin-left: 15px;
+}
+
+#mtmRulesPageContainer .oper-buttons input[type="button"] {
+    cursor: pointer;
+}
+
+
+#mtm-rules-data-table .align-right {
+    text-align: right;
+}
+
+

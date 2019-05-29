@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.pricelist" extends="ccm">
+        <!-- pricelist 页面返回-->
+        <action name="showPricelistContent" class="com.saninco.ccm.action.pricelist.PricelistAction" method="exec">
+            <result name="success">/WEB-INF/pages/pricelist/pricelist.jsp</result>
+        </action>
+
+        <!-- pricelist 列表分页请求。 -->
+        <action name="getPricelistViewListPageNo" class="com.saninco.ccm.action.pricelist.PricelistAction" method="getPricelistViewListPageNo" />
+
+        <!-- pricelist 列表数据请求。 -->
+        <action name="searchPricelistList" class="com.saninco.ccm.action.pricelist.PricelistAction" method="searchPricelistList" />
+
+        <!-- 下载 pricelist 列表 -->
+        <action name="downloadPricelistToExcel" class="com.saninco.ccm.action.pricelist.PricelistAction" method="downloadPricelistToExcel" />
+    </package>
+</struts>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.common.ErrorPageAction" extends="ccm">
+    	 <action name="toBPLErrorPage" class="com.saninco.ccm.action.common.ErrorPageAction" method="toBPLErrorPage">
+		  	<result name="success" type="tiles">viewBPLErrorPage</result>
+		</action>
+    </package>
+</struts>

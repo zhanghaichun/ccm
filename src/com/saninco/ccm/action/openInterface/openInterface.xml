@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.openInterface" extends="ccm">
+    
+		<action name="doExternalAproveFromEmail" class="com.saninco.ccm.action.openInterface.OpenInterfaceAction" method="externalAproveFromEmail">
+			<result name="success">/WEB-INF/pages/invoice/openInterfaceEmail/externalAprovedSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/openInterfaceEmail/externalAprovedInput.jsp</result>
+			<result name="OUT">/WEB-INF/pages/invoice/openInterfaceEmail/externalAprovedOut.jsp</result>
+		</action>
+		
+		<action name="doExternalRejectFromEmail" class="com.saninco.ccm.action.openInterface.OpenInterfaceAction" method="externalRejectFromEmail">
+			<result name="success">/WEB-INF/pages/invoice/openInterfaceEmail/externalRejectSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/openInterfaceEmail/externalAprovedInput.jsp</result>
+			<result name="OUT">/WEB-INF/pages/invoice/openInterfaceEmail/externalAprovedOut.jsp</result>
+		</action>
+		
+		
+		<action name="doExternalCommentsFromEmail" class="com.saninco.ccm.action.openInterface.OpenInterfaceAction" method="externalCommentsFromEmail">
+			<result name="success">/WEB-INF/pages/invoice/openInterfaceEmail/externalCommentsNotes.jsp</result>
+			<result name="OUT">/WEB-INF/pages/invoice/openInterfaceEmail/externalAprovedOut.jsp</result>
+		</action>
+		
+		<action name="doExternalCommentsNote" class="com.saninco.ccm.action.openInterface.OpenInterfaceAction" method="externalCommentsNotes">
+		</action>
+		
+		<action name="doViewOriginalList" class="com.saninco.ccm.action.openInterface.OpenInterfaceAction" method="doViewOriginalList">
+			<result name="success">/WEB-INF/pages/invoice/openInterfaceEmail/externalOriginalTable.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/openInterfaceEmail/externalNoOriginal.jsp</result>
+		</action>
+		
+		<action name="createUsageInvoiceNote" class="com.saninco.ccm.action.openInterface.OpenInterfaceAction" method="createUsageInvoiceNote">
+		</action>
+		
+		<action name="downloadInvoiceOriginalFile" class="com.saninco.ccm.action.openInterface.OpenInterfaceAction" method="downloadInvoiceOriginalFile">
+			<result name="input">/WEB-INF/pages/invoice/openInterfaceEmail/externalNoOriginal.jsp</result>
+		</action>
+		
+		<action name="downloadReportFile" class="com.saninco.ccm.action.openInterface.OpenInterfaceAction" method="downloadReportFile">
+			<result name="Login" type="redirect">login.action</result>
+			<result name="Timeout">/WEB-INF/pages/common/fileDownload/fileDownloadTimeout.jsp</result>
+			<result name="TokenError">/WEB-INF/pages/common/fileDownload/fileDownloadTokenError.jsp</result>
+			<result name="input">/WEB-INF/pages/common/fileDownload/fileDownloadSystemError.jsp</result>
+			<result name="AgainDownload">/WEB-INF/pages/common/fileDownload/fileDownloadAgainDownload.jsp</result>
+		</action>
+		
+		<action name="securityDownloadReportFile" class="com.saninco.ccm.action.openInterface.OpenInterfaceAction" method="securityDownloadReportFile">
+			<result name="Login" type="redirect">login.action</result>
+			<result name="Timeout">/WEB-INF/pages/common/fileDownload/fileDownloadTimeout.jsp</result>
+			<result name="TokenError">/WEB-INF/pages/common/fileDownload/fileDownloadTokenError.jsp</result>
+			<result name="input">/WEB-INF/pages/common/fileDownload/fileDownloadSystemError.jsp</result>
+			<result name="AgainDownload">/WEB-INF/pages/common/fileDownload/fileDownloadAgainDownload.jsp</result>
+		</action>
+		
+    </package>
+</struts>

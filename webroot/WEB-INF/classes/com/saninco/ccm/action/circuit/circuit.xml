@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.circuit" extends="ccm">
+    <action name="searchCircuit" class="com.saninco.ccm.action.circuit.CircuitAction" method="exec">
+<!--		  	<result name="success">/WEB-INF/pages/circuit/searchCircuitChargesAndSCOAsMainPanel.jsp</result>-->
+		  	<result name="success" type="tiles">searchCircuitView</result> 
+	</action>
+	<action name="doSaveCircuitSearch" class="com.saninco.ccm.action.circuit.CircuitAction" method="saveCircuitSearch"></action>
+	<action name="doGetCircuitSearchTotalPageNo" class="com.saninco.ccm.action.circuit.CircuitAction" method="getCircuitSearchTotalPageNo"></action>
+    <action name="doSearchCircuit" class="com.saninco.ccm.action.circuit.CircuitAction" method="searchCircuit"></action>
+    <action name="doSaveExcel" class="com.saninco.ccm.action.circuit.CircuitAction" method="saveExcel"></action>
+    <action name="doSaveAllToExcel" class="com.saninco.ccm.action.circuit.CircuitAction" method="saveAllToExcel"></action>
+    <action name="dogetTabView" class="com.saninco.ccm.action.circuit.CircuitAction" method="getTabView"></action>
+    <action name="dogetCircuitDateHyperlink" class="com.saninco.ccm.action.circuit.CircuitAction" method="getCircuitDateHyperlink"></action>
+    <action name="dosaveHistoricalDataToExcel" class="com.saninco.ccm.action.circuit.CircuitAction" method="saveHistoricalDataToExcel"></action>
+	<action name="doGetVendorCircuitSearchTotalPageNo" class="com.saninco.ccm.action.circuit.CircuitAction" method="getVendorCircuitSearchTotalPageNo"></action>
+    <action name="doSearchVendorCircuit" class="com.saninco.ccm.action.circuit.CircuitAction" method="searchVendorCircuit"></action>
+	<action name="doDownloadVendorCircuitCsv" class="com.saninco.ccm.action.circuit.CircuitAction" method="doDownloadVendorCircuitCsv"></action>    
+	<action name="checkVendorCircuitCsv" class="com.saninco.ccm.action.circuit.CircuitAction" method="checkVendorCircuitCsv"></action>    
+	
+	<action name="doFindCircuitDetail" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="findCircuitDetail">
+		<result name="success" >WEB-INF/pages/invoice/circuitDetailMainPanel.jsp</result>
+	</action>    
+	<action name="doSearchTariff" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doSearchTariff">
+		<result name="success" >WEB-INF/pages/circuit/TariffMainPanel.jsp</result>
+	</action> 
+	<action name="doSearchContract" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="SearchContract">
+		<result name="success" >WEB-INF/pages/circuit/ContractMainPanel.jsp</result>
+	</action> 
+	
+	
+    <action name="showCircuitDetail" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="exec">
+    	<result name="success" type="tiles">showCircuitDetailView</result>
+    </action>
+    <action name="doSearchSCOATotalPageNo" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doSearchSCOATotalPageNo"></action>
+    <action name="doSearchSCOAList" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doSearchSCOAList"></action>
+    <action name="doSearchCostTotalPageNo" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doSearchCostTotalPageNo"></action>
+    <action name="doSearchCostList" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doSearchCostList"></action>
+    <action name="doSearchTariffTotalPageNo" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doSearchTariffTotalPageNo"></action>
+    <action name="doSearchTariffList" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doSearchTariffList"></action>
+    <action name="doSearchMappingPageNo" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doSearchMappingPageNo"></action>
+    <action name="doSearchMappingList" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doSearchMappingList"></action>
+    <action name="doUploadAttachFile" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doUploadAttachFile">
+    	<result name="success">/WEB-INF/pages/circuit/res/uploadCallbackSuccess.jsp</result>
+		<result name="input">/WEB-INF/pages/circuit/res/uploadCallbackInput.jsp</result>
+    </action>
+    <action name="deleteTariffOfVendorCircuit" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="deleteTariffOfVendorCircuit"></action>
+    <action name="doDownloadScoaCsv" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doDownloadScoaCsv"></action>
+    <action name="doDownloadCostCsv" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doDownloadCostCsv"></action>
+    <action name="doDownloadTariffCsv" class="com.saninco.ccm.action.circuit.CircuitDetailAction" method="doDownloadTariffCsv"></action>
+    </package>
+</struts>

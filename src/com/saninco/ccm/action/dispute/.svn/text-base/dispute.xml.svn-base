@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.dispute.DisputeAction" extends="ccm">
+    	
+		<action name="searchDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="exec">
+		  	<result name="success" type="tiles">searchDisputeView</result>    
+		</action>
+		
+		<action name="updateIncreaseAndDecrease" class="com.saninco.ccm.action.dispute.DisputeAction" method="updateIncreaseAndDecrease">
+		    <result name="success">/WEB-INF/pages/dispute/res/updateIncreaseAndDecreaseSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/dispute/res/updateIncreaseAndDecreaseInput.jsp</result>
+		</action>
+		
+		<action name="addReconcileSCOA" class="com.saninco.ccm.action.dispute.DisputeAction" method="addReconcileSCOA"/>
+		
+		<action name="getOutstandingReserveAmount" class="com.saninco.ccm.action.dispute.DisputeAction" method="getOutstandingReserveAmount"/>
+		
+		<action name="getDisputeAmount" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeAmount"/>
+		
+		<action name="getDisputeSCOA" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeSCOA"/>
+		
+		<action name="addOutstandingDisputeItemsSCOA" class="com.saninco.ccm.action.dispute.DisputeAction" method="addOutstandingDisputeItemsSCOA"/>
+		
+    	<action name="updateCancelRefileDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="updateCancelRefileDispute" />
+		
+    	<action name="updateRefileDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="updateRefileDispute" />
+    	
+    	<action name="updateRefileDisputeByProposal" class="com.saninco.ccm.action.dispute.DisputeAction" method="updateRefileDisputeByProposal" />
+		
+		<action name="delDisputeAttachmentFile" class="com.saninco.ccm.action.dispute.DisputeAction" method="delDisputeAttachmentFile" />
+		
+		<action name="getAccessoriesListPageNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getAccessoriesListPageNo" />
+		
+		<action name="searchAccessoriesList" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchAccessoriesList" />
+    	
+		<action name="downloadTransactionExcel" class="com.saninco.ccm.action.dispute.DisputeAction" method="downloadTransactionExcel" />
+		
+		<action name="doValidateDisputeBanLock" class="com.saninco.ccm.action.dispute.DisputeAction" method="doValidateDisputeBanLock" />
+		
+		<action name="doValiUserPrivilegeBanLockDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="doValiUserPrivilegeBanLockDispute" />
+		
+		<action name="searchTransactionHistoryList" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchTransactionHistoryList"/>
+		
+		<action name="searchDisputeNotesList" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchDisputeNotesList"/>
+		
+		<action name="getDisputeNotesListPageNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeNotesListPageNo"/>
+		
+		<action name="getDisputeActionRequestListPageNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeActionRequestListPageNo"/>
+		
+		<action name="getDisputeActionRequestListPageNoByBanId" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeActionRequestListPageNoByBanId"/>
+		
+		<action name="searchDisputeReplyList" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchDisputeReplyList"/>
+		
+		<action name="deleteDisputeReply" class="com.saninco.ccm.action.dispute.DisputeAction" method="deleteDisputeReply"/>		
+		
+		<action name="addReplyNote" class="com.saninco.ccm.action.dispute.DisputeAction" method="addReplyNote"/>
+		
+		<action name="updateDisputeActionRequestStatus" class="com.saninco.ccm.action.dispute.DisputeAction" method="updateDisputeActionRequestStatus"/>
+				
+		<action name="searchDisputeActionRequestList" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchDisputeActionRequestList"/>
+		
+		<action name="searchDisputeActionRequestListByBanId" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchDisputeActionRequestListByBanId"/>
+		
+		<!-- 保存 Dispute Action Request. -->
+		<action name="saveDisputeActionRequest" class="com.saninco.ccm.action.dispute.DisputeAction" method="saveDisputeActionRequest">
+		    <result name="success">/WEB-INF/pages/dispute/res/addSaveDisputeActionRequestSuccess.jsp</result>
+		</action>
+		<action name="doDisputeNote" class="com.saninco.ccm.action.dispute.DisputeAction" method="doSaveDisputeNote">
+    		<result name="success">/WEB-INF/pages/dispute/res/addSaveDisputeNoteSuccess.jsp</result>
+    		<result name="input">/WEB-INF/pages/dispute/res/addSaveDisputeNoteInput.jsp</result>
+        </action>
+		
+		<action name="downloadDisputeItemExcel" class="com.saninco.ccm.action.dispute.DisputeAction" method="downloadDisputeItemExcel"/>
+		
+		<action name="deleteReconciliation" class="com.saninco.ccm.action.dispute.DisputeAction" method="deleteReconciliation"/>
+		
+		<action name="deleteReconciliationMany" class="com.saninco.ccm.action.dispute.DisputeAction" method="deleteReconciliationMany"/>
+		
+		<action name="getDisputeItemViewListPageNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeItemViewListPageNo"/>
+		
+		<action name="searchDisputeItemList" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchDisputeItemList"/>
+
+		<action name="searchDisputeMessageByDisputeId" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchDisputeMessageByDisputeId"/>
+		
+		<!-- 选中一条dispute记录之后，点击Forward Selected Dispute 跳转到邮件信息
+			详细列表页面。
+		-->
+		<action name="searchDisputeMessageByDisputeIds" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchDisputeMessageByDisputeIds">
+			<result name="success" type="tiles">forwardSelectedDispute</result>
+		</action>
+		
+		<action name="searchContactVendorByDisputeIds" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchContactVendorByDisputeIds">
+            <result name="success">/WEB-INF/pages/dispute/res/sendContactVendorEmail.jsp</result>
+		</action>
+		
+		<action name="contactVendorDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="contactVendorDispute">
+		<result name="success">/WEB-INF/pages/dispute/res/sendContactVendorEmailSuccess.jsp</result>
+		<result name="input">/WEB-INF/pages/dispute/res/sendContactVendorEmailInput.jsp</result>
+		</action>
+		
+		<action name="forwordDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="forwordDispute">
+		<result name="success">/WEB-INF/pages/dispute/res/sendForwordDisputeEmailSuccess.jsp</result>
+		<result name="input">/WEB-INF/pages/dispute/res/sendForwordDisputeEmailInput.jsp</result>
+		</action>
+		
+		<action name="getDisputeReconciliationListPageNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeReconciliationListPageNo"/>
+		
+		<action name="searchDisputeReconciliationList" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchDisputeReconciliationList"/>
+		
+		<action name="doSearchDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchDispute"/>
+		
+		<action name="doSearchDisputeAssignment" class="com.saninco.ccm.action.dispute.DisputeAction" method="searchDisputeAssignment"/>
+		
+		<action name="doGetDisputeAssignmentSearchTotalPageNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeAssignmentSearchTotalPageNo"/>
+		
+		<action name="doGetDisputeSearchTotalPageNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeSearchTotalPageNo"/>
+		
+		<action name="doSaveDisputeSearch" class="com.saninco.ccm.action.dispute.DisputeAction" method="saveDisputeSearch"/>
+				   
+		<action name="getUserPreviledgedVendorList" class="com.saninco.ccm.action.dispute.DisputeAction" method="getUserPreviledgedVendorList"/>
+		
+		<action name="doPendingDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="pendingDispute"/>
+		
+		<action name="dogetPendingTotalPageNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getPendingTotalPageNo"/>
+
+		<action name="ReconcileDetailTotalNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getReconcileDetailTotalNo"/>
+	
+		<action name="ReconcileDetails" class="com.saninco.ccm.action.dispute.DisputeAction" method="getReconcileDetails"/>
+		
+		<action name="CreditDetailsTotalNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getCreditDetailsTotalNo"/>
+		
+		<action name="CreditDetails" class="com.saninco.ccm.action.dispute.DisputeAction" method="getCreditDetails"/>
+		
+		<action name="doCancelForReconcile" class="com.saninco.ccm.action.dispute.DisputeAction" method="cancelForReconcile"/>
+		
+		<action name="doDisputeDetailTotalNo" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeDetailTotalNo"/>			
+		
+		<action name="doDisputeDetail" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeDetail"/>			
+		
+		<action name="doDisputeTransaction" class="com.saninco.ccm.action.dispute.DisputeAction" method="getDisputeTransaction"/>
+		
+		<action name="saveExcelBySearchDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="saveExcelBySearchDispute"/>
+		
+		<action name="saveExcelByDisputeDetail" class="com.saninco.ccm.action.dispute.DisputeAction" method="saveExcelByDisputeDetail"/>
+		
+		<action name="saveExcelByDisputeTransaction" class="com.saninco.ccm.action.dispute.DisputeAction" method="saveExcelByDisputeTransaction"/>
+		
+		<action name="getTicketNumber" class="com.saninco.ccm.action.dispute.DisputeAction" method="getTicketNumber"/>
+		
+		<action name="doRefileDisputeAttachFile" class="com.saninco.ccm.action.dispute.DisputeAction" method="doRefileDisputeAttachFile">
+    		<result name="success">/WEB-INF/pages/dispute/res/addRefileTransactionHistorySuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/dispute/res/addRefileTransactionHistoryInput.jsp</result>
+    	</action>
+		
+		<action name="addTransactionHistoryData" class="com.saninco.ccm.action.dispute.DisputeAction" method="addTransactionHistoryData">
+    		<result name="success">/WEB-INF/pages/dispute/res/addTransactionHistorySuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/dispute/res/addTransactionHistoryInput.jsp</result>
+    	</action>
+    	
+		<action name="updateDisputeBalance" class="com.saninco.ccm.action.dispute.DisputeAction" method="updateDisputeBalance"/>
+		
+		<action name="closeDisputeWin" class="com.saninco.ccm.action.dispute.DisputeAction" method="closeDisputeWin">
+    		<result name="success">/WEB-INF/pages/dispute/res/updateDisputeItemSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/dispute/res/updateDisputeItemInput.jsp</result>
+    	</action>
+    	
+    	<action name="closeDisputeLose" class="com.saninco.ccm.action.dispute.DisputeAction" method="closeDisputeLose">
+    		<result name="success">/WEB-INF/pages/dispute/res/updateDisputeItemSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/dispute/res/updateDisputeItemInput.jsp</result>
+    	</action>
+    	
+    	<action name="splitCloseDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="splitCloseDispute">
+    		<result name="success">/WEB-INF/pages/dispute/res/updateDisputeItemSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/dispute/res/updateDisputeItemInput.jsp</result>
+    	</action>
+    	
+    	<action name="splitCloseDispute1" class="com.saninco.ccm.action.dispute.DisputeAction" method="splitCloseDispute">
+    		<result name="success">/WEB-INF/pages/dispute/res/updateDisputeItemSuccess1.jsp</result>
+			<result name="input">/WEB-INF/pages/dispute/res/updateDisputeItemInput1.jsp</result>
+    	</action>
+		
+		<action name="searchPendingDispute" class="com.saninco.ccm.action.dispute.DisputeAction">
+		  <result name="success" type="tiles">pendingDisputeView</result>    
+		</action>
+		
+		<!-- Dispute Details 页面详细信息的检索。 -->
+		<action name="viewDisputeDetails" class="com.saninco.ccm.action.dispute.DisputeAction" method="viewDisputeDetails">
+			<result name="success" type="tiles">DisputeDetailView</result>  
+		</action>
+		
+		<action name="doCreditForReconcile" class="com.saninco.ccm.action.dispute.DisputeAction" method="creditForReconcile">			
+			<result name="success">/WEB-INF/pages/dispute/res/creditReconceilSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/dispute/res/creditReconceilInput.jsp</result>
+		</action>	
+		
+		<action name="doUpdateDisputeTiketNO" class="com.saninco.ccm.action.dispute.DisputeAction" method="updateDisputeTiketNO">
+			<result name="success">/WEB-INF/pages/dispute/res/updateDisputeSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/dispute/res/updateDisputeInput.jsp</result>
+		</action>
+		
+		<action name="validateReconcileByDispute" class="com.saninco.ccm.action.dispute.DisputeAction" method="validateReconcileByDispute">
+		</action>
+		
+    </package>
+</struts>
+
+

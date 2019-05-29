@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.invoice" extends="ccm">
+    
+    	<action name="searchInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction" method="exec">
+		  	<result name="success" type="tiles">searchInvoiceView</result>
+		</action>
+		
+		<action name="getBanListByVendorId" class="com.saninco.ccm.action.invoice.InvoiceAction" method="getBanListByVendorId"></action>
+		
+		<action name="getBanListByVendorId0" class="com.saninco.ccm.action.invoice.InvoiceAction" method="getBanListByVendorId0"></action>
+		
+		<action name="saveExcelBySearchInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction" method="saveExcelBySearchInvoice"/>
+
+        <action name="doGetInvoiceAssignmentSearchTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceAction" method="getInvoiceAssignmentSearchTotalPageNo"/>
+		
+        <action name="doSearchInvoiceAssignment" class="com.saninco.ccm.action.invoice.InvoiceAction" method="searchInvoiceAssignment"/>
+		
+        <action name="doGetInvoiceSearchTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceAction" method="getInvoiceSearchTotalPageNo"/>
+
+        <action name="doSearchInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction" method="searchInvoice"/>
+        
+        <action name="doSearchInvoiceLabel" class="com.saninco.ccm.action.invoice.InvoiceAction" method="searchInvoiceLabel"/>
+		
+        <action name="doSaveInvoiceSearch" class="com.saninco.ccm.action.invoice.InvoiceAction" method="saveInvoiceSearch"/>
+		
+        <action name="getUserPreviledgedVendorList" class="com.saninco.ccm.action.invoice.InvoiceAction" method="getUserPreviledgedVendorList"/>
+		
+		<action name="viewInvoiceDetails" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="exec">
+		  	<result name="success" type="tiles">viewInvoiceDetailView</result>
+		</action>
+		
+		<action name="updateBanAutoPay" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateBanAutoPay"/>
+		
+		<action name="updateSCOACodingSingle" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateSCOACodingSingle"/>
+		
+		<action name="searchListTabData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchListTabData"/>
+		
+		<action name="doSearchInvoiceDetailByInvoiceNumberTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchInvoiceDetailByInvoiceNumberTotalPageNo"/>
+		
+		<action name="doSearchInvoiceDetailByInvoiceNumber" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchInvoiceDetailByInvoiceNumber"/>
+		
+		<action name="searchItemTypeListTab" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchItemTypeListTab"/>
+		
+		<action name="getItemTypeListTabPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getItemTypeListTabPageNo"/>
+		
+		<action name="searchBrowseInvoiceListTab" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchBrowseInvoiceListTab"/>
+		
+		<action name="getBrowseInvoiceListTabPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getBrowseInvoiceListTabPageNo"/>
+		
+		<action name="searchDisputeItemsListTab" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchDisputeItemsListTab"/>
+		
+		<action name="getDisputeItemsListTabPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputeItemsListTabPageNo"/>
+		
+		<action name="searchEmptySCOAListTab" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchEmptySCOAListTab"/>
+		
+		<action name="getEmptySCOAListTabPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getEmptySCOAListTabPageNo"/>
+		
+		<action name="searchSCOACodingTabViewStr" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchSCOACodingTabViewStr"/>
+		
+		<action name="getAccordionTabView" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getAccordionTabView"/>
+		
+		<action name="doValiUserPrivilegeByUserId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doValiUserPrivilegeByUserId"/>
+		
+		<action name="doValidateBanLock" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doValidateBanLock"/>
+		
+		<action name="doValiUserPrivilegeBanLock" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doValiUserPrivilegeBanLock" />
+		
+		<action name="searchCountList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchCountList"/>
+		
+		<action name="updateSCOACoding" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateSCOACoding"/>
+		
+		<action name="updateProposalToCredit" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateProposalToCredit"/>
+		
+		<action name="initializedStoredData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="initializedStoredData"/>
+		
+		<action name="downloadSOCADisputeExcel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="downloadSOCADisputeExcel"/>
+		
+		<action name="getItemTypePageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getItemTypePageNo"/>
+		
+		<action name="searchItemTypeList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchItemTypeList"/>
+		
+		<action name="getDisputeItemsPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputeItemsPageNo"/>
+		
+		<action name="searchDisputeItemsList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchDisputeItemsList"/>
+		
+		<action name="getEmptySCOAListPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getEmptySCOAListPageNo"/>
+		
+		<action name="searchEmptySCOAList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchEmptySCOAList"/>
+
+		<action name="updateGroupProposalObject" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateGroupProposalObject"/>
+		
+		<action name="getAccordionView" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getAccordionView"/>
+		
+		<action name="updateProposalObject" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateProposalObject"/>
+		
+		<action name="getProposalViewListPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getProposalViewListPageNo"/>
+		
+		<action name="searchProposalList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchProposalList"/>
+		
+		<action name="downloadInvoiceExcel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="downloadInvoiceExcel"/>
+		
+		<action name="downloadInvoiceValidationExcel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="downloadInvoiceValidationExcel"/>
+
+		<action name="downloadTelephoneNumberValidationExcel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="downloadTelephoneNumberValidationExcel"/>
+		
+		<action name="downloadUsageReport" class="com.saninco.ccm.action.invoice.InvoiceAction" method="downloadUsageReport"/>
+		
+		<action name="auditInvoice" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="auditInvoice"/>
+			
+		<action name="getInvoiceDetailListName" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getInvoiceDetailListName"/>
+		
+		<action name="excelByInvoiceItemList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="excelByInvoiceItemList"/>
+		
+		<action name="excelByAccordionInvoiceDetail" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="excelByAccordionInvoiceDetail"/>
+		
+		<action name="updateNotProposedAmountData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateNotProposedAmountData"/>
+		
+		<action name="updateProposalAmountData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateProposalAmountData"/>
+		
+		<action name="updateProposalData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateProposalData"/>
+		
+		<action name="getItemGroupProposalList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getItemGroupProposalList"/>
+		
+		<action name="getItemProposalList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getItemProposalList"/>
+		
+		<action name="getItemGroupTotalAmount" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getItemGroupTotalAmount"/>
+		
+		<action name="getItemTotalAmount" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getItemTotalAmount"/>
+		
+		<action name="getInvoiceItemList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getInvoiceItemList"/>
+		
+		<action name="getInvoiceItemListTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getInvoiceItemListTotalPageNo"/>
+		
+		<action name="saveExcel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcel"/>
+		
+		<action name="updateItemProposal" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateItemProposal"/>
+		
+		<action name="addItemProposal" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="addItemProposal"/>
+		
+		<action name="getProposalList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getProposalList"/>
+		
+		<action name="getTypeOpenAcc" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getTypeOpenAcc"/>
+		
+		<action name="getTypeAccordion" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getTypeAccordion"/>
+		
+		<action name="getInvoiceItemTypeTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getInvoiceItemTypeTotalPageNo"/>
+		
+		<action name="getItemProposal" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getItemProposal"/>
+		
+		<action name="updateLabel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateLabel"/>
+
+		<action name="getInvoiceHyperlink" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getInvoiceHyperlink"/>
+		
+		<action name="getItemName" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getItemName"/>
+
+		<action name="getOriginal" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getOriginals"/>
+		
+		<action name="doGetOriginalTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doGetOriginalTotalPageNos"/>
+		
+		<action name="getTariff" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getTariffs"/>
+		
+		<action name="doGetTariffTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doGetTariffTotalPageNos"/>
+		
+		<action name="doPaymenttabla" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getPaymenttabla"/>
+		
+		<action name="doGetPaymenttablaTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doGetPaymenttablaTotalPageNos"/>
+
+		<action name="getDisputes" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputes"/>
+		
+		<action name="doGetDisputePageNos" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doGetDisputePageNos"/>
+		
+		<action name="getOutstandingCreditPageTotalNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getOutstandingCreditPageTotalNo"/>
+		
+		<action name="getOutstandingCreditPageData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getOutstandingCreditPageData"/>
+		
+		<action name="doGetIDisputeTabTotalNO" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getIDisputeTabTotalNO"/>
+		
+		<action name="doSearchIDisputeTab" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchIDisputeTab"/>
+		
+		<action name="doGetIReconciliationTabTotalNO" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getIReconciliationTabTotalNO"/>
+		
+		<action name="doSearchIReconciliationTab" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchIReconciliationTab"/>
+		
+		<action name="doSearchCreditSCOAName" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchCreditSCOAName"/>
+		
+		<action name="doSearchInvoiceByIName" class="com.saninco.ccm.action.invoice.InvoiceAction" method="searchInvoiceByIName"/>
+		
+		<action name="doSearchInvoiceByInvoiceNumber" class="com.saninco.ccm.action.invoice.InvoiceAction" method="searchInvoiceByInvoiceNumber"/>
+		
+		<action name="doSaveModifyPreviousAdjustment" class="com.saninco.ccm.action.invoice.InvoiceAction" method="saveModifyPreviousAdjustment"/>
+		
+		<action name="doSaveMoveCurrentToAdjustment" class="com.saninco.ccm.action.invoice.InvoiceAction" method="saveMoveCurrentToAdjustment"/>
+
+		<action name="doSearchInvoiceForPRJ" class="com.saninco.ccm.action.invoice.InvoiceAction" method="searchInvoiceForPRJ"/>
+		
+		<action name="doSearchInvoiceForPRS" class="com.saninco.ccm.action.invoice.InvoiceAction" method="searchInvoiceForPRS"/>
+		
+		<action name="doPRSConfirmed" class="com.saninco.ccm.action.invoice.InvoiceAction" method="pRSConfirmed"/>
+		
+		<action name="doSearchForScoa" class="com.saninco.ccm.action.invoice.InvoiceAction" method="searchForScoa"/>
+		
+		<action name="doSaveInvoiceReject" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveInvoiceReject"/>
+		
+		<action name="doEidtCreidtSave" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="eidtCreidtSave">
+			<result name="success">/WEB-INF/pages/invoice/res/creditSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/creditInput.jsp</result>
+		</action>
+		
+		<action name="doEidtInvoiceProposalSave" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doEidtInvoiceProposalSave">
+			<result name="success">/WEB-INF/pages/invoice/res/invoiceProposalSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/invoiceProposalInput.jsp</result>
+		</action>
+		
+		<action name="doUploadForDisputeTabLeftSave" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="uploadForDisputeTabLeftSave">
+			<result name="success">/WEB-INF/pages/invoice/res/disputeUploadSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/disputeUploadInput.jsp</result>
+		</action>
+		
+		<action name="doUploadForDisputeTabRightSave" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="uploadForDisputeTabRightSave">
+			<result name="success">/WEB-INF/pages/invoice/res/uploadForDisputeTabRightSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/uploadForDisputeTabRightInput.jsp</result>
+		</action>
+		
+		<action name="uploadForProposalOfEditProposal" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="uploadForProposalOfEditProposal">
+			<result name="success">/WEB-INF/pages/invoice/res/uploadForProposalOfEditProposalSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/uploadForProposalOfEditProposalInput.jsp</result>
+		</action>
+		
+		<action name="doEidtDisputeSave" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="eidtDisputeSave">
+			<result name="success">/WEB-INF/pages/invoice/res/disputeSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/disputeInput.jsp</result>
+		</action>
+		
+		<action name="doMiscProposal" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveMiscProposal">
+			<result name="success">/WEB-INF/pages/invoice/res/proposalSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/proposalInput.jsp</result>
+		</action>
+			
+		<action name="doEidtPaymentConfirm" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="eidtPaymentConfirm"/>
+		
+		<action name="saveExcelBySearchCreditTab" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelBySearchCreditTab"/>
+		
+		<action name="saveExcelBySearchCreditDisTab" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelBySearchCreditDisTab"/>
+		
+		<action name="saveExcelBySearchCreditRecTab" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelBySearchCreditRecTab"/>
+		
+		<action name="doEidtReconcilSubmit" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="eidtReconcilSubmit"/>
+		
+		<action name="doShowEidtPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="showEidtPayment"/>
+		
+		<action name="doShowEidtDispute" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="showEidtDispute"/>
+		
+		<action name="updateAutopaySwitch" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateAutopaySwitch"/>
+		
+		<action name="getInvoiceItemTotal" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getInvoiceItemTotal"/>
+		
+		<action name="doMisc" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getMisc"/>
+		
+		<action name="doGetMiscTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doGetMiscTotalPageNos"/>
+		
+		<action name="getTotalPDAmount" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getAmount"></action>
+		
+		<action name="getPaymentScoaAmountTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getPaymentScoaAmountTotalPageNo"></action>
+		<action name="getPaymentScoaAmount" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getPaymentScoaAmount"></action>
+		
+		<action name="getCurrentInvoicePaymentTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCurrentInvoicePaymentTotalPageNo"></action>
+		<action name="getCurrentInvoicePayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCurrentInvoicePayment"></action>
+		<action name="saveExcelByPaymentTabPCIP" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByPaymentTabPCIP"></action>
+		
+		<action name="getManuallyCreatedPaymentTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getManuallyCreatedPaymentTotalPageNo"></action>
+		<action name="getManuallyCreatedPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getManuallyCreatedPayment"></action>
+		<action name="saveExcelByPaymentTabPMCP" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByPaymentTabPMCP"></action>
+		<action name="saveExcelByPaymentTabMisc" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByPaymentTabMisc"></action>
+		
+		<action name="getDisputePaybackPaymentTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputePaybackPaymentTotalPageNo"></action>
+		<action name="getDisputePaybackPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputePaybackPayment"></action>
+		
+		<action name="getApplyingCreditPaymentTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getApplyingCreditPaymentTotalPageNo"></action>
+		<action name="getApplyingCreditPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getApplyingCreditPayment"></action>
+		<action name="getTotalPaymentAmount" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getTotalPaymentAmount"></action>
+		<action name="getPaymentScoaAmountTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getPaymentScoaAmountTotalPageNo"></action>
+		<action name="getPaymentScoaAmount" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getPaymentScoaAmount"></action>
+		
+		<action name="getCurrentInvoicePaymentTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCurrentInvoicePaymentTotalPageNo"></action>
+		<action name="getCurrentInvoicePayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCurrentInvoicePayment"></action>
+		
+		<action name="getPaidDisputePaymentTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getPaidDisputePaymentTotalPageNo"></action>
+		<action name="getPaidDisputePayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getPaidDisputePayment"></action>
+		<action name="downloadExcelByPaidDisputePayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="downloadExcelByPaidDisputePayment"></action>
+		
+		<action name="getShortPaidDisputePaymentTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getShortPaidDisputePaymentTotalPageNo"></action>
+		<action name="getShortPaidDisputePayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getShortPaidDisputePayment"></action>
+		<action name="downloadExcelByShortPaidDisputePayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="downloadExcelByShortPaidDisputePayment"></action>
+		
+		<action name="getManuallyCreatedPaymentTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getManuallyCreatedPaymentTotalPageNo"></action>
+		<action name="getManuallyCreatedPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getManuallyCreatedPayment"></action>
+		
+		<action name="getMiscPaymentAmount" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getMiscPaymentAmount"></action>
+		
+		<action name="getDisputePaybackPaymentTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputePaybackPaymentTotalPageNo"></action>
+		<action name="getDisputePaybackPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputePaybackPayment"></action>
+		
+		<action name="getApplyingCreditPaymentTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getApplyingCreditPaymentTotalPageNo"></action>
+		<action name="getApplyingCreditPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getApplyingCreditPayment"></action>
+		
+		<action name="getCurrentDisputeTotalPageNoi" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCurrentDisputeTotalPageNo"></action>
+		<action name="getCurrentDisputei" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCurrentDispute"></action>
+		
+		<action name="getCurrentInvoiceHistory" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCurrentInvoiceHistory"></action>
+		<action name="getPastThreePaymentPage" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getPastThreePaymentPage"></action>
+		
+		<action name="handleInvoiceWorkflow" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="handleInvoiceWorkflow">
+			<result name="success">/WEB-INF/pages/invoice/res/handleSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/handleInput.jsp</result>
+		</action>
+		<action name="checkWorkflowPrivilege" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="checkWorkflowPrivilege"></action>
+		
+		<action name="getSaveExcelByCreateDispute" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByCurrentDispute"></action>
+		
+		<action name="saveExcelByActionHistory" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByActionHistory"></action>
+		
+		<action name="doEditMiscProposalPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getEditMiscProposalPayment">
+			<result name="success">/WEB-INF/pages/invoice/res/proposalSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/proposalInput.jsp</result>
+		</action>
+		<action name="doDeleteMiscProposalPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDeleteMiscProposalPayment"></action>
+
+		<!-- wei.su -->
+		<action name="getDisputeTabTotalNoOfInoiceDetail" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputeTabTotalNoOfInoiceDetail"></action>
+		<action name="searchDisputeTabOfInoiceDetail" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchDisputeTabOfInoiceDetail"></action>
+		<action name="getDisputeTotalAmountByInvoiceId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputeTotalAmountByInvoiceId"></action>
+		<action name="saveProposalToInvoiceItem" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveProposalToInvoiceItem"></action>
+		<action name="updateDisputeTabMoveSelectGroupOfInvoiceDetail" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateDisputeTabMoveSelectGroupOfInvoiceDetail"></action>
+		<action name="updateDisputeTabGreateOneGroupOfInvoiceDetail" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateDisputeTabGreateOneGroupOfInvoiceDetail"></action>
+		<action name="deleteProposalFromProposalList" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="deleteProposalFromProposalList"></action>
+		<action name="getDisputesTotalNoByInvoiceId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputesTotalNoByInvoiceId"></action>
+		<action name="searchDisputesByInvoiceId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchDisputesByInvoiceId"></action>
+		<action name="getProposalsTotalNoOfInoiceDetailDisputeTabByInvoiceIdAndDisputeId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getProposalsTotalNoOfInoiceDetailDisputeTabByInvoiceIdAndDisputeId"></action>
+		<action name="searchProposalsOfInoiceDetailDisputeTabByInvoiceIdAndDisputeId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchProposalsOfInoiceDetailDisputeTabByInvoiceIdAndDisputeId"></action>
+		<action name="updateDisputeTabRemoveSelectedForThisGroupOfInvoiceDetail" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateDisputeTabRemoveSelectedForThisGroupOfInvoiceDetail"></action>
+    	<action name="saveExcelByProposalListInDisputeTabByInvoiceIdLeft" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByProposalListInDisputeTabByInvoiceIdLeft"></action>
+		<action name="saveExcelByProposalListInDisputeTabByInvoiceIdAndDiputeIdRight" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByProposalListInDisputeTabByInvoiceIdAndDiputeIdRight"></action>
+    	<action name="getDisputeListByInvoiceId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getDisputeListByInvoiceId"></action>
+    	<action name="getOriginatorListAndReturnJSON" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getOriginatorListAndReturnJSON"></action>
+    	<action name="getProposalDataLeftByInvoiceId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getProposalDataLeftByInvoiceId"></action>
+    	<action name="saveExcelByDisputeMisc" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByDisputeMisc"></action>
+    	<action name="saveExcelByAllPayments" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByAllPayments"></action>
+    	<action name="saveExcelByDisputePaybackPayments" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByDisputePaybackPayments"></action>
+    	<action name="saveExcelByApplyingCreditPayments" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByApplyingCreditPayments"></action>
+    	<action name="saveExcelByApplyingCreditPayments" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveExcelByApplyingCreditPayments"></action>
+    	<action name="updateDispute" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateDispute"></action>
+    	<action name="updateDisputeTabGreateNewGroupForEachSelectedOfInvoiceDetail" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateDisputeTabGreateNewGroupForEachSelectedOfInvoiceDetail"></action>
+    	<action name="deleteDisputeOfInvoiceDetail" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="deleteDisputeOfInvoiceDetail"></action>
+    	<action name="updateDisputeTabMoveSelectGroupOfInvoiceDetailRight" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateDisputeTabMoveSelectGroupOfInvoiceDetailRight"></action>
+    	<action name="updateDisputeTabGreateOneGroupOfInvoiceDetailRight" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateDisputeTabGreateOneGroupOfInvoiceDetailRight"></action>
+    	<action name="getProposalByProposalId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getProposalByProposalId"></action>
+    	<action name="updateProposalByProposalId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateProposalByProposalId"></action>
+    	<action name="getAnnexsTotalOfProposalByProposalId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getAnnexsTotalOfProposalByProposalId"></action>
+    	<action name="searchAnnexsOfProposalByProposalId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchAnnexsOfProposalByProposalId"></action>
+    	<action name="deleteAnnexsOfProposalById" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="deleteAnnexsOfProposalById"></action>
+    	<action name="getAnnexsTotalOfDisputeByDisputeId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getAnnexsTotalOfDisputeByDisputeId"></action>
+    	<action name="searchAnnexsOfDisputeByDisputeId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchAnnexsOfDisputeByDisputeId"></action>
+    	<action name="deleteAnnexsOfDisputeById" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="deleteAnnexsOfDisputeById"></action>
+    	<action name="getProposalDataRightByInvoiceIdAndDisputeId" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getProposalDataRightByInvoiceIdAndDisputeId"></action>
+    	<action name="validateMissingSCOA" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="validateMissingSCOA"></action>
+    	
+    	<action name="updateDisputeAmountByDiputeIdAndDisputeAmount" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateDisputeAmountByDiputeIdAndDisputeAmount"></action>
+    	
+    	<action name="doApplyCreditToCurrentPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doApplyCreditToCurrentPayment"></action>
+    	<action name="doManualReconciliation" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doManualReconciliation"></action>
+    	<action name="doManualReconciliationMany" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doManualReconciliationMany"></action>
+    	<action name="doRecordDisputeAndApplyToPayment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doRecordDisputeAndApplyToPayment">
+    		<result name="success">/WEB-INF/pages/invoice/res/doRecordDisputeAndApplyToPaymentResult.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/doRecordDisputeAndApplyToPaymentResult.jsp</result>
+    	</action>
+    	<action name="doOutstandingCreditSplitApply1" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doOutstandingCreditSplitApply1">
+    		<result name="success">/WEB-INF/pages/invoice/res/doOutstandingCreditSplitApply1.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/doOutstandingCreditSplitApply1.jsp</result>
+    	</action>
+    	<action name="doOutstandingCreditSplitApply2" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doOutstandingCreditSplitApply2">
+    		<result name="success">/WEB-INF/pages/invoice/res/doOutstandingCreditSplitApply2.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/doOutstandingCreditSplitApply2.jsp</result>
+    	</action>
+    	<action name="doInvoiceNote" class="com.saninco.ccm.action.invoice.InvoiceAction" method="doSaveInvoiceNotes">
+    		<result type= "redirect">doSaveInvoiceNotesSucess.action</result>   
+        </action>
+        
+        <action name="doSaveInvoiceNotesSucess" class="com.saninco.ccm.action.invoice.InvoiceAction" method="doSaveInvoiceNotesSucess">
+          <result name="success">/WEB-INF/pages/invoice/res/doSeachNoteSuccess.jsp</result>
+        </action>
+        
+        
+		<action name="getCloseAsDisputeLosePageTotalNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCloseAsDisputeLosePageTotalNo"></action>
+		<action name="getCloseAsDisputeLosePageData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCloseAsDisputeLosePageData"></action>
+		<action name="getCloseAsDisputeWinPageTotalNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCloseAsDisputeWinPageTotalNo"></action>
+		<action name="getCloseAsDisputeWinPageData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getCloseAsDisputeWinPageData"></action>
+		
+		<action name="getNotReconcileDisputePageTotalNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getNotReconcileDisputePageTotalNo"></action>
+		<action name="getNotReconcileDisputePageData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getNotReconcileDisputePageData"></action>
+		<action name="getTheInvoiceReconciliationPageTotalNo" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getTheInvoiceReconciliationPageTotalNo"></action>
+		<action name="getTheInvoiceReconciliationPageData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="getTheInvoiceReconciliationPageData"></action>
+		<action name="saveOutstandingCreditPageExcel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveOutstandingCreditPageExcel"></action>
+		<action name="saveNotReconcileDisputePageExcel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveNotReconcileDisputePageExcel"></action>
+		<action name="saveTheInvoiceReconciliationPageExcel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveTheInvoiceReconciliationPageExcel"></action>
+		<action name="saveCloseAsDisputeLosePageExcel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveCloseAsDisputeLosePageExcel"></action>
+		<action name="saveCloseAsDisputeWinPageExcel" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveCloseAsDisputeWinPageExcel"></action>
+		
+    	<action name="doReconcileByCurrentCreditM1" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doReconcileByCurrentCreditM1">
+    		<result name="success">/WEB-INF/pages/invoice/res/doReconcileByCurrentCreditM1.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/doReconcileByCurrentCreditM1.jsp</result>
+    	</action>
+    	<action name="doReconcileByCurrentCredit1M" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doReconcileByCurrentCredit1M">
+    		<result name="success">/WEB-INF/pages/invoice/res/doReconcileByCurrentCredit1M.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/doReconcileByCurrentCredit1M.jsp</result>
+    	</action>
+    	<action name="doReconcileByCurrentCredit11" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="doReconcileByCurrentCredit11">
+    		<result name="success">/WEB-INF/pages/invoice/res/doReconcileByCurrentCredit11.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/doReconcileByCurrentCredit11.jsp</result>
+    	</action>
+
+    	<!-- Validation result modal 显示页. -->
+    	<action name="searchValidationResult" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchValidationResult">
+    		<result name="success">/WEB-INF/pages/invoice/viewInvoiceValidationResult.jsp</result>
+    	</action>
+    	
+    	<action name="saveMemory" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="saveMemory"></action>
+    	<action name="updateMemory" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateMemory"></action>
+    	
+		<action name="addOutstandingDisputeSCOA" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="addOutstandingDisputeSCOA"></action>
+		<action name="addOutstandingDisputeSCOAAll" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="addOutstandingDisputeSCOAAll"></action>
+		
+		<action name="recodeTaxInvoice" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="recodeTaxInvoice"></action>
+
+		<action name="queryIsShowDueDate" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="queryIsShowDueDate"></action>
+
+		<action name="updateInvoiceNotes" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="updateInvoiceNotes"></action>
+	
+		<action name="doGetInvoiceByNumberSearchTotalPageNo" class="com.saninco.ccm.action.invoice.InvoiceAction" method="getInvoiceByNumberSearchTotalPageNo"/>
+		
+		<action name="doSearchPTOWInvoiceByINumber" class="com.saninco.ccm.action.invoice.InvoiceAction" method="searchPTOWInvoiceByINumber"/>
+	
+		<action name="doFindInvoiceStatus" class="com.saninco.ccm.action.invoice.InvoiceAction" method="findInvoiceStatus"/>
+		
+		<action name="doCloseInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction" method="closeInvoice"/>
+		
+		<action name="doRemoveInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction" method="removeInvoice"/>
+		
+		<action name="doCancelInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction" method="cancelInvoice"/>
+		
+		<action name="doThroughAPPaymentCloseInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction" method="throughAPPaymentCloseInvoice"/>
+		
+		<action name="doTRegularCloseInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction" method="tRegularCloseInvoice"/>
+		
+		<action name="doGetInvoiceNoteTotalPageNoUri" class="com.saninco.ccm.action.invoice.InvoiceAction" method="doGetInvoiceNoteTotalPageNoUri"></action>
+		<action name="doGetInvoiceNoteUri" class="com.saninco.ccm.action.invoice.InvoiceAction" method="doGetInvoiceNoteUri"></action>
+		<action name="doGetUserAndRoleUri" class="com.saninco.ccm.action.invoice.InvoiceAction" method="doGetUserAndRoleUri"></action>
+		<action name="searchInvoiceAttachment" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="searchInvoiceAttachment">
+			<result name="success">/WEB-INF/pages/invoice/sendInvoiceEmail.jsp</result>
+		</action>
+		<action name="sendInvoiceEmail" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="sendInvoiceEmail">
+			<result name="success">/WEB-INF/pages/invoice/res/sendInvoiceEmailSuccess.jsp</result>
+			<result name="input">/WEB-INF/pages/invoice/res/sendInvoiceEmailInput.jsp</result>
+		</action>
+		
+		<action name="deleteInvoiceNote" class="com.saninco.ccm.action.invoice.InvoiceAction" method="deleteInvoiceNote"/>
+
+		<!-- Dispose uploaded SCOA Date -->
+		<action name="uploadSCOAData" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="uploadSCOAData">
+			<result name="success">/WEB-INF/pages/invoice/res/uploadSCOADataSuccess.jsp</result>
+		</action>
+        <action name="creatExcelByTemplate" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="creatExcelByTemplate"></action>
+        
+		<!-- Download upload SCOA data error file -->
+		<action name="downloadSCOADataErrorFile" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="downloadSCOADataErrorFile"></action>
+		
+		<action name="runRepoet" class="com.saninco.ccm.action.invoice.InvoiceDetailAction" method="runReport"></action>
+
+    </package>
+</struts>

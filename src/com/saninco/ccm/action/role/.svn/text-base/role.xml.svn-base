@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>  
+    <package name="com.saninco.ccm.action.role.RoleAction" extends="ccm">
+    
+		<action name="doSearchRoleTotalNO" class="com.saninco.ccm.action.role.RoleAction" method="doSearchRoleTotalNO"/>
+		
+		<action name="doSearchRole" class="com.saninco.ccm.action.role.RoleAction" method="doSearchRole"/>
+		
+		<action name="deleteRoleInfo" class="com.saninco.ccm.action.role.RoleAction" method="deleteRole"/>
+		
+		<action name="searchFunction" class="com.saninco.ccm.action.role.RoleAction" method="searchFunction"/>
+		
+		<action name="saveName" class="com.saninco.ccm.action.role.RoleAction" method="saveName"/>
+		
+		<action name="addFunOrDel" class="com.saninco.ccm.action.role.RoleAction" method="addFunOrDel"/>
+		
+    </package>
+</struts>

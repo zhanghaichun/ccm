@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.target.action" extends="ccm">
+    <action name="showTarget" class="com.saninco.ccm.target.action.TargetAction" method="showTarget">
+		  	<result name="success" type="tiles">showTargetView</result>
+	</action>
+	<action name="searchTarget" class="com.saninco.ccm.target.action.TargetAction" method="searchTarget"/>
+	
+	<action name="getCircuitList" class="com.saninco.ccm.target.action.TargetAction" method="getCircuitList"/>
+	
+	<action name="doGetTragetSearchTotalPageNo" class="com.saninco.ccm.target.action.TargetAction" method="getTragetSearchTotalPageNo"/>
+	
+	<action name="saveExcelBySearchTarget" class="com.saninco.ccm.target.action.TargetAction" method="saveExcelBySearchTarget"/>
+	
+	<action name="saveTarget" class="com.saninco.ccm.target.action.TargetAction" method="saveTarget"/>
+	
+	<action name="queryCopyTargetList" class="com.saninco.ccm.target.action.TargetAction" method="queryCopyTargetList"/>
+	
+	<action name="verificationTargets" class="com.saninco.ccm.target.action.TargetAction" method="verificationTargets"/>
+	<!--verificationNoSave modyby2013-10-24 yongzhen -->
+	<action name="verificationNoSave" class="com.saninco.ccm.target.action.TargetAction" method="verificationNoSave"/>
+	<!-- procedur处理verification -->
+	<action name="verificationNoSaveProcedure" class="com.saninco.ccm.target.action.TargetAction" method="verificationNoSaveProcedure"/>
+	
+	<action name="downLoadResultToExcel" class="com.saninco.ccm.target.action.TargetAction" method="downLoadResultToExcel"/>
+	
+	<action name="actualResults" class="com.saninco.ccm.target.action.TargetAction" method="actualResults"/>
+
+	<action name="verificationOldTargets" class="com.saninco.ccm.target.action.TargetAction" method="verificationOldTargets"/>
+	
+	<action name="excelUp" class="com.saninco.ccm.target.action.TargetAction" method="excelUp">
+		<result name="success" type="dispatcher">/WEB-INF/pages/target/res/uploadCallbackSuccess.jsp</result>
+		<result name="input" type="dispatcher">/WEB-INF/pages/target/res/uploadCallbackInput.jsp</result>
+	</action>
+	
+	
+	    </package>
+	</struts>

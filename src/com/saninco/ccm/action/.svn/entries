@@ -1,0 +1,182 @@
+10
+
+dir
+10640
+svn://192.168.0.71/svntest/ccm-production-mrc-variance/src/com/saninco/ccm/action
+svn://192.168.0.71/svntest
+
+
+
+2019-04-26T04:40:12.157960Z
+10577
+yong.zhang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2f4b01f1-ed84-4fc5-8e0d-a9e6e3299111
+
+openInterface
+dir
+
+operations
+dir
+
+ticket
+dir
+
+message
+dir
+
+system
+dir
+
+tariffRules
+dir
+
+email
+dir
+
+contractTariffPriceList
+dir
+
+quicklink
+dir
+
+quote
+dir
+
+pricelist
+dir
+
+circuitpage
+dir
+
+securityIp
+dir
+
+ban
+dir
+
+circuit
+dir
+
+reconcile
+dir
+
+contractTab
+dir
+
+quoteRequest
+dir
+
+mtmRules
+dir
+
+masterInventory
+dir
+
+credit
+dir
+
+report
+dir
+
+contract
+dir
+
+dispute
+dir
+
+CcmActionSupport.java
+file
+
+
+
+
+2019-05-16T02:53:47.611487Z
+d9e9e158dd97888f666b4ca8ff8c34a0
+2018-04-16T12:22:16.124544Z
+9462
+yong.zhang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9995
+
+rateSearch
+dir
+
+scoa
+dir
+
+dashboard
+dir
+
+common
+dir
+
+admin
+dir
+
+contractRules
+dir
+
+invoice
+dir
+
+vendor
+dir
+
+profile
+dir
+
+role
+dir
+
+wiki
+dir
+
+contractAndTariffRules
+dir
+
+security
+dir
+
+assignment
+dir
+
+quoteInventory
+dir
+
+payment
+dir
+

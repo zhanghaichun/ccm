@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.profile.ProfileAction" extends="ccm">
+ 		<action name="toMyProfile" class="com.saninco.ccm.action.profile.ProfileAction" method="exec">
+		  	<result name="success" type="tiles">myProfile</result>    
+		</action>
+		<action name="toUploadLoginPicture" class="com.saninco.ccm.action.profile.ProfileAction" method="uploadLoginPicture">
+			<interceptor-ref name="CCMStack"/>
+			<result name="success">/WEB-INF/pages/profile/success.jsp</result>
+			<result name="input">/WEB-INF/pages/profile/failure.jsp</result>
+		</action>
+		<action name="toGetUserPictures" class="com.saninco.ccm.action.profile.ProfileAction" method="getUserPictures"></action>
+		<action name="toDeleteUserPicture" class="com.saninco.ccm.action.profile.ProfileAction" method="deleteUserPicture"></action>
+		
+		<action name="showUserPicture" class="com.saninco.ccm.action.profile.ProfileAction" method="showUserPicture"></action>
+		
+		<action name="doSearchUserDelegation" class="com.saninco.ccm.action.profile.ProfileAction" method="searchUserDelegation"></action>
+		<action name="doGetUserDelegationTotalPageNo" class="com.saninco.ccm.action.profile.ProfileAction" method="getUserDelegationTotalPageNo"></action>
+		
+		<action name="doSaveUserDelegation" class="com.saninco.ccm.action.profile.ProfileAction" method="saveUserDelegation"></action>
+		
+		<action name="doDeleteUserDelegation" class="com.saninco.ccm.action.profile.ProfileAction" method="deleteUserDelegation"></action>
+		
+		<action name="doGetUserDelegation" class="com.saninco.ccm.action.profile.ProfileAction" method="searchUserDelegationAssignment"></action>
+    	
+    	<action name="doGetUserLoginPicByUname" class="com.saninco.ccm.action.profile.ProfileAction" method="getUserLoginPicByUname"></action>
+    	
+    	
+    </package>
+</struts>

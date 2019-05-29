@@ -1,0 +1,10 @@
+#zhuye{width:100%;height:100%}
+#head{margin-bottom:8px; width:100%-20;height:260px; }
+#head_1{float:left;padding-left:10px!important;margin-right:7px; margin-top:10px; margin-bottom:8px;width:60%;height:220px;  }
+#head_2{float:left;padding-left:10px;  box-sizing: border-box; margin-top:10px;margin-right:7px; margin-bottom:8px;width:36%;height:220px;  }
+#head_2_1{float:left;width: 100%; height:100px; overflow-y:auto; border: 1px solid;}
+#down{width:100%; height:370px;}
+#down_1{float:left;padding-left:10px;width:49.5%;_width:49%;height:360px;box-sizing: border-box;}
+#down_2{float:right;padding-left:10px;width:49.5%;_width:50%;height:360px;box-sizing: border-box;}
+ 
+/*padding-left:10px;margin-right:7px; margin-bottom:8px;*/

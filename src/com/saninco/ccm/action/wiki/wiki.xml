@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.wiki" extends="ccm">
+    	<action name="wikiShow" class="com.saninco.ccm.action.wiki.WikiAction" method="wikiShow">
+		  	<result name="success" type="tiles">wikiShowView</result>
+		</action>
+		
+    	<action name="wikiManagement" class="com.saninco.ccm.action.wiki.WikiAction" method="wikiManagement"/>
+    	
+    	<action name="queryWikiList" class="com.saninco.ccm.action.wiki.WikiAction" method="queryWikiList"/>
+    	
+    	<action name="queryWikiListTotalPageNo" class="com.saninco.ccm.action.wiki.WikiAction" method="queryWikiListTotalPageNo"/>
+		
+		<action name="publishOrUpdateWiki" class="com.saninco.ccm.action.wiki.WikiAction" method="publishOrUpdateWiki"/>
+		
+		<action name="findWikiById" class="com.saninco.ccm.action.wiki.WikiAction" method="findWikiById"/>
+		
+		<action name="deleteWiki" class="com.saninco.ccm.action.wiki.WikiAction" method="deleteWiki"/>
+		
+		<action name="updateLististopById" class="com.saninco.ccm.action.wiki.WikiAction" method="updateLististopById"/>
+		
+		<action name="wikiUploadImage" class="com.saninco.ccm.action.wiki.WikiAction" method="wikiUploadImage"/>
+		
+		<action name="wikiUploadFlash" class="com.saninco.ccm.action.wiki.WikiAction" method="wikiUploadFlash"/>
+		
+		<action name="wikiDetail" class="com.saninco.ccm.action.wiki.WikiAction" method="wikiDetail">
+		  	<result name="success">/WEB-INF/pages/wiki/wikiDetail.jsp</result>
+		</action>
+		
+		<action name="selectWikiTopCount" class="com.saninco.ccm.action.wiki.WikiAction" method="selectWikiTopCount"/>
+		
+		<action name="reloadHomeWikiList" class="com.saninco.ccm.action.wiki.WikiAction" method="reloadHomeWikiList"/>
+		
+    </package>
+</struts>

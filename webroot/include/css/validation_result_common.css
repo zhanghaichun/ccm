@@ -1,0 +1,89 @@
+
+.validation-status {
+    cursor: pointer;
+}
+
+.validation-status .icon {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: translateY(3px);
+    z-index: 0;
+}
+
+.validation-status .icon.pass {
+    background-image: url("../images/validation_status/validation_pass.png");
+}
+
+.validation-status .icon.failed {
+    background-image: url("../images/validation_status/validation_failed.png");
+}
+
+.validation-status .icon.can-not-validate {
+    background-image: url("../images/validation_status/can_not_validation.png");
+}
+
+.validation-status .icon.no-reference {
+    background-image: url("../images/validation_status/no_reference.png");
+}
+
+
+/* Validation method help modal */
+.desc-popup {
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     display: none;
+     justify-content: center;
+     align-items: center;
+     background-color: rgba(0,0,0,.2);
+     z-index: 10;
+}
+
+.desc-popup:target {
+    display: flex;
+}
+
+.desc-popup-container {
+    position: relative;
+    font-size: 14px;
+    max-width: 600px;
+    color: #7f7a7a;
+    letter-spacing: 0.14px;
+    background-color: white;
+}
+
+.desc-popup-container .title-bar {
+    background: url('../images/validation_status/sprite.png') repeat-x 0px -200px;
+    line-height: 1.9;
+    border: #808080 1px solid;
+    border-bottom: none;
+    min-height: 22px;
+}
+
+.desc-popup-container .content-container {
+     padding: 22px;
+     border: 1px solid #618fb8;
+     line-height: 1.2;
+}
+
+.desc-popup-container .help-modal-close {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    background: url('../images/validation_status/sprite.png') no-repeat 0px -300px;
+    width: 25px;
+    height: 15px;
+    cursor: pointer;
+
+}
+
+/* Proposal list �е�validation �ֶε����ڵ��֮��
+��һ�л���һ����Ӧ��ѡ����ɫ�� */
+#_table_tbody_ProposalViewListPage tr.itemSelected {
+    background: #fff3dc;
+}

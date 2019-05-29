@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.1.xsd 
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+     
+     
+	<bean id="emailAction" class="com.saninco.ccm.action.email.EmailAction">
+		<property name="sendEmailService" ref="sendEmailService"/>
+		<property name="receivedEmailService" ref="receivedEmailService"/>
+		<property name="disputeService" ref="disputeService"/>
+	</bean>
+     
+    <bean id="receivedEmailJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="emailAction" />
+        <property name="targetMethod" value="createReceivedEmailCronJob" />
+    </bean>
+     
+    <bean id="receivedEmailJobTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+        <property name="jobDetail" ref="receivedEmailJobDetail" />
+        <property name="repeatInterval" value="${auto.receive.email.job.cron.repeatInterval}"/>
+        <property name="startDelay" value="36000"/>
+    </bean>
+    
+    
+    <bean id="sendDisputeReminderEmailJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="emailAction" />
+        <property name="targetMethod" value="sendDisputeReminderEmailCronJob" />
+    </bean>
+     
+    <bean id="sendDisputeReminderEmailCronJobTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+        <property name="jobDetail" ref="sendDisputeReminderEmailJobDetail" />
+        <property name="repeatInterval" value="36000"/>
+        <property name="startDelay" value="36000"/>
+<!--        <property name="repeatInterval" value="${auto.receive.email.job.cron.repeatInterval}"/>-->
+<!--        <property name="startDelay" value="2000"/>-->
+    </bean>
+     
+    <bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="default" autowire="default">
+        <property name="triggers">
+            <list>
+<!--                <ref bean="receivedEmailJobTrigger"/>-->
+<!--                <ref bean="sendDisputeReminderEmailCronJobTrigger"/>-->
+            </list>
+        </property>
+        <property name="overwriteExistingJobs" value="true" />
+        <property name="autoStartup" value="true" />
+    </bean>
+<!--	<bean id="reportExcelService" class="com.saninco.ccm.service.report.ReportExcelServiceImpl">-->
+<!--		<property name="reportDAO" ref="reportDAO"/>	-->
+<!--		<property name="sysConfigDAO" ref="sysConfigDAO"/>	-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean id="apAReportExcelServiceJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--	  <property name="targetObject" ref="reportExcelService"/>-->
+<!--	  <property name="targetMethod" value="saveIReportExcelA"/>-->
+<!--	  <property name="concurrent" value="false"/>-->
+<!--	</bean>-->
+<!--	<bean id="apAReportExcelServiceJobCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+<!-- 		<property name="jobDetail" ref="apAReportExcelServiceJobDetail"/>-->
+<!--  		<property name="cronExpression" value="${ap.report.run.a.job.cron.expression}"/>-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean id="apDReportExcelServiceJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--	  <property name="targetObject" ref="reportExcelService"/>-->
+<!--	  <property name="targetMethod" value="saveIReportExcelD"/>-->
+<!--	  <property name="concurrent" value="false"/>-->
+<!--	</bean>-->
+<!--	<bean id="apDeportExcelServiceJobCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+<!-- 		<property name="jobDetail" ref="apDReportExcelServiceJobDetail"/>-->
+<!--  		<property name="cronExpression" value="${ap.report.run.d.job.cron.expression}"/>-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean id="apMReportExcelServiceJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--	  <property name="targetObject" ref="reportExcelService"/>-->
+<!--	  <property name="targetMethod" value="saveIReportExcelM"/>-->
+<!--	  <property name="concurrent" value="false"/>-->
+<!--	</bean>-->
+<!--	<bean id="apMeportExcelServiceJobCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+<!-- 		<property name="jobDetail" ref="apMReportExcelServiceJobDetail"/>-->
+<!--  		<property name="cronExpression" value="${ap.report.run.m.job.cron.expression}"/>-->
+<!--	</bean>-->
+<!--	-->
+	
+<!--	<bean id="apFeedOutboundJob" class="com.saninco.ccm.job.ApFeedOutboundJobImpl">-->
+<!--		<property name="apService"><ref bean="apService"/></property>-->
+<!--	</bean>-->
+<!--	-->
+<!--    <bean id="apFeedInboundJob" class="com.saninco.ccm.job.ApFeedInboundJobImpl">-->
+<!--		<property name="apService"><ref bean="apService"/></property>-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean id="apFeedOutboundJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--	  <property name="targetObject" ref="apFeedOutboundJob"/>-->
+<!--	  <property name="targetMethod" value="sendOutboundFeedToAP"/>-->
+<!--	  <property name="concurrent" value="false"/>-->
+<!--	</bean>-->
+<!--	-->
+<!--   <bean id="apFeedInboundJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--	  <property name="targetObject" ref="apFeedInboundJob"/>-->
+<!--	  <property name="targetMethod" value="loadAPRemittance"/>-->
+<!--	  <property name="concurrent" value="false"/>-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean id="apFeedOutboundJobCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+<!-- 		<property name="jobDetail" ref="apFeedOutboundJobDetail"/>-->
+<!--  		<property name="cronExpression" value="${ap.feed.outbound.job.cron.expression}"/>-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean id="apFeedInboundJobCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+<!-- 		<property name="jobDetail" ref="apFeedInboundJobDetail"/>-->
+<!--  		<property name="cronExpression" value="${ap.feed.inbound.job.cron.expression}"/>-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">-->
+<!--		<property name="triggers">-->
+<!--			<list>-->
+<!--				<ref bean="apFeedOutboundJobCronTrigger" />-->
+<!--				<ref bean="apFeedInboundJobCronTrigger" />-->
+<!--			</list>-->
+<!--		</property>-->
+<!--        <property name="waitForJobsToCompleteOnShutdown" value="true"/>-->
+<!--	</bean>-->
+</beans>

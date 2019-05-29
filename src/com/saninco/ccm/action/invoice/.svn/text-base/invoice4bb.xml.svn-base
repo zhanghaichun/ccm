@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.invoice4bb" extends="ccm">
+    
+    	<action name="bb/listUserBackup" class="com.saninco.ccm.action.invoice.InvoiceAction4BB" >
+		  	<result name="success">/WEB-INF/bb/invoice/backupList.jsp</result>
+		</action>
+		<action name="bb/listInvoice4Approval" class="com.saninco.ccm.action.invoice.InvoiceAction4BB" method="getInvoices">
+		  	<result name="success">/WEB-INF/bb/invoice/listInvoices.jsp</result>
+		</action>
+		<action name="bb/viewInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction4BB" method="viewInvoice">
+			<result name="success">/WEB-INF/bb/invoice/viewInvoice.jsp</result>
+			<result name="errPage">/WEB-INF/bb/invoice/viewInvoiceError.jsp</result>
+		</action>
+		<action name="bb/approveInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction4BB" method="approveInvoice">
+			<result name="input">/WEB-INF/bb/invoice/confirmApprove.jsp</result>
+			<result name="success">/WEB-INF/bb/invoice/transactionSuccess.jsp</result>
+		</action>
+		<action name="bb/confirmApproveInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction4BB" method="confirmApproveInvoice">
+			<result name="input">/WEB-INF/bb/invoice/viewInvoice.jsp</result>
+			<result name="success">/WEB-INF/bb/invoice/confirmApprove.jsp</result>
+		</action>
+		<action name="bb/confirmApproveAllInvoices" class="com.saninco.ccm.action.invoice.InvoiceAction4BB" method="confirmApproveAllInvoices">
+			<result name="success">/WEB-INF/bb/invoice/confirmApproveAll.jsp</result>
+		</action>
+		<action name="bb/approveAllInvoices" class="com.saninco.ccm.action.invoice.InvoiceAction4BB" method="approveAllInvoices">
+			<result name="input">/WEB-INF/bb/invoice/confirmApproveAll.jsp</result>
+			<result name="success">/WEB-INF/bb/invoice/transactionSuccess.jsp</result>
+		</action>
+		<action name="bb/rejectInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction4BB" method="rejectInvoice">
+			<result name="input">/WEB-INF/bb/invoice/confirmReject.jsp</result>
+			<result name="success">/WEB-INF/bb/invoice/transactionSuccess.jsp</result>
+		</action>
+		<action name="bb/confirmRejectInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction4BB" method="confirmRejectInvoice">
+			<result name="input">/WEB-INF/bb/invoice/viewInvoice.jsp</result>
+			<result name="success">/WEB-INF/bb/invoice/confirmReject.jsp</result>
+		</action>
+		<action name="bb/holdInvoice" class="com.saninco.ccm.action.invoice.InvoiceAction4BB" method="holdInvoice">
+			<result name="input">/WEB-INF/bb/invoice/viewInvoice.jsp</result>
+			<result name="success">/WEB-INF/bb/invoice/transactionSuccess.jsp</result>
+		</action>
+
+    </package>
+</struts>

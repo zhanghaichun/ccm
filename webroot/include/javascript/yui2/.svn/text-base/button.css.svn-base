@@ -1,0 +1,120 @@
+.yui-button {
+	DISPLAY: inline-block; VERTICAL-ALIGN: text-bottom
+}
+.yui-button .first-child {
+	DISPLAY: inline-block
+}
+.yui-button BUTTON {
+	DISPLAY: inline-block; MARGIN: 0px; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.yui-button A {
+	DISPLAY: inline-block; MARGIN: 0px; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.yui-button BUTTON {
+	OVERFLOW: visible; CURSOR: pointer; BACKGROUND-COLOR: transparent
+}
+.yui-button A {
+	TEXT-DECORATION: none
+}
+.yui-skin-sam .yui-button {
+	BORDER-RIGHT: #808080 0px solid; BORDER-TOP: #808080 1px solid; BACKGROUND: url(sprite.png) repeat-x 0px 0px; MARGIN: auto 0.25em; BORDER-LEFT: #808080 0px solid; BORDER-BOTTOM: #808080 1px solid
+}
+.yui-skin-sam .yui-button .first-child {
+	BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #808080 0px solid; MARGIN: 0px; BORDER-LEFT: #808080 1px solid; BORDER-BOTTOM: #808080 0px solid
+}
+.yui-skin-sam .yui-button BUTTON {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 93%; MIN-HEIGHT: auto; PADDING-BOTTOM: 2px; COLOR: #000; LINE-HEIGHT: 1.0; PADDING-TOP: 2px
+}
+.yui-skin-sam .yui-button A {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 93%; MIN-HEIGHT: auto; PADDING-BOTTOM: 0px; COLOR: #000; LINE-HEIGHT: 1.0; PADDING-TOP: 0px
+}
+.yui-skin-sam .yui-button A:visited {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 93%; MIN-HEIGHT: auto; PADDING-BOTTOM: 0px; COLOR: #000; LINE-HEIGHT: 1.0; PADDING-TOP: 0px
+}
+.yui-skin-sam .yui-button A {
+	PADDING-BOTTOM: 1px; LINE-HEIGHT: 1.875
+}
+.yui-skin-sam .yui-split-button BUTTON {
+	PADDING-RIGHT: 20px; BACKGROUND-POSITION: right center; BACKGROUND-REPEAT: no-repeat
+}
+.yui-skin-sam .yui-menu-button BUTTON {
+	PADDING-RIGHT: 20px; BACKGROUND-POSITION: right center; BACKGROUND-REPEAT: no-repeat
+}
+.yui-skin-sam .yui-menu-button BUTTON {
+	BACKGROUND-IMAGE: url(menu-button-arrow.png)
+}
+.yui-skin-sam .yui-split-button BUTTON {
+	BACKGROUND-IMAGE: url(split-button-arrow.png)
+}
+.yui-skin-sam .yui-button-focus {
+	BACKGROUND-POSITION: 0px -1300px; BORDER-LEFT-COLOR: #7d98b8; BORDER-BOTTOM-COLOR: #7d98b8; BORDER-TOP-COLOR: #7d98b8; BORDER-RIGHT-COLOR: #7d98b8
+}
+.yui-skin-sam .yui-button-focus .first-child {
+	BORDER-LEFT-COLOR: #7d98b8; BORDER-BOTTOM-COLOR: #7d98b8; BORDER-TOP-COLOR: #7d98b8; BORDER-RIGHT-COLOR: #7d98b8
+}
+.yui-skin-sam .yui-split-button-focus BUTTON {
+	BACKGROUND-IMAGE: url(split-button-arrow-focus.png)
+}
+.yui-skin-sam .yui-button-hover {
+	BACKGROUND-POSITION: 0px -1300px; BORDER-LEFT-COLOR: #7d98b8; BORDER-BOTTOM-COLOR: #7d98b8; BORDER-TOP-COLOR: #7d98b8; BORDER-RIGHT-COLOR: #7d98b8
+}
+.yui-skin-sam .yui-button-hover .first-child {
+	BORDER-LEFT-COLOR: #7d98b8; BORDER-BOTTOM-COLOR: #7d98b8; BORDER-TOP-COLOR: #7d98b8; BORDER-RIGHT-COLOR: #7d98b8
+}
+.yui-skin-sam .yui-split-button-hover BUTTON {
+	BACKGROUND-IMAGE: url(split-button-arrow-hover.png)
+}
+.yui-skin-sam .yui-button-active {
+	BACKGROUND-POSITION: 0px -1700px; BORDER-LEFT-COLOR: #7d98b8; BORDER-BOTTOM-COLOR: #7d98b8; BORDER-TOP-COLOR: #7d98b8; BORDER-RIGHT-COLOR: #7d98b8
+}
+.yui-skin-sam .yui-button-active .first-child {
+	BORDER-LEFT-COLOR: #7d98b8; BORDER-BOTTOM-COLOR: #7d98b8; BORDER-TOP-COLOR: #7d98b8; BORDER-RIGHT-COLOR: #7d98b8
+}
+.yui-skin-sam .yui-split-button-activeoption {
+	BACKGROUND-POSITION: 0px 0px; BORDER-LEFT-COLOR: #808080; BORDER-BOTTOM-COLOR: #808080; BORDER-TOP-COLOR: #808080; BORDER-RIGHT-COLOR: #808080
+}
+.yui-skin-sam .yui-split-button-activeoption .first-child {
+	BORDER-LEFT-COLOR: #808080; BORDER-BOTTOM-COLOR: #808080; BORDER-TOP-COLOR: #808080; BORDER-RIGHT-COLOR: #808080
+}
+.yui-skin-sam .yui-split-button-activeoption BUTTON {
+	BACKGROUND-IMAGE: url(split-button-arrow-active.png)
+}
+.yui-skin-sam .yui-radio-button-checked {
+	BACKGROUND-POSITION: 0px -1400px; BORDER-LEFT-COLOR: #304369; BORDER-BOTTOM-COLOR: #304369; BORDER-TOP-COLOR: #304369; BORDER-RIGHT-COLOR: #304369
+}
+.yui-skin-sam .yui-checkbox-button-checked {
+	BACKGROUND-POSITION: 0px -1400px; BORDER-LEFT-COLOR: #304369; BORDER-BOTTOM-COLOR: #304369; BORDER-TOP-COLOR: #304369; BORDER-RIGHT-COLOR: #304369
+}
+.yui-skin-sam .yui-radio-button-checked .first-child {
+	BORDER-LEFT-COLOR: #304369; BORDER-BOTTOM-COLOR: #304369; BORDER-TOP-COLOR: #304369; BORDER-RIGHT-COLOR: #304369
+}
+.yui-skin-sam .yui-checkbox-button-checked .first-child {
+	BORDER-LEFT-COLOR: #304369; BORDER-BOTTOM-COLOR: #304369; BORDER-TOP-COLOR: #304369; BORDER-RIGHT-COLOR: #304369
+}
+.yui-skin-sam .yui-radio-button-checked BUTTON {
+	COLOR: #fff
+}
+.yui-skin-sam .yui-checkbox-button-checked BUTTON {
+	COLOR: #fff
+}
+.yui-skin-sam .yui-button-disabled {
+	BACKGROUND-POSITION: 0px -1500px; BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; BORDER-TOP-COLOR: #ccc; BORDER-RIGHT-COLOR: #ccc
+}
+.yui-skin-sam .yui-button-disabled .first-child {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; BORDER-TOP-COLOR: #ccc; BORDER-RIGHT-COLOR: #ccc
+}
+.yui-skin-sam .yui-button-disabled BUTTON {
+	CURSOR: default; COLOR: #a6a6a6
+}
+.yui-skin-sam .yui-button-disabled A {
+	CURSOR: default; COLOR: #a6a6a6
+}
+.yui-skin-sam .yui-button-disabled A:visited {
+	CURSOR: default; COLOR: #a6a6a6
+}
+.yui-skin-sam .yui-menu-button-disabled BUTTON {
+	BACKGROUND-IMAGE: url(menu-button-arrow-disabled.png)
+}
+.yui-skin-sam .yui-split-button-disabled BUTTON {
+	BACKGROUND-IMAGE: url(split-button-arrow-disabled.png)
+}

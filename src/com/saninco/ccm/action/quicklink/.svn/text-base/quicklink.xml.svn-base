@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.quicklink" extends="ccm">
+
+        <action name="deleteQuicklink" class="com.saninco.ccm.action.quicklink.QuicklinkAction" method="deleteQuicklink"/>
+		
+        <action name="getQuicklink" class="com.saninco.ccm.action.quicklink.QuicklinkAction" method="getQuicklink"/>
+
+        <action name="getThisPageName" class="com.saninco.ccm.action.quicklink.QuicklinkAction" method="getThisPageName"/>
+		
+        <action name="saveLocation" class="com.saninco.ccm.action.quicklink.QuicklinkAction" method="saveLocation"/>
+		
+        <action name="getLocation" class="com.saninco.ccm.action.quicklink.QuicklinkAction" method="getLocation"/>
+		
+		
+    </package>
+</struts>

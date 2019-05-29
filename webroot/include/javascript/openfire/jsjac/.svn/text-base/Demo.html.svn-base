@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JSJaC Simple CORS Client</title>
+
+        <script type="text/javascript" src="../jquery.min.js"></script>
+        <script type="text/javascript" src="js/Command.js"></script>
+        <script type="text/javascript" src="js/JSJaC.js"></script>
+
+        <script type="text/javascript">
+            Command.server = "192.168.0.74";
+			Command.resource = 'SPS';
+            Command.username = '2';
+			Command.password = '1';
+           	Command.init();
+            Command.receive = function(cmd) {
+	            console.debug(cmd.event);
+				console.debug(cmd.pictureId);
+				
+            	//alert(message);
+            }
+
+			var userId = 2;
+			Command.isUserOnline(userId, function(isOnline) {
+				alert(isOnline);
+			});
+			
+            // ]]>
+        </script>
+    <body onunload="Command.onunload()">
+
+        <div id="login_pane">
+            <h2>Login</h2>
+            <form name="loginForm" onSubmit="return doLogin();" action="#">
+                  <input type="submit" value="Login" tabindex="7"/>
+            </form>
+        </div>
+    </body>
+</html>

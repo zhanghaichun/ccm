@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.quoteInventory" extends="ccm">
+        <!-- 主要是返回 provider list 和 product list 下拉列表中的信息。 -->
+    	<action name="searchQuoteInventory" class="com.saninco.ccm.action.quoteInventory.QuoteInventoryAction" method="exec">
+    		<result name="success" type="tiles">showQuoteInventory</result>
+		</action>
+		
+		<!-- 返回Quote Inventory 列表中的信息 -->
+		<action name="searchQuoteInventoryList" class="com.saninco.ccm.action.quoteInventory.QuoteInventoryAction" method="searchQuoteInventoryList"/>
+		
+		<!-- 返回Quote Inventory 列表的分页查询信息 -->
+		<action name="getQuoteInventoryViewListPageNo" class="com.saninco.ccm.action.quoteInventory.QuoteInventoryAction" method="getQuoteInventoryViewListPageNo"/>
+		
+		<!-- 把 quote inventory 列表内容下载成excel文件 -->
+		<action name="downloadQuoteInventoryToExcel" class="com.saninco.ccm.action.quoteInventory.QuoteInventoryAction" method="downloadQuoteInventoryToExcel"/>
+
+		<!-- 保存已经查询的信息 -->
+		<action name="saveAllQuoteInventory" class="com.saninco.ccm.action.quoteInventory.QuoteInventoryAction" method="saveAllQuoteInventory"/>
+
+		<!-- 将Quote Inventory 表中信息的title信息当做Excel模板下载下来 -->
+		<action name="downloadQuoteInventoryTemplateToExcel" class="com.saninco.ccm.action.quoteInventory.QuoteInventoryAction" method="downloadQuoteInventoryTemplateToExcel"/>
+
+    </package>
+</struts>

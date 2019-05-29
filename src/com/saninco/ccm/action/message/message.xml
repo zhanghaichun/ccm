@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.message" extends="ccm">
+    	<action name="showMessageCenter" class="com.saninco.ccm.action.message.MessageCenterAction" method="exec">
+		  	<result name="success" type="tiles">searchMessageCenterView</result>
+		</action>
+    	<action name="doGetMessageCenterSearchTotalPageNo" class="com.saninco.ccm.action.message.MessageCenterAction" method="getMessageCenterSearchTotalPageNo"/>
+
+    	<action name="doSearchMessageCenter" class="com.saninco.ccm.action.message.MessageCenterAction" method="searchMessageCenter"/>
+    	<action name="doDownloadMessageCenterCsv" class="com.saninco.ccm.action.message.MessageCenterAction" method="doDownloadMessageCenterCsv"/>
+    	<action name="doUpdatMessageFavoriteFlag" class="com.saninco.ccm.action.message.MessageCenterAction" method="updatMessageFavoriteFlag"/>
+
+		
+    </package>
+</struts>

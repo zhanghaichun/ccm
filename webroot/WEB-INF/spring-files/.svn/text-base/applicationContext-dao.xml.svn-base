@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+	
+	<bean id="currencyDao" class="com.saninco.ccm.dao.CurrencyDaoImpl" parent="hibeDaoParent"/>
+	<bean id="banDao" class="com.saninco.ccm.dao.BanDaoImpl" parent="hibeDaoParent"/>
+	<bean id="vendorDao" class="com.saninco.ccm.dao.VendorDaoImpl" parent="hibeDaoParent"/>
+	<bean id="masterInventoryDao" class="com.saninco.ccm.dao.MasterInventoryDaoImpl" parent="hibeDaoParent"/>
+	<bean id="userDao" class="com.saninco.ccm.dao.UserDaoImpl" parent="hibeDaoParent"/>
+	<bean id="userLoginPictureDao" class="com.saninco.ccm.dao.UserLoginPictureDaoImpl" parent="hibeDaoParent"/>
+	<bean id="userQuicklinkDao" class="com.saninco.ccm.dao.UserQuicklinkDaoImpl" parent="hibeDaoParent"/>
+	<bean id="passwordHistoryDao" class="com.saninco.ccm.dao.PasswordHistoryDaoImpl" parent="hibeDaoParent"/>
+	<bean id="invoiceDao" class="com.saninco.ccm.dao.InvoiceDaoImpl" parent="hibeDaoParent"/>
+	<bean id="circuitDao" class="com.saninco.ccm.dao.CircuitDaoImpl" parent="hibeDaoParent"/>
+	<bean id="circuitOldDao" class="com.saninco.ccm.circuitold.dao.CircuitDaoImpl" parent="hibeDaoParent"/>
+	<bean id="circuitDetailDao" class="com.saninco.ccm.dao.CircuitDetailDaoImpl" parent="hibeDaoParent"/>
+	<bean id="invoiceStatusDao" class="com.saninco.ccm.dao.InvoiceStatusDaoImpl" parent="hibeDaoParent"/>
+	<bean id="paymentDao" class="com.saninco.ccm.dao.PaymentDaoImpl" parent="hibeDaoParent"/>
+	<bean id="paymentBatchDao" class="com.saninco.ccm.dao.PaymentBatchDaoImpl" parent="hibeDaoParent"/>
+	<bean id="paymentDetailDao" class="com.saninco.ccm.dao.PaymentDetailDaoImpl" parent="hibeDaoParent"/>
+	<bean id="paymentStatusDao" class="com.saninco.ccm.dao.PaymentStatusDaoImpl" parent="hibeDaoParent"/>
+	<bean id="disputeStatusDao" class="com.saninco.ccm.dao.DisputeStatusDaoImpl" parent="hibeDaoParent"/>
+	<bean id="disputeReasonDao" class="com.saninco.ccm.dao.DisputeReasonDaoImpl" parent="hibeDaoParent"/>
+	<bean id="disputeDao" class="com.saninco.ccm.dao.DisputeDaoImpl" parent="hibeDaoParent"/>
+	<bean id="creditDao" class="com.saninco.ccm.dao.CreditDaoImpl" parent="hibeDaoParent"/>
+	<bean id="creditStatusDao" class="com.saninco.ccm.dao.CreditStatusDaoImpl" parent="hibeDaoParent"/>
+	<bean id="createdByDao" class="com.saninco.ccm.dao.CreatedByDaoImpl" parent="hibeDaoParent"/>
+	<bean id="contactDao" class="com.saninco.ccm.dao.ContactDaoImpl" parent="hibeDaoParent"></bean>
+	
+	<bean id="userDelegationDao" class="com.saninco.ccm.dao.UserDelegationDaoImpl" parent="hibeDaoParent"/>
+	<bean id="reconcileDao" class="com.saninco.ccm.dao.ReconcileDaoImpl" parent="hibeDaoParent"/>
+	<bean id="ticketStatusDao" class="com.saninco.ccm.dao.TicketStatusDaoImpl" parent="hibeDaoParent"/> 
+	<bean id="priorityDao" class="com.saninco.ccm.dao.PriorityDaoImpl" parent="hibeDaoParent"/> 
+	<bean id="severityDao" class="com.saninco.ccm.dao.SeverityDaoImpl" parent="hibeDaoParent"/> 
+	<bean id="ticketDao" class="com.saninco.ccm.dao.TicketDaoImpl" parent="hibeDaoParent"/>	
+	<bean id="ticketHistoryDao" class="com.saninco.ccm.dao.TicketHistoryDaoImpl" parent="hibeDaoParent"/>	
+	<bean id="creditDetailDao" class="com.saninco.ccm.dao.CreditDetailDaoImpl" parent="hibeDaoParent"/>
+	<bean id="rtagDao" class="com.saninco.ccm.dao.RtagDaoImpl" parent="hibeDaoParent"/>
+	<bean id="sysConfigDAO" class="com.saninco.ccm.dao.SysConfigDAOImpl" parent="hibeDaoParent"></bean>
+	<bean id="reportDAO" class="com.saninco.ccm.dao.ReportDAOImpl" parent="hibeDaoParent"></bean>
+	<bean id="receivedEmailDao" class="com.saninco.ccm.dao.ReceivedEmailDaoImpl" parent="hibeDaoParent"></bean>
+	
+	<bean id="securityManagementDao" class="com.saninco.ccm.dao.SecurityManagementDaoImpl" parent="hibeDaoParent"/>
+	<bean id="roleDao" class="com.saninco.ccm.dao.RoleDaoImpl" parent="hibeDaoParent"/>
+	
+	<bean id="invoiceDetailDao" class="com.saninco.ccm.dao.InvoiceDetailDaoImpl" parent="hibeDaoParent"/>
+	<bean id="labelDao" class="com.saninco.ccm.dao.LabelDaoImpl" parent="hibeDaoParent"/>
+	<bean id="functionDao" class="com.saninco.ccm.dao.FunctionDaoImpl" parent="hibeDaoParent"/>
+	
+	<bean id="apDao" class="com.saninco.ccm.dao.ApDaoImpl" parent="hibeDaoParent"/>
+	<bean id="remittanceDao" class="com.saninco.ccm.dao.RemittanceDaoImpl" parent="hibeDaoParent"/>
+	
+	<bean id="accountCodelDao" class="com.saninco.ccm.dao.AccountCodeDaoImpl" parent="hibeDaoParent"/>
+	
+	<bean id="assignmentDao" class="com.saninco.ccm.dao.AssignmentDaoImpl" parent="hibeDaoParent"/>
+	
+	<bean id="attachmentFileDao" class="com.saninco.ccm.dao.AttachmentFileDaoImpl" parent="hibeDaoParent"></bean>
+	
+	<bean id="originatorDao" class="com.saninco.ccm.dao.OriginatorDaoImpl" parent="hibeDaoParent"></bean>
+	
+	<bean id="dashboardDao" class="com.saninco.ccm.dao.DashboardDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="userDashboardDao" class="com.saninco.ccm.dao.BIUserDashboardDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="timePeriodDao" class="com.saninco.ccm.dao.BITimePeriodDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="biVendorDao" class="com.saninco.ccm.dao.BIVendorDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="biProductDao" class="com.saninco.ccm.dao.BIProductDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="biProvinceDao" class="com.saninco.ccm.dao.BIProvinceDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="biBudgetDao" class="com.saninco.ccm.dao.BIBudgetDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="biAuditReferenceDao" class="com.saninco.ccm.dao.BIAuditReferenceDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="userDashboardModuleDao" class="com.saninco.ccm.dao.BIUserDashboardModuleDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="vendorSpendDashboardDao" class="com.saninco.ccm.dao.BIVendorSpendDashboardDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="dashboardControlDao" class="com.saninco.ccm.dao.BIDashboardControlDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="dashboardListbyDao" class="com.saninco.ccm.dao.BIDashboardListbyDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="dashboardModuleDao" class="com.saninco.ccm.dao.BIDashboardModuleDaoImpl" parent="hibeDaoParent"></bean>
+	
+	<bean id="proposalDao" class="com.saninco.ccm.dao.ProposalDAOImpl" parent="hibeDaoParent"></bean>
+	
+	<bean id="eventJournalDao" class="com.saninco.ccm.dao.EventJournalDaoImpl" parent="hibeDaoParent"></bean>
+
+	<bean id="reconcileStatusDao" class="com.saninco.ccm.dao.ReconcileStatusDaoImpl" parent="hibeDaoParent"></bean>
+	
+	<bean id="invoiceStDao" class="com.saninco.ccm.dao.InvoiceStDaoImpl" parent="hibeDaoParent"></bean>
+
+	<bean id="reportGenerateDao" class="com.saninco.ccm.dao.ReportGenerateDaoImpl" parent="hibeDaoParent"/>
+	<bean id="invoiceDao4BB" class="com.saninco.ccm.dao.InvoiceDao4BBImpl" parent="hibeDaoParent"></bean>
+	<bean id="invoiceStVDao" class="com.saninco.ccm.dao.InvoiceStVDaoImpl" parent="hibeDaoParent"></bean>
+	
+	<bean id="workflowActionDao" class="com.saninco.ccm.dao.WorkflowActionDao" parent="hibeDaoParent"></bean>
+	<bean id="barCodeDao" class="com.saninco.ccm.dao.BarCodeDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="emailDao" class="com.saninco.ccm.dao.EmailDaoImpl" parent="hibeDaoParent"></bean>
+	
+	<bean id="userActionLogDao" class="com.saninco.ccm.dao.UserActionLogDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="quoteDao" class="com.saninco.ccm.dao.QuoteDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="tariffLinkDao" class="com.saninco.ccm.dao.TariffLinkDaoImpl" parent="hibeDaoParent"></bean>
+	<bean id="targetDao" class="com.saninco.ccm.target.dao.TargetDaoImpl" parent="hibeDaoParent"></bean>
+    <bean id="targetDao2" class="com.saninco.ccm.target.dao.TargetDao2Impl" parent="hibeDaoParent"></bean>
+    
+    <bean id="invoiceNote" class="com.saninco.ccm.dao.InvoiceNoteDaoImpl" parent="hibeDaoParent"></bean>
+   
+    <bean id="SecurityIPDAOImpl" class="com.saninco.ccm.dao.SecurityIPDAOImpl" parent="hibeDaoParent"></bean>
+    
+    <bean id="wikiDao" class="com.saninco.ccm.dao.WikiDaoImpl" parent="hibeDaoParent"></bean>
+     
+    <bean id="vendorInventoryDao" class="com.saninco.ccm.dao.VendorInventoryDaoImpl" parent="hibeDaoParent"></bean>
+    <bean id="messageCenterDao" class="com.saninco.ccm.dao.MessageCenterDaoImpl" parent="hibeDaoParent"></bean>
+
+    <!-- Quote Inventory -->
+    <bean id="quoteInventoryDao" class="com.saninco.ccm.dao.quoteInventory.QuoteInventoryDaoImpl" parent="hibeDaoParent"></bean>
+    
+    <!-- Quote Request -->
+    <bean id="quoteRequestDao" class="com.saninco.ccm.dao.quoteRequest.QuoteRequestDaoImpl" parent="hibeDaoParent"></bean>
+
+    <!-- Contract/Tariff/Price List -->
+    <bean id="contractTariffPriceListDao" class="com.saninco.ccm.dao.contractTariffPriceList.ContractTariffPriceListDaoImpl" parent="hibeDaoParent"></bean>
+
+    <!-- Contract -->
+    <bean id="contractDao" class="com.saninco.ccm.dao.contract.ContractDaoImpl" parent="hibeDaoParent"></bean>
+
+    <!-- Pricelist -->
+    <bean id="pricelistDao" class="com.saninco.ccm.dao.pricelist.PricelistDaoImpl" parent="hibeDaoParent"></bean>
+
+    <!-- Contract Rules -->
+    <bean id="contractRulesDao" class="com.saninco.ccm.dao.contractRules.ContractRulesDaoImpl" parent="hibeDaoParent"></bean>
+
+    <!-- Tariff Rules -->
+    <bean id="tariffRulesDao" class="com.saninco.ccm.dao.tariffRules.TariffRulesDaoImpl" parent="hibeDaoParent"></bean>
+    <!-- MtM Rules -->
+    <bean id="mtmRulesDao" class="com.saninco.ccm.dao.mtmRules.MtMRulesDaoImpl" parent="hibeDaoParent"></bean>
+
+    <!-- Rate Search -->
+    <bean id="rateSearchDao" class="com.saninco.ccm.dao.rateSearch.RateSearchDaoImpl" parent="hibeDaoParent"></bean>
+    
+    <bean id="rateExcelTariffBatchDao" class="com.saninco.ccm.dao.rateSearch.RateExcelTariffBatchDaoImpl" parent="hibeDaoParent"></bean>
+    <bean id="rateExcelMtMBatchDao" class="com.saninco.ccm.dao.rateSearch.RateExcelMtMBatchDaoImpl" parent="hibeDaoParent"></bean>
+    <bean id="rateExcelContractBatchDao" class="com.saninco.ccm.dao.rateSearch.RateExcelContractBatchDaoImpl" parent="hibeDaoParent"></bean>
+</beans>

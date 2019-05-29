@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>  
+    <definition name="searchCircuitOldView" extends="ccmMainTemplate">
+        <put-attribute name="mainPanel" value="/WEB-INF/pages/circuitold/searchCircuitOldChargesAndSCOAsMainPanel.jsp"/>
+    </definition>
+    <definition name="searchCircuitView" extends="ccmMainTemplate">
+        <put-attribute name="mainPanel" value="/WEB-INF/pages/circuit/searchCircuitChargesAndSCOAsMainPanel.jsp"/>
+    </definition>
+    <definition name="showCircuitDetailView" extends="ccmMainTemplate">
+        <put-attribute name="mainPanel" value="/WEB-INF/pages/circuit/showCircuitDetailMainPanel.jsp"/>
+    </definition>
+</tiles-definitions>

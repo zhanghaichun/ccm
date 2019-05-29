@@ -1,0 +1,239 @@
+/* Begin: General */
+body { 
+	margin: 0px 0px 0px 0px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	}
+
+li{list-style-type: none;}/*»•µÙ±Í«©*/
+
+.clear{ padding-top:10px;}
+
+.account_search{
+	border:1px solid #dddddd;
+	margin-top:4px;
+	padding:20px 10px;
+}
+
+.account_search .text{
+	width:65px;
+	text-align:right;
+	float:left;
+	line-height:20px;
+	padding-right:10px;
+}
+
+
+.account_search select{
+	width:250px;
+	height:20px;
+	line-height:20px;
+}
+
+.accountLine{
+	height:18px;
+	overflow:hidden;
+}
+
+
+/*Circuit_Detail*/
+.Cir_Det{
+	width:1076px;
+	border:1px solid #b4b4b4;
+	margin-top:4px;
+}
+
+.Cir_Det table{
+	width:100%;
+	line-height:20px;
+}
+
+.Cir_Det table .th1{
+	border-bottom:1px solid #b4b4b4;
+	height:32px;
+	line-height:32px;
+	text-align:center;
+	background:#f7f7f7;
+	font-weight:bold;
+}
+.Cir_Det table .th2{
+	border-bottom:1px solid #b4b4b4;
+	border-right:1px solid #b4b4b4;
+	height:32px;
+	line-height:32px;
+	text-align:center;
+	background:#f7f7f7;
+	font-weight:bold;
+}
+.Cir_Det table .th3{
+	border-bottom:1px solid #e4e4e4;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	color:#595758;
+}
+.Cir_Det table .th4{
+	border-top:1px solid #b4b4b4;
+	height:32px;
+	line-height:32px;
+	text-align:center;
+	background:#f7f7f7;
+	color:#595758;
+	font-weight:bold;
+}
+
+.Cir_Det table .th5{
+	border-top:1px solid #b4b4b4;
+}
+
+
+.Cir_Det table .td1{
+	border-right:1px solid #b4b4b4;
+	border-bottom:1px solid #b4b4b4;
+}
+
+.Cir_Det table .td2{
+	border-right:1px solid #b4b4b4;
+}
+.Cir_Det table .td3{
+	border-bottom:1px solid #b4b4b4;
+}
+.Cir_Det_table1{
+}
+
+.Cir_Det_table1 td{
+	padding:1px 7px;
+}
+
+.Cir_Det_table2{
+}
+
+.Cir_Det_table2 td{
+	padding:1px 7px;
+}
+
+.Cir_cen_text{
+	padding:10px;
+	padding-bottom:none;
+	border-left:1px solid #d2d2d4;
+	border-right:1px solid #d2d2d4;
+	background:#f6f6f6;
+	line-height:22px;
+	color:#1e1e1e;
+	font-size:11PX;
+}
+
+
+.Cir_DetLine{
+	height:20px;
+	overflow:hidden;
+/*	border-left:1px solid #dddddd;
+	border-right:1px solid #dddddd;
+	padding-top:20px;
+	background:#eeeef0;*/
+}
+
+
+.AccPopup{
+}
+
+
+.InSePoput{
+	width:280px;
+}
+.InSePoput .ISPtop{
+	width:280px;
+	height:17px;
+	overflow:hidden;
+	background:url(images/InSePoput_top.png);
+}
+
+.InSePoput .ISPcon{
+	width:280px;
+	
+	
+}
+
+.InSePoput .ISPcon .ISPleft{
+	width:20px;
+	height:61px;
+	background:url(images/InSePoput_icon.png);
+	float:left;
+}
+
+.InSePoput .ISPcon .ISPright{
+	width:281px;
+	background:url(images/InSePoput_con.png) repeat scroll 0 0;
+}
+
+.InSePoput .ISPcon .ISPright table{
+	/*width:97%;*/
+}
+
+.InSePoput .ISPcon .ISPright tr{
+	height:25px;
+}
+
+.InSePoput .ISPcon .ISPright td{
+	padding:0 5px;
+	line-height:25px;
+}
+
+.InSePoput .ISPdown{
+	width:280px;
+	height:20px;
+	overflow:hidden;
+	background:url(images/InSePoput_down.png);
+}
+
+
+.InDePoput{
+	width:235px;
+}
+
+.InDePoput .IDPtop{
+	width:235px;
+	height:22px;
+	background:url(images/InDePop_top.png);
+}
+
+.InDePoput .IDPcon{
+	overflow:hidden;
+	width:235px;
+	background:url(images/InDePop_con.png);
+}
+
+.InDePoput .IDPcon .IDPleft{
+	width:25px;
+	height:36px;
+	background:url(images/InDePop_icon.png);
+	float:left;
+}
+
+.InDePoput .IDPcon .IDPright{
+	width:190px;
+	float:left;
+	padding:0 10px;
+}
+
+.InDePoput .IDPcon .IDPright h3{
+	margin-bottom:0px;
+	line-height:25px;
+	font-size:12px;
+	color:#585858;
+}
+
+.InDePoput .IDPcon .IDPright p{
+	margin-bottom:0px;
+	line-height:25px;
+	font-size:11px;
+	color:#000000;
+	font-weight:bold;
+}
+
+.InDePoput .IDPdown{
+	width:235px;
+	height:22px;
+	overflow:hidden;
+	background:url(images/InDePop_down.png);
+}

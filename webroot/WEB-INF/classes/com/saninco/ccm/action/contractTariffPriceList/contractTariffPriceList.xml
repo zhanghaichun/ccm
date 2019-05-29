@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.contractTariffPriceList" extends="ccm">
+        <!-- 主要是返回筛选条件中 vendor, ban, product, product component下拉列表
+        , 以及expiry date contracts count 的信息。 -->
+    	<action name="searchContractTariffPriceList" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="exec">
+    		<result name="success" type="tiles">showContractTariffPriceList</result>
+		</action>
+
+        <!-- 查询Contract 列表的分页信息。 -->
+        <action name="getContractListPageNo" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="getContractListPageNo"/>
+
+        <!-- 根据 expiry date 条件来查询 contracts 的个数 -->
+        <action name="getContractCountsByExpiryDate" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="getContractCountsByExpiryDate"/>
+
+        <!-- 查询Contract 列表。 -->
+        <action name="getContractList" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="getContractList"/>
+
+        <!-- 下载Contract List 列表信息。 -->
+        <action name="downloadContractList" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="downloadContractList"/>
+        
+        <!-- 查询Tariff 列表的分页信息。 -->
+        <action name="getTariffListPageNo" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="getTariffListPageNo"/>
+
+        <!-- 查询Tariff 列表。 -->
+        <action name="getTariffList" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="getTariffList"/>
+
+        <!-- 下载 Tariff List 列表到Excel文件中. -->
+        <action name="downloadTariffList" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="downloadTariffList"/>
+
+        <!-- 查询Price List 列表的分页信息。 -->
+        <action name="getPriceListListPageNo" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="getPriceListListPageNo"/>
+
+        <!-- 查询Price List 列表。 -->
+        <action name="getPriceListList" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="getPriceListList"/>
+
+        <!-- 下载 Price List 列表到Excel文件中. -->
+        <action name="downloadPriceListList" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="downloadPriceListList"/>
+
+        <!-- 保存已经查询的信息 -->
+		<action name="saveContractTariffPriceListSearch" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="saveContractTariffPriceListSearch"/>
+		
+		<!-- 查询 Rate Discrepancy List -->
+		<action name="getRateDiscrepancyList" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="getRateDiscrepancyList"/>
+		<!-- 查询 Rate Discrepancy List 分页信息-->
+		<action name="getRateDiscrepancyListPageNo" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="getRateDiscrepancyListPageNo"/>
+		
+		<!-- 导出 Rate Discrepancy List 到 excel -->
+		<action name="saveExcelBySearchRateDiscrepancy" class="com.saninco.ccm.action.contractTariffPriceList.ContractTariffPriceListAction" method="saveExcelBySearchRateDiscrepancy"/>
+    	
+    </package>
+</struts>

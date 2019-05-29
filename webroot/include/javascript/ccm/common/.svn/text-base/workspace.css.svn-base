@@ -1,0 +1,78 @@
+/**
+ * Auchor Chao.Liu
+ * This is general program
+ */
+*{
+	padding:0; 
+	margin:0;
+}
+ul{
+	list-style:none;
+	line-height:24px;
+}
+/**
+ * make UL Style
+ */
+#Left_Menu div{
+	border:1px solid #ccc;
+	cursor: pointer;
+}
+#Left_Menu{
+	width:200px;
+}
+#Left_Menu li{
+	width:180px; 
+	overflow:hidden; 
+	vertical-align: bottom;
+}
+
+#My_Workspace_Menu{
+	width:180px;
+}
+#My_Workspace_Menu div{
+	width:170px; 
+	overflow:hidden; 
+	vertical-align: bottom;
+	cursor: default;
+}
+
+#Backup_Menu{
+	width:180px;
+}
+#Backup_Menu li{
+	width:170px; 
+	overflow:hidden; 
+	vertical-align: bottom;
+}
+
+#Delegation_Menu{
+	width:180px;
+}
+#Delegation_Menu li{
+	width:170px; 
+	overflow:hidden; 
+	vertical-align: bottom;
+}
+
+#My_Team_Menu{
+	width:180px;
+}
+#My_Team_Menu li{
+	width:170px; 
+	overflow:hidden; 
+	vertical-align: bottom;
+}
+
+/**
+ * This is general program
+ */
+.ML_Head{ 
+	background:orange; 
+	color:white; 
+	text-align:left;
+	display:block;
+}
+.second_head{
+	text-align:left; 
+	display:block;
+}

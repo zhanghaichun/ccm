@@ -1,0 +1,204 @@
+#contractPageContainer {}
+
+#contractPageContainer .clearfix:before,
+#contractPageContainer .clearfix:after {
+	display: table;
+	content: '';
+}
+
+#contractPageContainer .clearfix:after {
+	clear: both;
+}
+
+#contractPageContainer .pull-left {
+	float: left;
+}
+
+#contractPageContainer .pull-right {
+	float: right;
+}
+
+#contractPageContainer .tabDetailView {
+	width: 100%;
+	margin-bottom: 10px;
+	border-width: 1px;
+	border-collapse: collapse;
+}
+
+#contractPageContainer .searchItemPanel table {
+	width: 100%;
+}
+
+#contractPageContainer .searchItemPanel table td {
+	height: 25px;
+	line-height: 25px;
+}
+
+#contractPageContainer .searchItemPanel table td input[type="text"] {
+	height: 20px;
+	width: 230px;
+	padding: 3px;
+}
+
+#contractPageContainer .searchItemPanel a:link,
+#contractPageContainer .searchItemPanel a:hover {
+	text-decoration: none;
+}
+
+#contractPageContainer .searchItemPanel .Date {
+	height: 20px;
+    padding: 3px;
+    width: 140px;
+}
+
+#contractPageContainer .searchItemPanel .calendar-image-link {
+	display: inline-block;
+	transform: translateY(4px);
+}
+
+
+/* 取消搜索条件中下拉列表的行高度样式。 */
+#contractPageContainer #carrier-entity-name-filter-list .content .row,
+#contractPageContainer #carrier-type-filter-list .content .row,
+#contractPageContainer #agreement-type-filter-list .content .row,
+#contractPageContainer #products-services-filter-list .content .row,
+#contractPageContainer #term-combined-filter-list .content .row {
+    line-height: normal;
+}
+
+#contractPageContainer .buttons-container input {
+	cursor: pointer;
+}
+
+#contractPageContainer .buttons-container .clear-contract--button {
+	margin-left: 5px;
+}
+
+#contractPageContainer #contract-wrapper {
+	width: 100%;
+}
+
+#contractPageContainer #contract-wrapper .wrapper-inner-table {
+	table-layout: fixed; 
+	width: 100%;
+}
+
+#contractPageContainer #contract-wrapper .data-table-wrapper {
+	width:100%; 
+	overflow-x: auto; 
+	padding-bottom: 20px;
+}
+
+#contractPageContainer .contract-pagination-TD {
+	padding-top: 15px;
+}
+
+#contractPageContainer #contract-dataTable-page {
+	float: left;
+}
+
+#contractPageContainer .oper-buttons {
+	float: left;
+	margin-left: 15px;
+}
+
+#contractPageContainer .oper-buttons input[type="button"] {
+	cursor: pointer;
+}
+
+
+.termination-penalty-popup {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(211, 211, 211,.4);
+}
+
+.termination-penalty-popup .termination-penalty {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 800px;
+	padding: 25px 25px 40px 25px;
+	background: white;
+	box-sizing: border-box;
+}
+
+.termination-penalty-popup .close-penalty-popup-icon {
+	display: inline-block;
+	float: right;
+	width: 15px;
+	height: 15px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url('../../images/contract/close.png');
+	cursor: pointer;
+}
+
+.termination-penalty-popup .termination-penalty-title {
+	margin-bottom: 30px;
+}
+
+.termination-penalty-popup .termination-penalty-title-text {
+	font-family: "Arial-BoldMT";
+	font-size: 16px;
+	font-weight: bold;
+	color: #4A4A4A;
+	letter-spacing: 0.19px;
+}
+
+.termination-penalty-popup .termination-penalty-filter-conditions-form {
+	margin-bottom: 40px;
+}
+
+.termination-penalty-popup .search-conditions {
+	padding: 15px;
+	margin-bottom: 10px;
+	background: #f6f6f6;
+	border: 1px solid #9EC5EB;
+}
+
+.termination-penalty-popup .search-conditions-table {
+	width: 100%;
+}
+
+.termination-penalty-popup .search-conditions-table td {
+	height: 25px;
+	line-height: 25px;
+}
+
+.termination-penalty-popup .search-conditions-table input[type="text"] {
+	height: 20px;
+	width: 230px;
+	padding: 3px;
+}
+
+.termination-penalty-popup #terminationDate {
+	width: 147px;
+}
+
+.termination-penalty-popup .termination-penalty-table {
+	width: 100%;
+}
+
+.termination-penalty-popup a:link,
+.termination-penalty-popup a:hover {
+	text-decoration: none;
+}
+
+.termination-penalty-popup .calendar-image-link {
+	display: inline-block;
+	transform: translateY(-2px);
+}
+
+.termination-penalty-popup input[type="button"] {
+	cursor: pointer;
+}
+
+.termination-penalty-popup .penalty-submit-button {
+	margin-right: 5px;
+}

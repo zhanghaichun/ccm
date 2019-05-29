@@ -1,0 +1,5 @@
+*html .yui-picker-bg {
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(
+    src='include/javascript/yui/build/picker_mask.png', 
+    sizingMethod='scale');
+}

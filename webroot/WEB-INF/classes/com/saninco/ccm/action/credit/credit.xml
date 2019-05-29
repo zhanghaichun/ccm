@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>  
+    <package name="com.saninco.ccm.action.credit" extends="ccm">
+    
+			<action name="saveExcelBySearchCredit" class="com.saninco.ccm.action.credit.CreditAction" method="saveExcelBySearchCredit"/>
+		
+			<action name="getUserPreviledgedVendorList" class="com.saninco.ccm.action.credit.CreditAction" method="getUserPreviledgedVendorList"/>
+			
+			<action name="doSaveCreditSearch" class="com.saninco.ccm.action.credit.CreditAction" method="saveCreditSearch"/>
+			
+			<action name="doGetCreditSearchTotalPageNo" class="com.saninco.ccm.action.credit.CreditAction" method="getCreditSearchTotalPageNo"/>
+			
+			<action name="doGetCreditAssignmentSearchTotalPageNo" class="com.saninco.ccm.action.credit.CreditAction" method="getCreditAssignmentSearchTotalPageNo"/>
+			
+			<action name="CreditDetailsDisputeTotalNo" class="com.saninco.ccm.action.credit.CreditAction" method="creditDetailsTotalNo"/>
+	    	
+	    	<action name="CreditDetailsDisputeList" class="com.saninco.ccm.action.credit.CreditAction" method="creditDetailsDisputeList"/>
+	    	
+	    	<action name="GetReconcileList"  class="com.saninco.ccm.action.credit.CreditAction" method="creditDetailsReconcileList"/>
+	    	
+	    	<action name="doCancelForReconcileByCredit" class="com.saninco.ccm.action.credit.CreditAction" method="cancelForReconcileByCredit"/>
+	    	
+	    	<action name="doAddReconcileData" class="com.saninco.ccm.action.credit.CreditAction" method="addReconcileData"/>
+	    	
+    </package>
+</struts>

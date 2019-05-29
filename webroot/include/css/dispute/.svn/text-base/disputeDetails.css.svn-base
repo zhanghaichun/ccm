@@ -1,0 +1,264 @@
+
+
+.fixed-table {
+	table-layout: fixed;
+}
+/* 使dispute details 中的四个单元格的分割线更加清晰。 */
+.tabDetailView2 .tabDetailViewDL:nth-of-type(odd) {
+	border-right: none;
+}
+
+/* View ban invoice detail 按钮的间距样式。 */
+td.view-invoice-detail--button {
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+/* Increase 和 decrease 操作按钮的样式。 */
+td.ban-manipulation-buttons {
+	padding-top: 45px;
+}
+
+/* 表格样式设置。 */
+.details-table {
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+
+.details-table.left-bottom {
+	margin-bottom: 20px;
+}
+
+.details-table td {
+	width: 50%;
+	height: 25px;
+	line-height: 20px;
+	padding-left: 25px;
+}
+
+/* label 左对齐 奇数列*/
+.details-table td:nth-of-type(odd) {
+	text-align: left;
+}
+
+/* value 右对齐 偶数列*/
+.details-table td:nth-of-type(even) {
+	text-align: left;
+	padding-right: 25px;
+}
+
+/* left bottom 单元格样式的设置。 */
+
+.left-bottom.details-table td {
+	/* width: auto; */
+}
+
+.left-bottom.details-table .dispute-notes-row td {
+	padding-top: 20px;
+}
+
+.left-bottom.details-table .dispute-notes-row .notes-label {
+	vertical-align: top;
+	width: 200px;
+} 
+
+.left-bottom.details-table .dispute-notes-row .content-wrapper {
+	height:55px;
+	overflow:auto;
+}
+
+/* 记录邮件发送信息的单元格的样式，根据是否
+存在数据进行不同样式的调整。 */
+
+/* Email message title. */
+.email-center .dispute-message-title {
+	padding-left:30px; 
+	height:15px; 
+	text-align:left;
+}
+
+/* 存在数据的外层容器的设置。 */
+.email-center .exist-message-container {
+	max-height: 200px;
+	width: 100%; 
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align:center;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+.email-center .exist-message-wrapper::-webkit-scrollbar  {  
+    /*width: 0;  */  
+}  
+
+
+.exist-message-wrapper-overflow {
+	width: 93%;
+	max-height: 200px;
+	margin: auto;
+	border: 1px solid #abc1d8;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* 数据中心的 inner wrapper. */
+.email-center .exist-message-container .inner-wrapper {
+	height: auto;
+	border-bottom: 1px solid #abc1d8;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	min-height:150px;
+	background: white;
+}
+
+/* Email 地址 （抄送人） */
+.email-center .inner-wrapper .ccAddress-container {
+	height: 20px;
+	line-height: 20px;
+	text-align: left; 
+	padding-left: 20px;
+	padding-top: 1px;
+	margin-bottom: 1px;
+}
+
+.email-center .inner-wrapper .ccAddress-container h6 {
+	float: left;
+}
+
+.email-center .inner-wrapper .ccAddress-container .cc-address-input {
+    width: 80%;
+    height: 20px;
+    border: 0;
+    background-color: #ffffff
+}
+
+.email-center .inner-wrapper .subject-container .subject-address-input {
+    width: 10%;
+    height: 18px;
+    border-color: #CCCCCC;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    float: left;
+    color: #cccccc;
+    margin-right: 8px;
+    line-height: 18px;
+}
+.email-center .inner-wrapper .subject-container .subject {
+    padding-top: 1px;
+    font-weight: 700;
+}
+
+/* Email 地址 （包括发件人和收件人） */
+.email-center .inner-wrapper .address-container {
+	height: 24px;
+	text-align: left; 
+	padding-left: 20px;
+	/* padding-top: 10px; */
+	margin-bottom: 10px;
+}
+.email-center .inner-wrapper .subject-container {
+	height: 24px;
+
+	text-align: left; 
+	padding-left: 20px;
+    padding-top: 10px;
+}
+
+
+.email-center .inner-wrapper .address-container h3 {
+	float: left;
+}
+
+.email-center .inner-wrapper .address-container .send-to {
+	float: left;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-top: 4px;
+	background: url("../../images/disputeDetails/sendTo.png") no-repeat;
+	background-size: cover;
+}
+
+.email-center .inner-wrapper .address-container .from-address {
+	margin-right: 15px;
+	
+	color: rgba(0,0,0,.8);
+}
+
+.email-center .inner-wrapper .address-container .to-address {
+	margin-left: 15px;
+
+	color: rgba(0,0,0,.8);
+}
+
+/* 发送邮件的日期。 */
+.email-center .inner-wrapper .datatime {
+	height: 20px;
+	text-align: left;
+	padding-left: 18px; 
+	padding-top:5px;
+}
+
+.email-center .inner-wrapper .datatime h4 {
+	/*float:left;*/
+	color: #948f8f; 
+	margin-top: 6px;
+}
+
+.email-center .inner-wrapper .datatime .download-img {
+	float: right;
+	margin-right: 20px;
+	cursor: pointer; 
+}
+
+/* 多条信息分割线的样式。 */
+.email-center .inner-wrapper .seperator {
+	margin: 10px 20px;
+	border: none;
+	border-top: 1px solid #e6e6e6;
+}
+
+/* Email的发送信息。 */
+.email-center .inner-wrapper .content {
+	height: auto;
+	padding-left: 16px; 
+	padding-top:5px; 
+	margin-right:15px;
+	text-align: left;
+}
+
+.email-center .inner-wrapper .content h4 {
+	text-align:left;
+	color: black;
+}
+.czgdIcon {
+	display:block;
+	width:16px;
+	cursor:pointer;
+	height: 16px;
+	transform: translateY(15px);
+	float:right;
+	background:url(../../images/message-icon_56.png) no-repeat;
+	position:relative;
+	top:-16px;
+}
+
+/* 没有数据时的email center 容器样式的设定。 */
+.email-center .empty-message-container {
+	min-height: 80px;
+	margin: 15px 6px;
+	border: 1px solid #A8C4DC;
+	border-radius: 1px;
+	line-height: 80px;
+	text-align: center;
+}
+
+/* 联系供应商按钮样式设置 */
+.email-center .contact-vandor-button {
+	width:100%; 
+	height:30px; 
+	margin-left:30px; 
+	text-align:left;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions> 
+	<!-- 旧的Dashboard页面。 -->
+    <definition name="searchDashboardView" extends="ccmMainTemplate">
+        <put-attribute name="mainPanel" value="/WEB-INF/pages/dashboard/searchDashboardMainPanel.jsp"/>
+    </definition>
+
+     <definition name="showDashboardList" extends="ccmMainTemplate">
+        <put-attribute name="mainPanel" value="/WEB-INF/pages/dashboard/dashboard_list.jsp"/>
+    </definition>
+	
+
+    <definition name="userDashboardModuleView" extends="ccmMainTemplate">
+        <put-attribute name="mainPanel" value="/WEB-INF/pages/dashboard/dashboard.jsp"/>
+    </definition>
+
+</tiles-definitions>

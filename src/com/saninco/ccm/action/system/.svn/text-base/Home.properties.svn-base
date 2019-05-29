@@ -1,0 +1,9 @@
+page.home.title=Rogers Toll Free Portal Home
+page.home.text.instruction=Navigate by using the tabs above or select a task from the list below.
+page.home.text.shortcuts=Shortcuts
+page.home.text.whatToDo=What would you like to do?
+page.home.text.createSor=Create Service Order Request
+page.home.text.viewSor=View Service Order Request
+page.home.text.viewCdi=View Call Details
+page.home.text.viewDownloadReport=View/Download Report
+page.home.banner=images/login_banner.gif

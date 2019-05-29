@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.reconcile.ReconcileAction" extends="ccm">
+		
+		<action name="doSearchReconcile" class="com.saninco.ccm.action.reconcile.ReconcileAction" method="searchReconcile"/>
+		
+		<action name="doGetReconcileSearchTotalPageNo" class="com.saninco.ccm.action.reconcile.ReconcileAction" method="getReconcileSearchTotalPageNo"/>
+		
+		<action name="doSaveReconcileSearch" class="com.saninco.ccm.action.reconcile.ReconcileAction" method="saveReconcileSearch"/>
+		
+		<action name="doSaveReconcileSearch" class="com.saninco.ccm.action.reconcile.ReconcileAction" method="saveReconcileSearch"/>
+		
+		<action name="getUserPreviledgedVendorList" class="com.saninco.ccm.action.reconcile.ReconcileAction" method="getUserPreviledgedVendorList"/>
+		
+		<action name="doUpdateCreditOrDisputebalanceRollback" class="com.saninco.ccm.action.reconcile.ReconcileAction" method="updateCreditOrDisputebalanceRollback"/>
+		
+    </package>
+</struts>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="com.saninco.ccm.action.tariffRules" extends="ccm">
+        <!-- ContractRules -->
+        <action name="showTariffRulesContent" class="com.saninco.ccm.action.tariffRules.TariffRulesAction" method="exec">
+            <result name="success">/WEB-INF/pages/contractAndTariffRules/tariffRules.jsp</result>
+        </action>
+
+
+        <!-- Tariff Rules List Item page count.-->
+        <action name="countTariffRulesViewListPageNo" class="com.saninco.ccm.action.tariffRules.TariffRulesAction" method="countTariffRulesViewListPageNo" />
+
+        <!-- Tariff Rules list items.-->
+        <action name="listTariffRules" class="com.saninco.ccm.action.tariffRules.TariffRulesAction" method="listTariffRules" />
+
+        <!-- Download tariff rules list items.-->
+        <action name="downloadTariffRulesToExcel" class="com.saninco.ccm.action.tariffRules.TariffRulesAction" method="downloadTariffRulesToExcel" />
+
+    </package>
+
+
+
+</struts>

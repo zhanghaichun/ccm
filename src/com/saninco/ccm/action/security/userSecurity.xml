@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>  
+    <package name="com.saninco.ccm.action.security" extends="ccm">
+    
+ 		<action name="securityManagement" class="com.saninco.ccm.action.security.SecurityManagementAction" method="exec">
+		  	<result name="success" type="tiles">securityManagementView</result>
+		</action>
+		
+		<action name="verifyPreviledgeData" class="com.saninco.ccm.action.security.SecurityManagementAction" method="verifyPreviledgeData"></action>
+		
+		<action name="verifyUserNameExists" class="com.saninco.ccm.action.security.SecurityManagementAction" method="verifyUserNameExists"></action>
+		
+		<action name="updateRadio" class="com.saninco.ccm.action.security.SecurityManagementAction" method="updateRadio"></action>
+		
+		<action name="resetFailureCount" class="com.saninco.ccm.action.security.SecurityManagementAction" method="resetFailureCount"></action>
+		
+		<action name="getUserPreviledgedVendorList" class="com.saninco.ccm.action.security.SecurityManagementAction" method="getUserPreviledgedVendorList"></action>
+		
+		<action name="getPreviledgeVendorBanTotalPageNo" class="com.saninco.ccm.action.security.SecurityManagementAction" method="getPreviledgeVendorBanTotalPageNo"></action>
+		
+		<action name="daletePreviledgeVendorBan" class="com.saninco.ccm.action.security.SecurityManagementAction" method="daletePreviledgeVendorBan"></action>
+		
+		<action name="searchPreviledgeVendorBan" class="com.saninco.ccm.action.security.SecurityManagementAction" method="searchPreviledgeVendorBan"></action>
+		
+		<action name="savePreviledgeVendorBan" class="com.saninco.ccm.action.security.SecurityManagementAction" method="savePreviledgeVendorBan"></action>
+		
+		<action name="searchDelegation" class="com.saninco.ccm.action.security.SecurityManagementAction" method="searchDelegation"></action>
+		
+		<action name="getDelegationTotalPageNo" class="com.saninco.ccm.action.security.SecurityManagementAction" method="getDelegationTotalPageNo"></action>
+		
+		<action name="saveDelegation" class="com.saninco.ccm.action.security.SecurityManagementAction" method="saveDelegation"></action>
+		
+		<action name="daleteDelegation" class="com.saninco.ccm.action.security.SecurityManagementAction" method="daleteDelegation"></action>
+		
+		<action name="updateUserRoleAndPassword" class="com.saninco.ccm.action.security.SecurityManagementAction" method="updateUserRoleAndPassword"></action>
+		
+		<action name="upSaveDelegation" class="com.saninco.ccm.action.security.SecurityManagementAction" method="upSaveDelegation"></action>
+		
+		<action name="addUserRoleAndPassword" class="com.saninco.ccm.action.security.SecurityManagementAction" method="addUserRoleAndPassword"></action>
+	
+		<action name="doStarSearchUserListTotalNumber" class="com.saninco.ccm.action.security.UserListAction" method="doStarSearchUserListTotalNumber"></action>
+    	
+    	<action name="doSearchUserList" class="com.saninco.ccm.action.security.UserListAction" method="doSearchUserList"></action>
+    	
+    	<action name="doSaveSearchUser" class="com.saninco.ccm.action.security.UserListAction" method="doSaveSearchUser"></action>
+    	
+    	<action name="doDeleteUser" class="com.saninco.ccm.action.security.UserListAction" method="doDeleteUser"></action>
+   	
+    	<action name="doIsShowOrDel" class="com.saninco.ccm.action.security.UserListAction" method="isShowOrDel"></action>
+    	
+    	<action name="verifyOperatePermission" class="com.saninco.ccm.action.security.SecurityManagementAction" method="verifyOperatePermission"></action>
+    	
+    </package>
+</struts>
